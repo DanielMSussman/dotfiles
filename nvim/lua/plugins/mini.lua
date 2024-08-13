@@ -57,9 +57,10 @@ return {
                 { mode = 'n', keys = '<LocalLeader>' },
 
                 -- toggle triggers (vimtex)
-                {mode = 'n',keys='t'},
-                {mode = 'n',keys='c'},
-                {mode = 'n',keys='d'},
+                {mode = 'n',keys='t'}, --toggle commands
+                {mode = 'n',keys='c'}, --change commands
+                {mode = 'n',keys='d'}, --delete commands
+                {mode = 'n',keys='['}, --motion commands
 
                 -- normal mode control functions
                 { mode = 'n', keys = '<C-x>' },
