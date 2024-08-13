@@ -12,8 +12,8 @@ bindings = [
 ]
 
 [font]
-normal.family = "FiraMono Nerd Font"
-bold.family = "FiraMono Nerd Font Bold"
-italic.family = "FiraMono Nerd Font Italic"
-bold_italic.family = "FiraMono Nerd Font Bold Italic"
+normal.family = "JetBrainsMono Nerd Font"
+bold.family = "JetBrainsMono Nerd Font Bold"
+italic.family = "JetBrainsMono Nerd Font Italic"
+bold_italic.family = "JetBrainsMono Nerd Font Bold Italic"
 size = 12
