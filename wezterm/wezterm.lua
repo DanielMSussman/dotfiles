@@ -2,6 +2,9 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
+--On windows, name this file .wezterm.lua, put it in $HOME, and add this line:
+--config.default_prog = {'powershell.exe.,'NoLogo'}
+
 --aesthetics
 config.color_scheme = 'Kanagawa (Gogh)'
 config.font = wezterm.font {

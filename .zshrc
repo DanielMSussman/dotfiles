@@ -1,3 +1,5 @@
+ZSH_THEME="robbyrussel"
+
 export PS1='%n@%m %~$ '
 alias ll="ls -alFh"
 alias ls="ls -A --color=auto"
@@ -9,6 +11,7 @@ alias xmerced='ssh -X -Y dsussman@merced.ucmerced.edu'
 alias leviathan='ssh -p 51151 user@leviathan.physics.emory.edu'
 alias behemoth='ssh sussman@behemoth.physics.emory.edu'
 alias xlev='ssh -X -Y -p 51151 user@leviathan.physics.emory.edu'
-
+alias xbehemoth='ssh -X -Y sussman@behemoth.physics.emory.edu'
+alias ncsa='ssh dsussman@login.delta.ncsa.illinois.edu'
 
 export LSCOLORS=GxFxCxDxBxegedabagaced
