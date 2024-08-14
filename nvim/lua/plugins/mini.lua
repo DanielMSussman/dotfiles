@@ -57,10 +57,9 @@ return {
                 { mode = 'n', keys = '<LocalLeader>' },
 
                 -- toggle triggers (vimtex)
-                {mode = 'n',keys='t'}, --toggle commands
-                {mode = 'n',keys='c'}, --change commands
-                {mode = 'n',keys='d'}, --delete commands
-                {mode = 'n',keys='['}, --motion commands
+                {mode = 'n',keys='t'},
+                {mode = 'n',keys='c'},
+                {mode = 'n',keys='d'},
 
                 -- normal mode control functions
                 { mode = 'n', keys = '<C-x>' },
@@ -103,8 +102,9 @@ return {
                 miniclue.gen_clues.registers(),
                 miniclue.gen_clues.windows(),
                 miniclue.gen_clues.z(),
-            { mode = 'n', keys = '<localLeader>c', desc = '(Gitsigns commands' },
+            { mode = 'n', keys = '<Leader>c', desc = '(Gitsigns commands)' },
             { mode = 'n', keys = '<localLeader>l', desc = '(additional VimTex commands)' },
+            { mode = 'n', keys = '<Leader>x', desc = '(Trouble commands)' },
             { mode = 'n', keys = '<C-x><C-p>', desc = 'telescope find files'},
             { mode = 'n', keys = '<C-x><C-n>', desc = 'neotree show filesystem'},
 

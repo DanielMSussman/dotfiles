@@ -20,8 +20,8 @@ return {
                 },
             })
 
-            vim.keymap.set("n", "<localleader>ch", ":Gitsigns preview_hunk<CR>", {desc = "Gitsigns: preview hunk"})
-            vim.keymap.set("n", "<localleader>ci", ":Gitsigns preview_hunk_inline<CR>", {desc = "Gitsigns: preview hunk inline"})
+            vim.keymap.set("n", "<leader>ch", ":Gitsigns preview_hunk<CR>", {desc = "Gitsigns: preview hunk"})
+            vim.keymap.set("n", "<leader>ci", ":Gitsigns preview_hunk_inline<CR>", {desc = "Gitsigns: preview hunk inline"})
         end
     },
     {
