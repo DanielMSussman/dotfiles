@@ -16,7 +16,6 @@ local config = wezterm.config_builder()
 --    }
 --    "${osc7}PS $p$('>' * ($nestedPromptLevel + 1)) ";
 --}
---
 
 --aesthetics
 config.color_scheme = 'Kanagawa (Gogh)'
