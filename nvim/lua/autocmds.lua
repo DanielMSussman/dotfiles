@@ -29,25 +29,34 @@ autocmd('TextYankPost',{
             end,
 })
 
---on vimtex inverse search, center cursor
+--after inverse search, focus back on the nvim terminal and center line on screen
 autocmd("User", {
     pattern = "VimtexEventViewReverse",
     group = vimtexGroup,
-    callback = function()
+    callback = function() 
+       --"call b:vimtex.viewer.xdo_focus_vim()" --
+        vim.cmd('!open -a wezterm')
+        vim.cmd('redraw')
         vim.cmd("normal zz")
     end
     }
 )
 
---after inverse search, focus back on the nvim terminal
-autocmd("User", {
-    pattern = "VimtexEventViewReverse",
+--after compilation, return focus to terminal
+vim.api.nvim_create_autocmd("User", {
+    pattern = "VimtexEventCompileSuccess",
     group = vimtexGroup,
-    command = "call b:vimtex.viewer.xdo_focus_vim()"
+    callback =  function()
+        vim.cmd('VimtexView')
+        vim.cmd('sleep 200m') -- tweak per hardware...a bit janky
+        vim.cmd('!open -a wezterm')
+    end
     }
 )
 
+--
 -- completely frivolous notifications about vimtex compilation progress
+--
 vim.api.nvim_create_autocmd("User", {
     pattern = "VimtexEventCompileSuccess",
     group = vimtexGroup,
