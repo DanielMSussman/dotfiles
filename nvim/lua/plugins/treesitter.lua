@@ -8,7 +8,9 @@ return {
         config.setup({
         ensure_installed = {"lua","c", "markdown", "vim", "vimdoc","markdown_inline"},
         sync_install = true,
-        highlight = {enable = true },
+        highlight = {enable = true,
+               --     disable = {"tex"},
+                },
         indent = {enable = true},
         })
     end
