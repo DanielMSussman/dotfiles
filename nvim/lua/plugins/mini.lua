@@ -116,7 +116,7 @@ return {
             { mode = 'i', keys = '<C-x><C-k>', desc = 'expand luasnip'},
             { mode = 'i', keys = '<C-x><C-J>', desc = 'next luansip segment <C-j>'},
             { mode = 'i', keys = '<C-x><C-l>', desc = 'prev luasnip segment'},
-
+            }
         })
         end
     },
