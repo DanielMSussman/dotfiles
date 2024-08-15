@@ -103,6 +103,7 @@ return {
                 miniclue.gen_clues.windows(),
                 miniclue.gen_clues.z(),
             { mode = 'n', keys = '<Leader>c', desc = '(Gitsigns commands)' },
+            { mode = 'n', keys = '<Leader>l', desc = '(LSP commands)' },
             { mode = 'n', keys = '<localLeader>l', desc = '(additional VimTex commands)' },
             { mode = 'n', keys = '<Leader>x', desc = '(Trouble commands)' },
             { mode = 'n', keys = '<C-x><C-p>', desc = 'telescope find files'},
@@ -115,7 +116,6 @@ return {
             { mode = 'i', keys = '<C-x><C-k>', desc = 'expand luasnip'},
             { mode = 'i', keys = '<C-x><C-J>', desc = 'next luansip segment <C-j>'},
             { mode = 'i', keys = '<C-x><C-l>', desc = 'prev luasnip segment'},
-            },
 
         })
         end
