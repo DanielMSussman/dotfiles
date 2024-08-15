@@ -5,7 +5,8 @@ return {
     -- tag = "v2.15", -- uncomment to pin to a specific release
     config = function()
             --global vimtex settings
-            vim.g.vimtex_imaps_enabled = 0
+            vim.g.vimtex_imaps_enabled = 0 --i.e., disable them
+            vim.g.vimtex_compiler_silent = 1 -- i.e., don't emit compilation notifications
             --vimtex_view_settings
             -- set viewer based on operating system (windows = sumatraPDF via general, mac= skim, etc)
             local is_windows = vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win16") == 1
