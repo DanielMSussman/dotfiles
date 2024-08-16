@@ -69,7 +69,7 @@ return {
                     end,
                 },
                 completion = {
-                    keyword_length=2,
+                    keyword_length=3,
                     },
                 window = {
                     completion = cmp.config.window.bordered(),
