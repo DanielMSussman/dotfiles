@@ -16,6 +16,13 @@ autocmd('VimResized',{
             vim.cmd("tabnext " .. currentTab)
         end
 })
+-- stop detecting latex style and class files as tex for filetype purposes?
+local autocmd=vim.api.nvim_create_autocmd
+autocmd({"BufEnter","BufRead","BufNewFile"},{
+    group = sussmanGroup,
+    pattern = {'*.def','*.cls','*.sty'},
+    command = 'set filetype=txt',
+})
 
 --briefly (140ms) highlight text that gets yanked
 autocmd('TextYankPost',{

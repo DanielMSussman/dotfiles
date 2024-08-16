@@ -23,7 +23,7 @@ return {
         local lspconfig = require("lspconfig")
             --advertise cmp-nvim-lsp
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
-        lspconfig.texlab.setup {capabilities = capabilities}
+--        lspconfig.texlab.setup {capabilities = capabilities}
         lspconfig.clangd.setup {capabilities = capabilities}
     end
     },
@@ -68,6 +68,9 @@ return {
                          require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
                     end,
                 },
+                completion = {
+                    keyword_length=2,
+                    },
                 window = {
                     completion = cmp.config.window.bordered(),
                     documentation = cmp.config.window.bordered(),
