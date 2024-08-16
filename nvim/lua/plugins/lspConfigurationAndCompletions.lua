@@ -23,7 +23,7 @@ return {
         local lspconfig = require("lspconfig")
             --advertise cmp-nvim-lsp
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
---        lspconfig.texlab.setup {capabilities = capabilities}
+        lspconfig.texlab.setup {capabilities = capabilities}
         lspconfig.clangd.setup {capabilities = capabilities}
     end
     },
@@ -68,9 +68,6 @@ return {
                          require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
                     end,
                 },
-                completion = {
-                    keyword_length=3,
-                    },
                 window = {
                     completion = cmp.config.window.bordered(),
                     documentation = cmp.config.window.bordered(),
@@ -129,7 +126,7 @@ return {
                 sources = cmp.config.sources({
                     { name = 'luasnip' }, -- For luasnip users.
                     { name = 'nvim_lsp' },
-                    { name = 'buffer' },
+                    { name = 'buffer', keyword_length = 5 },
                 }),
                 performance = {max_view_entries = 15,}, 
             })
@@ -157,7 +154,7 @@ return {
                 sources = {
                     { name = 'vimtex' },
                     { name = 'luasnip' }, -- For luasnip users.
-                    { name = 'buffer' },
+                    { name = 'buffer', keyword_length = 5 },
                     -- other sources
                 },
             })
