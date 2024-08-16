@@ -63,9 +63,8 @@ return {
         local cmp = require("cmp")
         cmp.setup({
                 snippet = {
-                    -- REQUIRED - you must specify a snippet engine
                     expand = function(args)
-                         require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+                         require('luasnip').lsp_expand(args.body)
                     end,
                 },
                 window = {
@@ -124,14 +123,13 @@ return {
                 },
 
                 sources = cmp.config.sources({
-                    { name = 'luasnip' }, -- For luasnip users.
+                    { name = 'luasnip' },
                     { name = 'nvim_lsp' },
                     { name = 'buffer', keyword_length = 5 },
                 }),
                 performance = {max_view_entries = 15,}, 
             })
 
-            -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
             cmp.setup.cmdline({ '/', '?' }, {
                 mapping = cmp.mapping.preset.cmdline(),
                 sources = {
@@ -139,7 +137,6 @@ return {
                 }
             })
 
-            -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
             cmp.setup.cmdline(':', {
                 mapping = cmp.mapping.preset.cmdline(),
                 sources = cmp.config.sources({
@@ -153,9 +150,8 @@ return {
             cmp.setup.filetype("tex", {
                 sources = {
                     { name = 'vimtex' },
-                    { name = 'luasnip' }, -- For luasnip users.
+                    { name = 'luasnip' },
                     { name = 'buffer', keyword_length = 5 },
-                    -- other sources
                 },
             })
         end
