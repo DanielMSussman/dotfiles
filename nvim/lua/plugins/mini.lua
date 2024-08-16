@@ -42,6 +42,8 @@ return {
                 --                window = { config = win_config } ,
             }
             )
+            vim.notify = mininotify.make_notify({
+                })
         end
 
     },
