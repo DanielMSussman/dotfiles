@@ -23,7 +23,7 @@ config.font = wezterm.font {
         family = 'JetBrains Mono',
         harfbuzz_features = {'calt=0','clig=0','liga=0'},
     }
-config.font_size = 12
+config.font_size = 13
 config.window_background_opacity =1
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = false
