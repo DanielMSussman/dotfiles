@@ -28,6 +28,9 @@ config.window_background_opacity =1
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = false
 
+config.initial_rows = 40
+config.initial_cols = 100
+
 -- non-default keybinds
 config.keys = {
   {
