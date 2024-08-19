@@ -30,6 +30,7 @@ config.hide_tab_bar_if_only_one_tab = false
 
 config.initial_rows = 40
 config.initial_cols = 100
+config.enable_scroll_bar = trueconfig.enable_scroll_bar = true
 
 -- non-default keybinds
 config.keys = {
