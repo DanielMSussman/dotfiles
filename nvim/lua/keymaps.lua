@@ -54,3 +54,16 @@ vim.keymap.set('n', '<leader>e', function()
 
     vim.diagnostic.open_float(nil, { focus = false, scope = 'cursor' })
 end, { desc = 'Toggle Diagnostics' })
+
+-- obsidian
+vim.keymap.set('n','<localleader>mv',':ObsidianOpen<CR>',
+    {noremap=true, desc="Obsidian: view in app"})
+vim.keymap.set('n','<localleader>mn',':ObsidianNew<CR>',
+    {noremap=true, desc="Obsidian: new note"})
+vim.keymap.set('n','<localleader>mf',':ObsidianFollowLink vsplit<CR>',
+    {noremap=true, desc="Obsidian: follow link in split"})
+vim.keymap.set('n','<localleader>mb',':ObsidianBacklinks<CR>',
+    {noremap=true, desc="Obsidian: list backlinks"})
+
+vim.keymap.set('v','L',':ObsidianLinkNew<CR>',
+    {noremap=true, desc="Obsidian: create new note from selected text"})

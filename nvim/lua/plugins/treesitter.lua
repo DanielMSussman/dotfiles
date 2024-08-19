@@ -9,7 +9,7 @@ return {
         ensure_installed = {"lua","c", "markdown", "vim", "vimdoc","markdown_inline"},
         sync_install = true,
         highlight = {enable = true,
-               --     disable = {"tex"},
+                    disable = {"tex"},
                 },
         indent = {enable = true},
         })
