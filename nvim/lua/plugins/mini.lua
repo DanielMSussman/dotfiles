@@ -101,6 +101,7 @@ return {
                 miniclue.gen_clues.windows(),
                 miniclue.gen_clues.z(),
             { mode = 'n', keys = '<Leader>c', desc = '(Gitsigns commands)' },
+            { mode = 'n', keys = '<Leader>g', desc = '(git commands)' },
             { mode = 'n', keys = '<Leader>l', desc = '(LSP commands)' },
             { mode = 'n', keys = '<localLeader>l', desc = '(additional VimTex commands)' },
             { mode = 'n', keys = '<Leader>x', desc = '(Trouble commands)' },

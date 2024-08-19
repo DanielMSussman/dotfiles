@@ -1,8 +1,16 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+--vim-fugitive
+vim.keymap.set('n','<leader>gs',':Git<CR>',{noremap=true,desc ='git status'})
+vim.keymap.set('n','<leader>gc',':Git commit -am "',{noremap=true,desc ='git commit -am'})
+vim.keymap.set('n','<leader>gp',':Git push <CR>',{noremap=true,desc ='git push'})
+
+
 vim.keymap.set("n","<leader>p",'\"0p',{desc = 'paste last yank'})
 vim.keymap.set("n","<leader>P",'\"0P',{desc = 'Paste last yank'})
+
+vim.keymap.set("n","<leader>s","a<C-x>s",{noremap = true, desc = 'drop-down spelling suggestion of word under cursor'})
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz",{desc = 'move down and center'})
 vim.keymap.set("n", "<C-u>", "<C-u>zz",{desc = 'move up and center'})
@@ -15,10 +23,8 @@ vim.keymap.set('n', '<C-z>', ':sp<bar>term<cr><c-w>J:resize8<cr>i',{noremap = tr
 --when in terminal mode, ESC gets back to normal mode
 vim.keymap.set('t', '<ESC>', '<C-\\><C-n>',{noremap = true})
 
--- convenient, if janky, map for formatting some of my existing text
-vim.keymap.set('n','<C-q>','V:!fmt -s -w80 <CR>',{noremap = true, desc = "call fmt on text"})
-vim.keymap.set('v','<C-q>',':!fmt -s -w80 <CR>',{noremap = true, desc = "call fmt on text"})
-
+--clean up carriage returns from windows
+vim.keymap.set('n','<leader>z',':%s/\r//<CR>',{noremap=true,desc = 'delete dos encoding carriage returns'})
 
 -- LSP and diagnostic section
 vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>',{noremap = true, desc = 'LSP: hover information'})

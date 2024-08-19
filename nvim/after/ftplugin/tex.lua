@@ -1,4 +1,7 @@
--- a set of localleader keymaps I call a lot
+-- Formatter--quick call to latexindent to enforce oneSentencePerline
+vim.keymap.set('n','<leader>q','vip:Format<CR>',{noremap=true,desc="Format: call latexindent for 1-sentence-per-line"})
+
+-- Vimtex: a set of localleader keymaps I call a lot
 vim.keymap.set('n','<localleader>b',':VimtexCompileSS<CR>',{noremap=true, desc="VimTex: single-shot compile"})
     vim.keymap.set('n','<localleader>c',':VimtexCompile<CR>',{noremap=true, desc="VimTex: continuous compile"})
     vim.keymap.set('n','<localleader>Z',':VimtexStopAll<CR>',{noremap=true, desc="VimTex: stop all compilation"})
