@@ -19,6 +19,9 @@ vim.opt.rtp:prepend(lazypath)
 
 -- load vimoptions and plugins
 local opts = {}
+--
+--require("editorconfig").properties.end_of_line = "lf"
+--
 --for now, just rig up an old vim setting file
 require("vimOptions")
 require("keymaps")

@@ -2,15 +2,23 @@ return {
 
     {
     'stevearc/conform.nvim',
-    event = {'VeryLazy'},
+--    event = {'VeryLazy'},
 
     config = function()
-        require("conform").setup({
-            formatters_ft = {
+        conformTex = require("conform").setup({
+            formatters = {
                 tex = {
-                    command = "latexindent"
-                    }
-                    --command ="latexindent -y='modifyLineBreaks:oneSentencePerLine:manipulateSentences:1','modifyLineBreaks:oneSentencePerLine:multipleSpacesToSingle:1'",}
+                        command = "latexindent",
+                                args = {
+                                    "-g",devnullstring,
+                                    "-y", "modifyLineBreaks:oneSentencePerLine:manipulateSentences:1,modifyLineBreaks:oneSentencePerLine:multipleSpacesToSingle:1",
+                                    "-m"
+                                },
+                                stdin = true,
+
+                    },
+--                    command = "latexindent"
+                    --command ="latexindent -y='modifyLineBreaks:oneSentencePerLine:manipulateSentences:1','modifyLineBreaks:oneSentencePerLine:multipleSpacesToSingle:1'",
                 },
             -- If this is set, Conform will run the formatter on save.
             -- It will pass the table to conform.format().
@@ -24,8 +32,8 @@ return {
 --                lsp_format = "fallback",
 --            },
         })
-        -- create a keymap to format a visual selection
-        vim.keymap.set("", "<leader>q", function()
+        -- Create a keymap to format a visual selection
+        vim.keymap.set("", "<leader>w", function()
             require("conform").format({ async = true, lsp_fallback = true })
         end, { desc = "Conform: format" })
         -- create a user command to run on current file
