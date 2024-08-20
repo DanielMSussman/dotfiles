@@ -2,20 +2,6 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
---On windows, name this file .wezterm.lua, put it in $HOME, and add this line:
---config.default_prog = {'powershell.exe.,'NoLogo'}
-
---Separately, echo $Profile to find a file like "C:\Users\dmsussm\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1", and add the following to it:
---function prompt {
---    $p = $executionContext.SessionState.Path.CurrentLocation
---    $osc7 = ""
---    if ($p.Provider.Name -eq "FileSystem") {
---        $ansi_escape = [char]27
---        $provider_path = $p.ProviderPath -Replace "\\", "/"
---        $osc7 = "$ansi_escape]7;file://${env:COMPUTERNAME}/${provider_path}${ansi_escape}\"
---    }
---    "${osc7}PS $p$('>' * ($nestedPromptLevel + 1)) ";
---}
 
 --aesthetics
 config.color_scheme = 'Kanagawa (Gogh)'
