@@ -2,7 +2,6 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
-
 --aesthetics
 config.color_scheme = 'Kanagawa (Gogh)'
 config.font = wezterm.font {
