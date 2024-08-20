@@ -103,6 +103,7 @@ return {
             { mode = 'n', keys = '<Leader>c', desc = '(Gitsigns commands)' },
             { mode = 'n', keys = '<Leader>g', desc = '(git commands)' },
             { mode = 'n', keys = '<Leader>l', desc = '(LSP commands)' },
+            { mode = 'n', keys = '<Leader>t', desc = '(Pomodoro sessions)' },
             { mode = 'n', keys = '<localLeader>m', desc = '(Obsidian md commands)' },
             { mode = 'n', keys = '<localLeader>l', desc = '(additional VimTex commands)' },
             { mode = 'n', keys = '<Leader>x', desc = '(Trouble commands)' },

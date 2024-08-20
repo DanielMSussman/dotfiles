@@ -22,10 +22,12 @@ local opts = {}
 --
 --require("editorconfig").properties.end_of_line = "lf"
 --
---for now, just rig up an old vim setting file
-require("vimOptions")
-require("keymaps")
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 require("lazy").setup("plugins")
 
+require("vimOptions")
+require("keymaps")
 require("autocmds")
