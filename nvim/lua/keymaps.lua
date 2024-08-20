@@ -56,14 +56,16 @@ vim.keymap.set('n', '<leader>e', function()
 end, { desc = 'Toggle Diagnostics' })
 
 -- obsidian
-vim.keymap.set('n','<localleader>mv',':ObsidianOpen<CR>',
+vim.keymap.set('n','<localleader>ov',':ObsidianOpen<CR>',
     {noremap=true, desc="Obsidian: view in app"})
-vim.keymap.set('n','<localleader>mn',':ObsidianNew<CR>',
+vim.keymap.set('n','<localleader>on',':ObsidianNew<CR>',
     {noremap=true, desc="Obsidian: new note"})
-vim.keymap.set('n','<localleader>mf',':ObsidianFollowLink vsplit<CR>',
+vim.keymap.set('n','<localleader>of',':ObsidianFollowLink vsplit<CR>',
     {noremap=true, desc="Obsidian: follow link in split"})
-vim.keymap.set('n','<localleader>mb',':ObsidianBacklinks<CR>',
+vim.keymap.set('n','<localleader>ob',':ObsidianBacklinks<CR>',
     {noremap=true, desc="Obsidian: list backlinks"})
+vim.keymap.set('n','<localleader>ot',':ObsidianTemplate<CR>',
+    {noremap=true, desc="Obsidian: template picker"})
 
 vim.keymap.set('v','L',':ObsidianLinkNew<CR>',
     {noremap=true, desc="Obsidian: create new note from selected text"})

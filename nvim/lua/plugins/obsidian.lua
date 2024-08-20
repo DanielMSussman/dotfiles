@@ -20,10 +20,10 @@ return{
             },
             opts = {
                 workspaces = {
-                    --{
-                    --    name = "personal",
-                    --    path = "~/vaults/personal",
-                    --},
+                    {
+                        name = "sussman",
+                        path = "~/repos/obsidianNotes",
+                    },
                     --{
                     --    name = "work",
                     --    path = "~/vaults/work",
@@ -45,7 +45,10 @@ return{
                     },
                 },
             },
---            ui = {enable = false},
+            disable_frontmatter = true,
+            notes_subdir = "notes",
+            new_notes_location = "notes_subdir",
+            ui = {enable = true},
             note_id_func = function(title)
                 local suffix = ""
                 if title ~= nil then
@@ -59,7 +62,22 @@ return{
                 end
                 return suffix
             end,
+            
+            templates = {
+                folder = "templates",
+                date_format = "%Y-%m-%d",
+                time_format = "%H:%M",
+                -- A map for custom variables, the key should be the variable and the value a function
+                substitutions = {
+                    fname = function()
+                        --return vim.fn.expand('%')
+                        local temp = vim.fn.expand('%:p:h:t') .. "/" .. vim.fn. expand('%:t')
+                        return temp
+                    end
+                },
+            },
         },
+
 
     },
 
