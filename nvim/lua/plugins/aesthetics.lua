@@ -14,6 +14,9 @@ return {
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function()
             require("lualine").setup({
+                options = {
+                    refresh = {statusline = 2000, tabline = 1000, winbar = 1000}
+                    },
                 sections = {
                     lualine_a = {'mode'},
                     lualine_b = {'branch', 'diff', 'diagnostics'},
@@ -24,7 +27,23 @@ return {
 
                         shorting_target = 40,    -- Shortens path to leave 40 spaces in the window
                                 }},
-                    lualine_x = { 'fileformat', 'filetype'},
+                    lualine_x = {
+                        function()
+                            local ok, pomo = pcall(require, "pomo")
+                            if not ok then
+                                return ""
+                            end
+
+                            local timer = pomo.get_first_to_finish()
+                            if timer == nil then
+                                return ""
+                            end
+
+                            return "󰄉 " .. tostring(timer)
+                        end,
+                        "fileformat",
+                        "filetype",
+                    },
                     lualine_y = {'progress'},
                     lualine_z = {'location'},
                 },    

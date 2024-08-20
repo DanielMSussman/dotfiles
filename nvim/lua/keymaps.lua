@@ -1,8 +1,7 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
 --vim-fugitive
 vim.keymap.set('n','<leader>gs',':Git<CR>',{noremap=true,desc ='git status'})
+vim.keymap.set('n','<leader>ga',':Git add ',{noremap=true,desc ='git add '})
+vim.keymap.set('n','<leader>gA',':Git add .',{noremap=true,desc ='git add .<CR>'})
 vim.keymap.set('n','<leader>gc',':Git commit -am "',{noremap=true,desc ='git commit -am'})
 vim.keymap.set('n','<leader>gp',':Git push <CR>',{noremap=true,desc ='git push'})
 
@@ -69,3 +68,13 @@ vim.keymap.set('n','<localleader>ot',':ObsidianTemplate<CR>',
 
 vim.keymap.set('v','L',':ObsidianLinkNew<CR>',
     {noremap=true, desc="Obsidian: create new note from selected text"})
+
+-- pomodoro
+require("telescope").load_extension("pomodori")
+
+vim.keymap.set("n", "<leader>ft", function()
+  require("telescope").extensions.pomodori.timers()
+end, { desc = "Manage Pomodori Timers"})
+vim.keymap.set('n','<leader>tc',':TimerSession classicPomodoro<CR>',{noremap = true, desc = 'start 4 pomodoros'})
+vim.keymap.set('n','<leader>tp',':TimerSession pomodoroPod<CR>',{noremap = true, desc = 'start 1 pomodoro'})
+vim.keymap.set('n','<leader>th',':TimerSession pomodoroHour<CR>',{noremap = true, desc = 'start 2 pomodoros'})
