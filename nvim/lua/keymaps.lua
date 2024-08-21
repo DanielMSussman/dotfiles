@@ -4,6 +4,9 @@ vim.keymap.set('n','<leader>ga',':Git add ',{noremap=true,desc ='git add '})
 vim.keymap.set('n','<leader>gA',':Git add .<CR>',{noremap=true,desc ='git add .'})
 vim.keymap.set('n','<leader>gc',':Git commit -am "',{noremap=true,desc ='git commit -am'})
 vim.keymap.set('n','<leader>gp',':Git push <CR>',{noremap=true,desc ='git push'})
+--gitsigns
+            vim.keymap.set("n", "<leader>gh", ":Gitsigns preview_hunk<CR>", {noremap=true,desc = "Gitsigns: preview hunk"})
+            vim.keymap.set("n", "<leader>gi", ":Gitsigns preview_hunk_inline<CR>", {noremap=true,desc = "Gitsigns: preview hunk inline"})
 
 
 vim.keymap.set("n","<leader>p",'\"0p',{desc = 'paste last yank'})
@@ -25,13 +28,29 @@ vim.keymap.set('t', '<ESC>', '<C-\\><C-n>',{noremap = true})
 --clean up carriage returns from windows
 vim.keymap.set('n','<leader>z',':%s/\r//<CR>',{noremap=true,desc = 'delete dos encoding carriage returns'})
 
--- LSP and diagnostic section
-vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>',{noremap = true, desc = 'LSP: hover information'})
-vim.keymap.set('n', '<leader>ld', '<cmd>lua vim.lsp.buf.definition()<cr>',{noremap = true, desc = 'LSP: jump to definition'})
-vim.keymap.set('n', '<leader>lD', '<cmd>lua vim.lsp.buf.declaration()<cr>',{noremap = true, desc = 'LSP: jump to declaration'})
-vim.keymap.set('n', '<leader>lr', '<cmd>lua vim.lsp.buf.references()<cr>',{noremap = true, desc = 'LSP: list all references of symbol'})
-vim.keymap.set('n', '<leader>lc', '<cmd>lua vim.lsp.buf.code_action()<cr>',{noremap = true, desc = 'LSP: select code action available at cursor'})
-vim.keymap.set('n', '<leader>ln', '<cmd>lua vim.lsp.buf.rename()<cr>',{noremap = true, desc = 'LSP: rename all references to symbol'})
+-- LSP and diagnostic section (as an autocomplete)
+vim.api.nvim_create_autocmd('LspAttach', {
+    group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+    callback = function(event)
+        local map = function(keys,func,desc)
+            vim.keymap.set('n',keys,func,{buffer = event.buf,desc='LSP: ' .. desc})
+        end
+        map('gd', require('telescope.builtin').lsp_definitions, '[g]oto [d]efinition')
+        map('gD', require('telescope.builtin').lsp_definitions, '[g]oto [D]eclaration')
+        map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+        map('<leader>ln',vim.lsp.buf.rename,'[r]e[n]ame all references to symbol')
+        map('gr', require('telescope.builtin').lsp_references, '[g]oto [r]eferences')
+        map('<leader>c',vim.lsp.buf.code_action,'[c]ode action')
+        map('[K]',vim.lsp.buf.hover,'[K] hover information')
+    end
+})
+vim.api.nvim_create_autocmd('LspDetach', {
+              group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
+              callback = function(event2)
+                vim.lsp.buf.clear_references()
+                vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
+              end,
+            })
 
 vim.keymap.set('n','[d',vim.diagnostic.goto_next, {desc = 'Next warning or error'})
 vim.keymap.set('n',']d',vim.diagnostic.goto_prev, {desc = 'Next warning or error'})
@@ -72,7 +91,7 @@ vim.keymap.set('v','L',':ObsidianLinkNew<CR>',
 -- pomodoro
 require("telescope").load_extension("pomodori")
 
-vim.keymap.set("n", "<leader>ft", function()
+vim.keymap.set("n", "<leader>tt", function()
   require("telescope").extensions.pomodori.timers()
 end, { desc = "Manage Pomodori Timers"})
 vim.keymap.set('n','<leader>tc',':TimerSession classicPomodoro<CR>',{noremap = true, desc = 'start 4 pomodoros'})

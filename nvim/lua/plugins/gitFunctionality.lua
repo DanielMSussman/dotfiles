@@ -5,9 +5,9 @@ return {
                 signs = {
                     add          = { text = '+' },
                     change       = { text = '~' },
-                    delete       = { text = '-' },
+                    delete       = { text = '_' },
                     topdelete    = { text = '‾' },
-                    changedelete = { text = '_' },
+                    changedelete = { text = '~' },
                     untracked    = { text = '┆' },
                 },
                 signs_staged = {
@@ -20,8 +20,6 @@ return {
                 },
             })
 
-            vim.keymap.set("n", "<leader>ch", ":Gitsigns preview_hunk<CR>", {desc = "Gitsigns: preview hunk"})
-            vim.keymap.set("n", "<leader>ci", ":Gitsigns preview_hunk_inline<CR>", {desc = "Gitsigns: preview hunk inline"})
         end
     },
     {

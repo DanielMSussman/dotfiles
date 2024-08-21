@@ -134,9 +134,9 @@ return {
                 sources = cmp.config.sources({
                     { name = 'luasnip' },
                     { name = 'nvim_lsp' },
-                    { name = 'buffer', keyword_length = 5 },
+                    { name = 'buffer'},
                 }),
-                performance = {max_view_entries = 15,}, 
+                performance = {debounce = 200,}, 
             })
 
             cmp.setup.cmdline({ '/', '?' }, {
@@ -160,7 +160,7 @@ return {
                 sources = {
                     { name = 'vimtex' },
                     { name = 'luasnip' },
-                    { name = 'buffer', keyword_length = 5 },
+                    { name = 'buffer'},
                 },
             })
         end
