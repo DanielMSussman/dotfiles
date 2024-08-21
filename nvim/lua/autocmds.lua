@@ -61,7 +61,8 @@ vim.api.nvim_create_autocmd("User", {
     pattern = "VimtexEventCompileSuccess",
     group = vimtexGroup,
     callback =  function()
-        local id = MiniNotify.add('VimTex: Compilation finished','INFO')
+        vimtexCompileDuration = os.difftime(os.time(),vimtexStartTime)
+        local id = MiniNotify.add('VimTex: Compilation finished after '..tostring(vimtexCompileDuration)..'s','INFO')
          vim.defer_fn(function() MiniNotify.remove(id) end, 2000)
     end
     }
@@ -72,7 +73,8 @@ vim.api.nvim_create_autocmd("User", {
     group = vimtexGroup,
     callback =  function()
         local id = MiniNotify.add('VimTex: Compilation started','INFO')
-         vim.defer_fn(function() MiniNotify.remove(id) end, 2000)
+        vim.defer_fn(function() MiniNotify.remove(id) end, 2000)
+        vimtexStartTime = os.time()
     end
     }
 )
