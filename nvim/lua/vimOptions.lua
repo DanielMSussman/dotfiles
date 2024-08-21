@@ -27,7 +27,10 @@ vim.cmd("set clipboard=unnamedplus")
 
 vim.cmd("set noerrorbells")
 
-vim.cmd("set mouse=a")
+vim.cmd("set  hidden")
+--vim.cmd("set mouse=a")
 
 vim.cmd("set history=1000")
-vim.cmd("set scrolloff=8")
+vim.cmd("set scrolloff=10")
+
+vim.cmd("highlight Spellbad  cterm=underline gui=underline") 

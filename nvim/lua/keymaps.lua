@@ -5,14 +5,14 @@ vim.keymap.set('n','<leader>gA',':Git add .<CR>',{noremap=true,desc ='git add .'
 vim.keymap.set('n','<leader>gc',':Git commit -am "',{noremap=true,desc ='git commit -am'})
 vim.keymap.set('n','<leader>gp',':Git push <CR>',{noremap=true,desc ='git push'})
 --gitsigns
-            vim.keymap.set("n", "<leader>gh", ":Gitsigns preview_hunk<CR>", {noremap=true,desc = "Gitsigns: preview hunk"})
-            vim.keymap.set("n", "<leader>gi", ":Gitsigns preview_hunk_inline<CR>", {noremap=true,desc = "Gitsigns: preview hunk inline"})
+            vim.keymap.set("n", "<leader>gh", ":Gitsigns preview_hunk<CR>", {noremap=true,desc = "Gitsigns: preview [h]unk"})
+            vim.keymap.set("n", "<leader>gi", ":Gitsigns preview_hunk_inline<CR>", {noremap=true,desc = "Gitsigns: preview hunk [i]nline"})
 
 
 vim.keymap.set("n","<leader>p",'\"0p',{desc = 'paste last yank'})
 vim.keymap.set("n","<leader>P",'\"0P',{desc = 'Paste last yank'})
 
-vim.keymap.set("n","<leader>s","a<C-x>s",{noremap = true, desc = 'drop-down spelling suggestion of word under cursor'})
+vim.keymap.set("n","<leader>s","a<C-x>s",{noremap = true, desc = 'drop-down [s]pelling suggestion of word under cursor'})
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz",{desc = 'move down and center'})
 vim.keymap.set("n", "<C-u>", "<C-u>zz",{desc = 'move up and center'})
@@ -75,15 +75,15 @@ end, { desc = 'Toggle Diagnostics' })
 
 -- obsidian
 vim.keymap.set('n','<localleader>ov',':ObsidianOpen<CR>',
-    {noremap=true, desc="Obsidian: view in app"})
+    {noremap=true, desc="Obsidian: [v]iew in app"})
 vim.keymap.set('n','<localleader>on',':ObsidianNew<CR>',
-    {noremap=true, desc="Obsidian: new note"})
+    {noremap=true, desc="Obsidian: [n]ew note"})
 vim.keymap.set('n','<localleader>of',':ObsidianFollowLink vsplit<CR>',
-    {noremap=true, desc="Obsidian: follow link in split"})
+    {noremap=true, desc="Obsidian: [f]ollow link in split"})
 vim.keymap.set('n','<localleader>ob',':ObsidianBacklinks<CR>',
-    {noremap=true, desc="Obsidian: list backlinks"})
+    {noremap=true, desc="Obsidian: list [b]acklinks"})
 vim.keymap.set('n','<localleader>ot',':ObsidianTemplate<CR>',
-    {noremap=true, desc="Obsidian: template picker"})
+    {noremap=true, desc="Obsidian: [t]emplate picker"})
 
 vim.keymap.set('v','L',':ObsidianLinkNew<CR>',
     {noremap=true, desc="Obsidian: create new note from selected text"})
@@ -93,7 +93,7 @@ require("telescope").load_extension("pomodori")
 
 vim.keymap.set("n", "<leader>tt", function()
   require("telescope").extensions.pomodori.timers()
-end, { desc = "Manage Pomodori Timers"})
-vim.keymap.set('n','<leader>tc',':TimerSession classicPomodoro<CR>',{noremap = true, desc = 'start 4 pomodoros'})
-vim.keymap.set('n','<leader>tp',':TimerSession pomodoroPod<CR>',{noremap = true, desc = 'start 1 pomodoro'})
-vim.keymap.set('n','<leader>th',':TimerSession pomodoroHour<CR>',{noremap = true, desc = 'start 2 pomodoros'})
+end, { desc = "Manage Pomodori [t]imers"})
+vim.keymap.set('n','<leader>tc',':TimerSession classicPomodoro<CR>',{noremap = true, desc = '[c]lassic: start 4 pomodoros'})
+vim.keymap.set('n','<leader>tp',':TimerSession pomodoroPod<CR>',{noremap = true, desc = 'start 1 [p]omodoro'})
+vim.keymap.set('n','<leader>th',':TimerSession pomodoroHour<CR>',{noremap = true, desc = '[h]our: start 2 pomodoros'})
