@@ -97,3 +97,7 @@ end, { desc = "Manage Pomodori [t]imers"})
 vim.keymap.set('n','<leader>tc',':TimerSession classicPomodoro<CR>',{noremap = true, desc = '[c]lassic: start 4 pomodoros'})
 vim.keymap.set('n','<leader>tp',':TimerSession pomodoroPod<CR>',{noremap = true, desc = 'start 1 [p]omodoro'})
 vim.keymap.set('n','<leader>th',':TimerSession pomodoroHour<CR>',{noremap = true, desc = '[h]our: start 2 pomodoros'})
+
+--neo-tree
+vim.keymap.set('n', '<C-n>', ':Neotree filesystem toggle reveal left<CR>',{desc = "view neotree filesystem"})
+
