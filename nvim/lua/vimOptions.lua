@@ -27,7 +27,7 @@ vim.cmd("set clipboard=unnamedplus")
 
 vim.cmd("set noerrorbells")
 
-vim.cmd("set  hidden")
+vim.cmd("set hidden")
 --vim.cmd("set mouse=a")
 
 vim.cmd("set history=1000")

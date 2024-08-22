@@ -84,9 +84,9 @@ vim.keymap.set('n','<localleader>ob',':ObsidianBacklinks<CR>',
     {noremap=true, desc="Obsidian: list [b]acklinks"})
 vim.keymap.set('n','<localleader>ot',':ObsidianTemplate<CR>',
     {noremap=true, desc="Obsidian: [t]emplate picker"})
-
 vim.keymap.set('v','L',':ObsidianLinkNew<CR>',
     {noremap=true, desc="Obsidian: create new note from selected text"})
+vim.keymap.set('n', '<localleader>om', ':RenderMarkdown toggle <CR>',{desc = "toggle render [m]arkdown"})
 
 -- pomodoro
 require("telescope").load_extension("pomodori")

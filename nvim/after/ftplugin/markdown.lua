@@ -1,1 +1,1 @@
-vim.cmd("set conceallevel=1")
+--vim.cmd("set conceallevel=1")

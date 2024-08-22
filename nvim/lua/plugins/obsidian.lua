@@ -48,7 +48,7 @@ return{
             disable_frontmatter = true,
             notes_subdir = "notes",
             new_notes_location = "notes_subdir",
-            ui = {enable = true},
+            ui = {enable = false},
             note_id_func = function(title)
                 local suffix = ""
                 if title ~= nil then
