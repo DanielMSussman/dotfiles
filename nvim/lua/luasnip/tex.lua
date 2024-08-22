@@ -101,6 +101,15 @@ return {
         )
     ),
 
+    --autotrigger latex quotation marks
+    s({trig="\"", snippetType="autosnippet", desc="quotation marks"},
+        fmta(
+            [[``<>'' ]],
+            {
+            i(1, "text"),
+            }
+        )
+    ),
 
     --autotrigger greek letters
     s({trig=";a", snippetType="autosnippet", desc="alpha"},
