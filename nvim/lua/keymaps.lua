@@ -12,7 +12,7 @@ vim.keymap.set('n','<leader>gp',':Git push <CR>',{noremap=true,desc ='git push'}
 vim.keymap.set("n","<leader>p",'\"0p',{desc = 'paste last yank'})
 vim.keymap.set("n","<leader>P",'\"0P',{desc = 'Paste last yank'})
 
-vim.keymap.set("n","<leader>s","a<C-x>s",{noremap = true, desc = 'drop-down [s]pelling suggestion of word under cursor'})
+vim.keymap.set("n","<leader>z","a<C-x>s",{noremap = true, desc = '[z] drop-down spelling suggestion of word under cursor'})
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz",{desc = 'move down and center'})
 vim.keymap.set("n", "<C-u>", "<C-u>zz",{desc = 'move up and center'})
@@ -26,7 +26,7 @@ vim.keymap.set('n', '<C-z>', ':sp<bar>term<cr><c-w>J:resize8<cr>i',{noremap = tr
 vim.keymap.set('t', '<ESC>', '<C-\\><C-n>',{noremap = true})
 
 --clean up carriage returns from windows
-vim.keymap.set('n','<leader>z',':%s/\r//<CR>',{noremap=true,desc = 'delete dos encoding carriage returns'})
+--vim.keymap.set('n','<leader>z',':%s/\r//<CR>',{noremap=true,desc = 'delete dos encoding carriage returns'})
 
 -- LSP and diagnostic section (as an autocomplete)
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -101,3 +101,7 @@ vim.keymap.set('n','<leader>th',':TimerSession pomodoroHour<CR>',{noremap = true
 --neo-tree
 vim.keymap.set('n', '<C-n>', ':Neotree filesystem toggle reveal left<CR>',{desc = "view neotree filesystem"})
 
+--session  management
+vim.keymap.set('n','<leader>ss','<cmd>SessionManager save_current_session<CR>',{noremap=true,desc = "[s]ave current session"})
+vim.keymap.set('n','<leader>sd','<cmd>SessionManager delete_session<CR>',{noremap=true,desc = "[d]elete current session"})
+vim.keymap.set('n','<leader>sl','<cmd>SessionManager load_session<CR>',{noremap=true,desc = "[l]oad session"})

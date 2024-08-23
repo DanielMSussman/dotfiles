@@ -1,8 +1,18 @@
 --finding files by text string is nice...live grepping in large projects is awesome
 return {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = { 'nvim-lua/plenary.nvim',
+                    "nvim-telescope/telescope-ui-select.nvim",
+                    },
     config = function()
+        require('telescope').setup({
+            extensions = {
+                ['ui-select'] = {
+                    require('telescope.themes').get_dropdown(),
+                },
+            }
+        })
+        pcall(require('telescope').load_extension, 'ui-select')
         builtin = require("telescope.builtin")
 
         vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[f]ind [h]elp' })
