@@ -102,6 +102,20 @@ vim.keymap.set('n','<leader>th',':TimerSession pomodoroHour<CR>',{noremap = true
 vim.keymap.set('n', '<C-n>', ':Neotree filesystem toggle reveal left<CR>',{desc = "view neotree filesystem"})
 
 --session  management
-vim.keymap.set('n','<leader>ss','<cmd>SessionManager save_current_session<CR>',{noremap=true,desc = "[s]ave current session"})
-vim.keymap.set('n','<leader>sd','<cmd>SessionManager delete_session<CR>',{noremap=true,desc = "[d]elete current session"})
-vim.keymap.set('n','<leader>sl','<cmd>SessionManager load_session<CR>',{noremap=true,desc = "[l]oad session"})
+vim.keymap.set('n','<leader>ss',function()
+                                    vim.cmd("SessionManager save_current_session")
+                                    vim.notify("Session saved")
+                                end,
+                                {noremap=true,desc = "[s]ave current session"})
+vim.keymap.set('n','<leader>sd',function()
+                                    vim.cmd("SessionManager delete_session")
+                                    vim.notify("Session deleted")
+                                end,
+                                {noremap=true,desc = "[d]elete current session"})
+
+vim.keymap.set('n','<leader>sl',function()
+                                    vim.cmd("SessionManager load_session")
+                                    vim.notify("Session loaded")
+                                end,
+                                {noremap=true,desc = "[l]oad session"})
+vim.keymap.set('n','<leader>sx',':wqa<CR> ',{noremap=true,desc = "save session and e[x]it"})
