@@ -3,16 +3,19 @@ vim.keymap.set('n','<leader>q','vip:Format<CR>',{noremap=true,desc="Format: call
 
 -- Vimtex: a set of localleader keymaps I call a lot
 vim.keymap.set('n','<localleader>b',':VimtexCompileSS<CR>',{noremap=true, desc="VimTex: single-shot [b]uild"})
-    vim.keymap.set('n','<localleader>c',':VimtexCompile<CR>',{noremap=true, desc="VimTex: [c]ontinuous compile"})
-    vim.keymap.set('n','<localleader>Z',':VimtexStopAll<CR>',{noremap=true, desc="VimTex: [Z] stop all compilation"})
+vim.keymap.set('n','<localleader>c',':VimtexCompile<CR>',{noremap=true, desc="VimTex: [c]ontinuous compile"})
+vim.keymap.set('n','<localleader>Z',':VimtexStopAll<CR>',{noremap=true, desc="VimTex: [Z] stop all compilation"})
 
-    vim.keymap.set('n','<localleader>o',':VimtexCompileSS<CR><bar>:VimtexCompileOutput<CR><bar>:wincmd J<CR><bar>:resize 10<CR>',{noremap=true, desc="VimTex: compile and see [o]utput of compiler"})
-    vim.keymap.set('n','<localleader>v',':VimtexView<CR>',{noremap=true, desc="VimTex: [v]iew  forward search"})
-    
-    vim.keymap.set('n','<localleader>t',':VimtexTocToggle<CR>',{noremap=true, desc="VimTex: toggle [t]able of contents"})
-    vim.keymap.set('n','<localleader>i',':VimtexInfo<CR>',{noremap=true, desc="VimTex: [i]nfo"})
-    vim.keymap.set('n','<localleader>x',':VimtexClean<CR>',{noremap=true, desc="VimTex: clean au[x] files"})
-    vim.keymap.set('n','<localleader>X',':VimtexClean!<CR>',{noremap=true, desc="VimTex: clean au[X] files and output"})
+vim.keymap.set('n','<localleader>o',':VimtexCompileSS<CR><bar>:VimtexCompileOutput<CR><bar>:wincmd J<CR><bar>:resize 10<CR>',{noremap=true, desc="VimTex: see compiler [o]utput"})
+vim.keymap.set('n','<localleader>v',':VimtexView<CR>',{noremap=true, desc="VimTex: [v]iew  forward search"})
+
+vim.keymap.set('n','<localleader>t',':VimtexTocToggle<CR>',{noremap=true, desc="VimTex: toggle [t]able of contents"})
+vim.keymap.set('n','<localleader>i',':VimtexInfo<CR>',{noremap=true, desc="VimTex: [i]nfo"})
+vim.keymap.set('n','<localleader>x',':VimtexClean<CR>',{noremap=true, desc="VimTex: clean au[x] files"})
+vim.keymap.set('n','<localleader>X',':VimtexClean!<CR>',{noremap=true, desc="VimTex: clean au[X] files and output"})
+
+
+vim.keymap.set('n', '<leader>fc', ':Telescope bibtex<CR>', { desc = '[f]ind [c]itation' })
 
 local autocmd=vim.api.nvim_create_autocmd
 autocmd({"BufEnter","BufRead","BufNewFile"},{
