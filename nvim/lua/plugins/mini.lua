@@ -106,7 +106,7 @@ return {
             { mode = 'n', keys = '<localLeader>o', desc = '([o]bsidian and md commands)' },
             { mode = 'n', keys = '<Leader>s', desc = '([S]ession management)' },
             { mode = 'n', keys = '<Leader>t', desc = '(Pomodoro [t]timer sessions)' },
-            { mode = 'n', keys = '<localLeader>l', desc = '([l]atex/VimTex commands)' },
+            { mode = 'n', keys = '<localLeader>l', desc = '(additional [l]atex/VimTex commands)' },
             { mode = 'n', keys = '<Leader>x', desc = '([x]  Trouble commands)' },
             { mode = 'n', keys = '<C-x><C-n>', desc = 'neotree show filesystem'},
 

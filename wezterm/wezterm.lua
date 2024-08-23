@@ -1,6 +1,10 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
+local launch_menu={}
+
+--- Set Pwsh as the default on Windows
+--config.default_prog = { 'powershell.exe', '-NoLogo' }
 
 --aesthetics
 config.color_scheme = 'Kanagawa (Gogh)'
@@ -15,8 +19,13 @@ config.hide_tab_bar_if_only_one_tab = false
 
 config.initial_rows = 40
 config.initial_cols = 100
-config.enable_scroll_bar = trueconfig.enable_scroll_bar = true
-
+config.enable_scroll_bar = false
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
+}
 -- non-default keybinds
 config.keys = {
   {
