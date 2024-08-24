@@ -112,82 +112,82 @@ return {
     ),
 
     --autotrigger greek letters
-    s({trig=";a", snippetType="autosnippet", desc="alpha"},
+    s({trig=";a", snippetType="autosnippet", desc="alpha",wordTrig=false},
         {
             t("\\alpha"),
         }
     ),
-    s({trig=";b", snippetType="autosnippet", desc="beta"},
+    s({trig=";b", snippetType="autosnippet", desc="beta",wordTrig=false},
         {
             t("\\beta"),
         }
     ),
-    s({trig=";B", snippetType="autosnippet", desc="Beta"},
+    s({trig=";B", snippetType="autosnippet", desc="Beta",wordTrig=false},
         {
             t("\\Beta"),
         }
     ),
-    s({trig=";g", snippetType="autosnippet", desc="gamma"},
+    s({trig=";g", snippetType="autosnippet", desc="gamma",wordTrig=false},
         {
             t("\\gamma"),
         }
     ),
-    s({trig=";G", snippetType="autosnippet", desc="Gamma"},
+    s({trig=";G", snippetType="autosnippet", desc="Gamma",wordTrig=false},
         {
             t("\\Gamma"),
         }
     ),
-    s({trig=";d", snippetType="autosnippet", desc="delta"},
+    s({trig=";d", snippetType="autosnippet", desc="delta",wordTrig=false},
         {
             t("\\delta"),
         }
     ),
-    s({trig=";D", snippetType="autosnippet", desc="Delta"},
+    s({trig=";D", snippetType="autosnippet", desc="Delta",wordTrig=false},
         {
             t("\\Delta"),
         }
     ),
-    s({trig=";e", snippetType="autosnippet", desc="eta"},
+    s({trig=";e", snippetType="autosnippet", desc="eta",wordTrig=false},
         {
             t("\\eta"),
         }
     ),
-    s({trig=";z", snippetType="autosnippet", desc="zeta"},
+    s({trig=";z", snippetType="autosnippet", desc="zeta",wordTrig=false},
         {
             t("\\zeta"),
         }
     ),
-    s({trig=";t", snippetType="autosnippet", desc="theta"},
+    s({trig=";t", snippetType="autosnippet", desc="theta",wordTrig=false},
         {
             t("\\theta"),
         }
     ),
-    s({trig=";p", snippetType="autosnippet", desc="pi"},
+    s({trig=";p", snippetType="autosnippet", desc="pi",wordTrig=false},
         {
             t("\\pi"),
         }
     ),
-    s({trig=";r", snippetType="autosnippet", desc="rho"},
+    s({trig=";r", snippetType="autosnippet", desc="rho",wordTrig=false},
         {
             t("\\rho"),
         }
     ),
-    s({trig=";s", snippetType="autosnippet", desc="sigma"},
+    s({trig=";s", snippetType="autosnippet", desc="sigma",wordTrig=false},
         {
             t("\\sigma"),
         }
     ),
-    s({trig=";o", snippetType="autosnippet", desc="omega"},
+    s({trig=";o", snippetType="autosnippet", desc="omega",wordTrig=false},
         {
             t("\\omega"),
         }
     ),
-    s({trig=";w", snippetType="autosnippet", desc="omega"},
+    s({trig=";w", snippetType="autosnippet", desc="omega",wordTrig=false},
         {
             t("\\omega"),
         }
     ),
-    s({trig=";O", snippetType="autosnippet", desc="Omega"},
+    s({trig=";O", snippetType="autosnippet", desc="Omega",wordTrig=false},
         {
             t("\\Omega"),
         }
