@@ -9,8 +9,8 @@ vim.keymap.set('n','<leader>gp',':Git push <CR>',{noremap=true,desc ='git push'}
             vim.keymap.set("n", "<leader>gi", ":Gitsigns preview_hunk_inline<CR>", {noremap=true,desc = "Gitsigns: preview hunk [i]nline"})
 
 
-vim.keymap.set("n","<leader>p",'\"0p',{desc = 'paste last yank'})
-vim.keymap.set("n","<leader>P",'\"0P',{desc = 'Paste last yank'})
+--vim.keymap.set("n","<leader>p",'\"0p',{desc = 'paste last yank'})
+--vim.keymap.set("n","<leader>P",'\"0P',{desc = 'Paste last yank'})
 
 vim.keymap.set("n","<leader>z","a<C-x>s",{noremap = true, desc = '[z] drop-down spelling suggestion of word under cursor'})
 
@@ -56,22 +56,22 @@ vim.keymap.set('n','[d',vim.diagnostic.goto_next, {desc = 'Next warning or error
 vim.keymap.set('n',']d',vim.diagnostic.goto_prev, {desc = 'Next warning or error'})
 
 -- toggle a floating window with error message
-vim.keymap.set('n', '<leader>e', function()
-    -- If we find a floating window, close it.
-    local found_float = false
-    for _, win in ipairs(vim.api.nvim_list_wins()) do
-        if vim.api.nvim_win_get_config(win).relative ~= '' then
-            vim.api.nvim_win_close(win, true)
-            found_float = true
-        end
-    end
-
-    if found_float then
-        return
-    end
-
-    vim.diagnostic.open_float(nil, { focus = false, scope = 'cursor' })
-end, { desc = 'Toggle Diagnostics' })
+--vim.keymap.set('n', '<leader>e', function()
+--    -- If we find a floating window, close it.
+--    local found_float = false
+--    for _, win in ipairs(vim.api.nvim_list_wins()) do
+--        if vim.api.nvim_win_get_config(win).relative ~= '' then
+--            vim.api.nvim_win_close(win, true)
+--            found_float = true
+--        end
+--    end
+--
+--    if found_float then
+--        return
+--    end
+--
+--    vim.diagnostic.open_float(nil, { focus = false, scope = 'cursor' })
+--end, { desc = 'Toggle Diagnostics' })
 
 -- obsidian
 vim.keymap.set('n','<localleader>ov',':ObsidianOpen<CR>',
