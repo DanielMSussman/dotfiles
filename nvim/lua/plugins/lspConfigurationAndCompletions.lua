@@ -23,7 +23,7 @@ return {
         local lspconfig = require("lspconfig")
             --advertise cmp-nvim-lsp
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
-        lspconfig.texlab.setup({capabilities = capabilities,
+--        lspconfig.texlab.setup({capabilities = capabilities,
 --                        settings = {
 --                            texlab = {
 --                                latexindent = {
@@ -32,7 +32,7 @@ return {
 --                                            },
 --                                    },
 --                },
-            })
+--            })
         lspconfig.clangd.setup {capabilities = capabilities}
     end
     },
