@@ -118,4 +118,9 @@ vim.keymap.set('n','<leader>sl',function()
                                     vim.notify("Session loaded")
                                 end,
                                 {noremap=true,desc = "[l]oad session"})
-vim.keymap.set('n','<leader>sx',':wqa<CR> ',{noremap=true,desc = "save session and e[x]it"})
+vim.keymap.set('n','<leader>sx',function()
+                                    vim.cmd("SessionManager save_current_session")
+                                    vim.notify("Session saved")
+                                    vim.cmd("wqa<CR>")
+                                end,
+                                {noremap=true,desc = "save session and e[x]it"})
