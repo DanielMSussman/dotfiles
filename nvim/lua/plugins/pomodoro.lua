@@ -12,7 +12,7 @@ return {
             update_interval=5000,
             notifiers = {
                 { name = "Default", opts = { sticky = false } },
-              --  { name = "System" }, -- rings the system bell... a bit ann
+              --  { name = "System" }, -- rings the system bell... a bit annoying
             },
             timers = {
                 Stretching = {
