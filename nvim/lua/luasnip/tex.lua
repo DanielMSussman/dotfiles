@@ -111,6 +111,14 @@ return {
         )
     ),
 
+    --autotrigger fractions
+    s({trig="//",snippetType="autosnippet",desc = "fraction",wordTrig=false},
+        fmta([[\frac{<>}{<>}]],
+        {i(1,"numerator"),
+         i(2,"denominator")}
+        )
+    ),
+
     --autotrigger greek letters
     s({trig=";a", snippetType="autosnippet", desc="alpha",wordTrig=false},
         {
