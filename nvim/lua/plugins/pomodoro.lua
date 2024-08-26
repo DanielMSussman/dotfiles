@@ -12,24 +12,24 @@ return {
             update_interval=5000,
             notifiers = {
                 { name = "Default", opts = { sticky = false } },
-              --  { name = "System" }, -- rings the system bell... a bit annoying
+              --  { name = "System" }, -- rings the system bell... a bit annoying, and not implemented in Windows by default?
             },
             timers = {
                 Stretching = {
                     { name = "Default" },
-                    { name = "System" },
+--                    { name = "System" },
                 },
                 Break = {
                     { name = "Default" },
-                    { name = "System" },
+--                    { name = "System" },
                 },
                 ["Short Break"] = {
                     { name = "Default", opts = { sticky = true } },
-                    { name = "System" },
+--                    { name = "System" },
                 },
                 ["Long Break"] = {
                     { name = "Default", opts = { sticky = true } },
-                    { name = "System" },
+--                    { name = "System" },
                 },
             },
             sessions = {
