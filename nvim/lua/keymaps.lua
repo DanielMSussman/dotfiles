@@ -111,7 +111,7 @@ vim.keymap.set('n','<leader>sd',function()
                                     vim.cmd("SessionManager delete_session")
                                     vim.notify("Session deleted")
                                 end,
-                                {noremap=true,desc = "[d]elete current session"})
+                                {noremap=true,desc = "[d]elete session (picker)"})
 
 vim.keymap.set('n','<leader>sl',function()
                                     vim.cmd("SessionManager load_session")
