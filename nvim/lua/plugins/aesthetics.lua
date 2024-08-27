@@ -4,10 +4,15 @@ return {
         "rebelot/kanagawa.nvim",
         priority=1000,
         config = function()
-            vim.o.pumblend = 0
+--            vim.o.pumblend = 0
             local colors = require("kanagawa.colors")
             require('kanagawa').setup({
+                undercurl = false,
+                transparent = true,
                 overrides = function()
+                    return {}
+                --[[
+                    {
                     local theme = colors.theme
                     return {
                      Pmenu = { fg = colors.fg_dark, bg = colors.bg_light0, blend = vim.o.pumblend },
@@ -28,6 +33,7 @@ return {
                     TelescopePreviewNormal = { bg = colors.bg_dim },
                     TelescopePreviewBorder = { bg = colors.bg_dim, fg = colors.bg_dim }
                 }
+                ]]--
                         end
             })
             vim.cmd.colorscheme "kanagawa"
@@ -76,7 +82,5 @@ return {
             })
         end
     },
-
-
 }
 
