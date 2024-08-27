@@ -50,7 +50,7 @@ return {
 		vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[f]ind [d]iagnostics' })
 		vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[f]ind [r]esume' })
 		vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[f]ind Recent Files ("." for repeat)' })
-		vim.keymap.set('n', '<leader>fb' builtin.buffers, { desc = '[f]ind existing [b]uffers' })
+		vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[f]ind existing [b]uffers' })
 
 		-- Slightly advanced example of overriding default behavior and theme
 		vim.keymap.set('n', '<leader>fs', function()
