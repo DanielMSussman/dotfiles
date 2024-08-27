@@ -2,12 +2,14 @@ return {
     --begin by setting up plugins for language server protocols...to demonstrate I'll just focus on servers for TeX and C++
     {
     "williamboman/mason.nvim",
+    event = "VeryLazy",
     config = function()
         require("mason").setup()
     end
     },
     {
     "williamboman/mason-lspconfig.nvim",
+    event = "VeryLazy",
     config = function()
         require("mason-lspconfig").setup({
             ensure_installed = {"clangd","texlab"}
@@ -38,6 +40,7 @@ return {
     },
     {
     "micangl/cmp-vimtex",
+    event = "VeryLazy",
     config = function()
             local is_windows = vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win16") == 1
             if is_windows then
@@ -65,7 +68,7 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"L3MON4D3/LuaSnip",
 	    },
-    event = "VeryLazy",
+    event = "InsertEnter",
 
     config = function()
         local luasnip = require("luasnip")

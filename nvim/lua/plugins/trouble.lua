@@ -1,6 +1,7 @@
 return {
     {
         "folke/trouble.nvim",
+        event = "VimEnter",
         config = function()
             require("trouble").setup({
             })

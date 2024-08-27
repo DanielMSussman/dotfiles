@@ -1,6 +1,7 @@
 return { 
     --notify
     { 'echasnovski/mini.notify', version = '*',
+        event = "VimEnter",
         config = function()
             local mininotify=require('mini.notify')
             mininotify.setup({
@@ -44,7 +45,9 @@ return {
 
     },
     -- clue
-    { 'echasnovski/mini.clue', version = '*', config = function() local
+    { 'echasnovski/mini.clue', version = '*', 
+        event = "VimEnter",
+        config = function() local
         miniclue = require('mini.clue')
         miniclue.setup({
             triggers = {

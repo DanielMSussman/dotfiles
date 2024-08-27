@@ -5,6 +5,7 @@ return {
 		"nvim-telescope/telescope-ui-select.nvim",
 		"nvim-telescope/telescope-bibtex.nvim",
 	},
+    event = "VeryLazy",
     config = function()
         require('telescope').setup({
             extensions = {
