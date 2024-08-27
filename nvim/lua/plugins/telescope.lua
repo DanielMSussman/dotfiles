@@ -50,15 +50,15 @@ return {
 		vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[f]ind [d]iagnostics' })
 		vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[f]ind [r]esume' })
 		vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[f]ind Recent Files ("." for repeat)' })
-		vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] [f]ind existing buffers' })
+		vim.keymap.set('n', '<leader>fb' builtin.buffers, { desc = '[f]ind existing [b]uffers' })
 
 		-- Slightly advanced example of overriding default behavior and theme
-		vim.keymap.set('n', '<leader>/', function()
+		vim.keymap.set('n', '<leader>fs', function()
 			-- You can pass additional configuration to Telescope to change the theme, layout, etc.
 			builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
 				winblend = 10,
 				previewer = false,
 			})
-      end, { desc = '[/] Fuzzily search in current buffer' })
+      end, { desc = '[F]uzzily [s]earch in current buffer' })
     end,
 }
