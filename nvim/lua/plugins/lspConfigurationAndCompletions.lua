@@ -59,10 +59,37 @@ return {
     config = function()
         local luasnip = require("luasnip")
         local cmp = require("cmp")
-        cmp.setup({
+            local kind_icons = {
+                Text = "",
+                Method = "󰆧",
+                Function = "󰊕",
+                Constructor = "",
+                Field = "󰇽",
+                Variable = "󰂡",
+                Class = "󰠱",
+                Interface = "",
+                Module = "",
+                Property = "󰜢",
+                Unit = "",
+                Value = "󰎠",
+                Enum = "",
+                Keyword = "󰌋",
+                Snippet = "",
+                Color = "󰏘",
+                File = "󰈙",
+                Reference = "",
+                Folder = "󰉋",
+                EnumMember = "",
+                Constant = "󰏿",
+                Struct = "",
+                Event = "",
+                Operator = "󰆕",
+                TypeParameter = "󰅲",
+            }
+            cmp.setup({
                 snippet = {
                     expand = function(args)
-                         require('luasnip').lsp_expand(args.body)
+                        require('luasnip').lsp_expand(args.body)
                     end,
                 },
                 performance = {
@@ -74,10 +101,24 @@ return {
                     max_view_entries = 20,
                 },
                 window = {
-                    completion = cmp.config.window.bordered(),
+                    completion = cmp.config.window.bordered({
+                    }),
                     documentation = cmp.config.window.bordered(),
                 },
-
+                formatting = {
+                    format = function(entry, vim_item)
+                        -- Kind icons
+                        vim_item.kind = string.format('%s', kind_icons[vim_item.kind]) -- This concatenates the icons with the name of the item kind
+                        -- Source
+                        vim_item.menu = ({
+                            buffer = "[Buffer]",
+                            nvim_lsp = "[LSP]",
+                            luasnip = "[LuaSnip]",
+                            vimtex = "[Vimtex]",
+                        })[entry.source.name]
+                        return vim_item
+                    end
+                },
                 mapping = {
 
                     ['<CR>'] = cmp.mapping(function(fallback)
@@ -159,6 +200,7 @@ return {
                     { name = 'buffer'},
                 },
             })
+            vim.cmd("highlight FloatBorder guibg=NONE")
         end
     }
 }
