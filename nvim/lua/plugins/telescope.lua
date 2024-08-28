@@ -5,7 +5,6 @@ return {
 		"nvim-telescope/telescope-ui-select.nvim",
 		"nvim-telescope/telescope-bibtex.nvim",
 	},
-    event = "VeryLazy",
     config = function()
         require('telescope').setup({
             extensions = {
@@ -43,15 +42,15 @@ return {
 		pcall(require('telescope').load_extension, 'ui-select')
 		pcall(require('telescope').load_extension, 'bibtex')
 		builtin = require("telescope.builtin")
-
-		vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[f]ind [h]elp' })
-		vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[f]ind [k]eymaps' })
-		vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[f]ind [f]iles' })
-		vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[f]ind by [g]rep' })
-		vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[f]ind [d]iagnostics' })
-		vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[f]ind [r]esume' })
-		vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[f]ind Recent Files ("." for repeat)' })
-		vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[f]ind existing [b]uffers' })
+        local  dropdown = require('telescope.themes').get_dropdown()
+		vim.keymap.set('n', '<leader>fh', function() builtin.help_tags(dropdown) end, { desc = '[f]ind [h]elp' })
+		vim.keymap.set('n', '<leader>fk', function() builtin.keymaps(dropdown) end, { desc = '[f]ind [k]eymaps' })
+		vim.keymap.set('n', '<leader>ff', function() builtin.find_files(dropdown) end, { desc = '[f]ind [f]iles' })
+		vim.keymap.set('n', '<leader>fg', function() builtin.live_grep(dropdown) end, { desc = '[f]ind by [g]rep' })
+		vim.keymap.set('n', '<leader>fd', function() builtin.diagnostics(dropdown) end, { desc = '[f]ind [d]iagnostics' })
+		vim.keymap.set('n', '<leader>fr', function() builtin.resume(dropdown) end, { desc = '[f]ind [r]esume' })
+		vim.keymap.set('n', '<leader>f.', function() builtin.oldfiles(dropdown) end, { desc = '[f]ind Recent Files ("." for repeat)' })
+		vim.keymap.set('n', '<leader>fb', function() builtin.buffers(dropdown) end, { desc = '[f]ind existing [b]uffers' })
 
 		-- Slightly advanced example of overriding default behavior and theme
 		vim.keymap.set('n', '<leader>fs', function()
