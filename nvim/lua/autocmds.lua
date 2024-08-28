@@ -62,8 +62,8 @@ autocmd("User",{
         local path = vim.loop.cwd() .. "/.git"
         local ok, err = vim.loop.fs_stat(path)
         if ok then
-            vim.notify("fetching from the remote to check for updates")
-            vim.cmd('!git fetch')  
+            vim.notify("Remember to git fetch!!",4) -- 4 is DiagnosticError hl_group. I think
+            --vim.cmd('!git fetch')  
         else
             vim.notify("no git repo here")
         end
