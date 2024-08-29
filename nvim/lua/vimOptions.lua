@@ -28,11 +28,15 @@ vim.cmd("set clipboard=unnamedplus")
 vim.cmd("set noerrorbells")
 
 vim.cmd("set hidden")
+
+vim.o.pumblend=20
 --vim.cmd("set mouse=a")
 
-vim.cmd("set pumheight=8")
+--vim.cmd("set pumheight=8")
 
 vim.cmd("set history=1000")
 vim.cmd("set scrolloff=10")
 
 vim.cmd("highlight Spellbad  cterm=underline gui=underline") 
+vim.cmd("highlight SpellRare  cterm=underdashed gui=underdashed")
+vim.cmd("highlight SpellCap  cterm=underdotted gui=underdotted")

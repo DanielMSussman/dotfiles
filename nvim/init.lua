@@ -26,8 +26,9 @@ local opts = {}
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+require("vimOptions")
+
 require("lazy").setup("plugins")
 
-require("vimOptions")
 require("keymaps")
 require("autocmds")

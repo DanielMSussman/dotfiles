@@ -4,7 +4,6 @@ return {
         "rebelot/kanagawa.nvim",
         priority=1000,
         config = function()
-            vim.o.pumblend=10
             local colors = require("kanagawa.colors")
             require('kanagawa').setup({
                 undercurl = false,
@@ -21,10 +20,15 @@ return {
                         -- Popular plugins that open floats will link to NormalFloat by default;
                         -- set their background accordingly if you wish to keep them dark and borderless
                         LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-                        Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1, blend=vim.o.pumblend },  -- add `blend = vim.o.pumblend` to enable transparency
+                        Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg},
                         PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2, blend =0},
                         PmenuSbar = { bg = theme.ui.bg_m1 },
                         PmenuThumb = { bg = theme.ui.bg_p2 },
+
+                        -- ridiculous tweaking of nvim-cmp completion menus
+                        completionWindowNormal = {fg = theme.ui.shade0, bg=theme.ui.bg},
+                        completionWindowCursorLine = {fg="NONE", bg = theme.ui.bg_p1, blend=0},
+                        completionFloatBorder = { fg = theme.ui.shade0, bg = theme.ui.bg,blend=0},
                     }
                 end
             })
