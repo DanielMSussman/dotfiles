@@ -1,0 +1,29 @@
+##spelling files for vim
+*.spl
+
+## LaTeX stuff for overleaf
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.xdv
+*-converted-to.*
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+*.rubbercache
+rubber.cache

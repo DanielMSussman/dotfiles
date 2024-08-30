@@ -12,7 +12,7 @@ lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(
 	autoSetupRemote = true
 [core]
     editor = vim
-	excludesFile = ~/.gitignore
+	excludesFile = ~/.globalGitignore
 
 [init]
     defaultBranch = main
