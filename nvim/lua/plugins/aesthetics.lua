@@ -7,6 +7,16 @@ return {
             local colors = require("kanagawa.colors")
             require('kanagawa').setup({
                 undercurl = false,
+                colors = {
+                    theme = {
+                        all = {
+                            ui = {
+                                bg_gutter = "none"
+                            }
+                        }
+                    }
+                },
+                transparent=true,
                 overrides = function(colors)
                     local theme = colors.theme
                     return {
