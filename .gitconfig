@@ -8,8 +8,11 @@ lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(
 	name = Daniel M Sussman
     email = dmsussman@gmail.com
 
+[push]
+	autoSetupRemote = true
 [core]
     editor = vim
+	excludesFile = ~/.gitignore
 
 [init]
     defaultBranch = main
