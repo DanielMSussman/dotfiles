@@ -20,15 +20,9 @@ vim.opt.rtp:prepend(lazypath)
 isWindows = vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win16") == 1
 isMac = vim.fn.has("mac") == 1 
 
--- load vimoptions and plugins
-local opts = {}
---
---require("editorconfig").properties.end_of_line = "lf"
---
-
+-- set up leader and local leader, and set vim options before loading plugins
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-
 require("vimOptions")
 
 require("lazy").setup("plugins")
