@@ -24,8 +24,12 @@ return {
                     { name = "Default" },
 --                    { name = "System" },
                 },
+                ["Work"] = {
+                    { name = "Default", opts = { sticky = false } },
+--                    { name = "System" },
+                },
                 ["Short Break"] = {
-                    { name = "Default", opts = { sticky = true } },
+                    { name = "Default", opts = { sticky = false } },
 --                    { name = "System" },
                 },
                 ["Long Break"] = {
@@ -34,6 +38,10 @@ return {
                 },
             },
             sessions = {
+                pomotest = {
+                    { name = "Work", duration = "25s" },
+                    { name = "Short Break", duration = "5s" },
+                },
                 pomodoroPod = {
                     { name = "Work", duration = "25m" },
                     { name = "Short Break", duration = "5m" },
