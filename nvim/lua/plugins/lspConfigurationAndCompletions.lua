@@ -28,7 +28,7 @@ return {
     },
     {
     "micangl/cmp-vimtex",
-    event = "VeryLazy",
+    --event = "VeryLazy", -- don't lazy load, or else it'll show up twice in nvim-cmp sources
     config = function()
             if isWindows then
                 require('cmp_vimtex').setup({
