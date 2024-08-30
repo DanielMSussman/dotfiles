@@ -3,9 +3,8 @@ return {
     'mhartington/formatter.nvim',
     event = {'VeryLazy'},
     config = function()
-        local is_windows = vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win16") == 1
         local devnullstring 
-        if is_windows then
+        if isWindows then
             devnullstring = "NUL"
         else
             devnullstring = "/dev/null"

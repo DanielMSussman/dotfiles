@@ -9,11 +9,9 @@ return {
             vim.g.vimtex_compiler_silent = 1 -- i.e., don't emit compilation notifications
             --vimtex_view_settings
             -- set viewer based on operating system (windows = sumatraPDF via general, mac= skim, etc)
-            local is_windows = vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win16") == 1
-            local is_mac = vim.fn.has("mac") == 1 
-            if is_windows then 
+            if isWindows then 
                 vim.g.vimtex_view_method = 'sioyek'
-            elseif is_mac then 
+            elseif isMac then 
                 vim.g.vimtex_view_method = "sioyek"
             else
                 --vim.g.vimtex_view_method = "zathura"
