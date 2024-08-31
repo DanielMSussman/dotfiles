@@ -24,6 +24,7 @@ isMac = vim.fn.has("mac") == 1
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 require("vimOptions")
+require("functions")
 
 require("lazy").setup("plugins")
 

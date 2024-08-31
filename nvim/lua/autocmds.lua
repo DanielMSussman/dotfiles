@@ -54,7 +54,7 @@ autocmd("BufWinEnter",{
         end,
 })
 
--- after loading a session, check git remote if it exists?
+-- after loading a session, check if the session is at the root of a git repo, then fetch to check status relative to remote
 autocmd("User",{
     group=sussmanGroup,
     pattern="SessionLoadPost",
@@ -62,10 +62,9 @@ autocmd("User",{
         local path = vim.loop.cwd() .. "/.git"
         local ok, err = vim.loop.fs_stat(path)
         if ok then
-            vim.notify("Remember to git fetch!!",4) -- 4 is DiagnosticError hl_group. I think
-            --vim.cmd('!git fetch')  
+            update_currentGitStatus()
         else
-            vim.notify("no git repo here")
+            vim.notify("Session not at the root directory of a git repo")
         end
     end
 })
