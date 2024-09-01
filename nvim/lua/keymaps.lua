@@ -1,15 +1,6 @@
---vim-fugitive
-vim.keymap.set('n','<leader>gs',':Git<CR>',{noremap=true,desc ='git status'}) --git status
-vim.keymap.set('n','<leader>ga',':Git add ',{noremap=true,desc ='git add '})
-vim.keymap.set('n','<leader>gA',':Git add .<CR>',{noremap=true,desc ='git add .'})
-vim.keymap.set('n','<leader>gp',':Git push --quiet <CR>',{noremap=true,desc ='git push'})
-vim.keymap.set('n','<leader>gc',':Git commit -qam "',{noremap=true,desc ='git commit -am'})
---gitsigns
-vim.keymap.set("n", "<leader>gh", ":Gitsigns preview_hunk<CR>", {noremap=true,desc = "Gitsigns: preview [h]unk"})
-vim.keymap.set("n", "<leader>gi", ":Gitsigns preview_hunk_inline<CR>", {noremap=true,desc = "Gitsigns: preview hunk [i]nline"}) 
---other git maps
-vim.keymap.set("n","<leader>gr",function () vim.cmd("lua update_currentGitStatus()") end, {desc = "check [g]it [r]emote (fetch)"})-- calls a "fetch and notify" function
+-- non-plugin keymaps
 
+vim.keymap.set("n","<S-h>" ,"ge",{noremap=true,desc="go to the end of last word"})
 --vim.keymap.set("n","<leader>p",'\"0p',{desc = 'paste last yank'})
 --vim.keymap.set("n","<leader>P",'\"0P',{desc = 'Paste last yank'})
 
@@ -28,6 +19,23 @@ vim.keymap.set('t', '<ESC>', '<C-\\><C-n>',{noremap = true})
 
 --clean up carriage returns from windows
 --vim.keymap.set('n','<leader>z',':%s/\r//<CR>',{noremap=true,desc = 'delete dos encoding carriage returns'})
+
+
+--
+--plugin keymaps
+--
+
+--vim-fugitive
+vim.keymap.set('n','<leader>gs',':Git<CR>',{noremap=true,desc ='git status'}) --git status
+vim.keymap.set('n','<leader>ga',':Git add ',{noremap=true,desc ='git add '})
+vim.keymap.set('n','<leader>gA',':Git add .<CR>',{noremap=true,desc ='git add .'})
+vim.keymap.set('n','<leader>gp',':Git push --quiet <CR>',{noremap=true,desc ='git push'})
+vim.keymap.set('n','<leader>gc',':Git commit -qam "',{noremap=true,desc ='git commit -am'})
+--gitsigns
+vim.keymap.set("n", "<leader>gh", ":Gitsigns preview_hunk<CR>", {noremap=true,desc = "Gitsigns: preview [h]unk"})
+vim.keymap.set("n", "<leader>gi", ":Gitsigns preview_hunk_inline<CR>", {noremap=true,desc = "Gitsigns: preview hunk [i]nline"}) 
+--other git maps
+vim.keymap.set("n","<leader>gr",function () vim.cmd("lua update_currentGitStatus()") end, {desc = "check [g]it [r]emote (fetch)"})-- calls a "fetch and notify" function
 
 -- LSP and diagnostic section (as an autocomplete)
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -72,6 +80,7 @@ vim.keymap.set('v','L',':ObsidianLinkNew<CR>',
     {noremap=true, desc="Obsidian: create new note from selected text"})
 vim.keymap.set('n', '<localleader>om', ':RenderMarkdown toggle <CR>',{desc = "toggle render [m]arkdown"})
 
+
 -- pomodoro
 require("telescope").load_extension("pomodori")
 
@@ -82,8 +91,10 @@ vim.keymap.set('n','<leader>tc',':TimerSession classicPomodoro<CR>',{noremap = t
 vim.keymap.set('n','<leader>tp',':TimerSession pomodoroPod<CR>',{noremap = true, desc = 'start 1 [p]omodoro'})
 vim.keymap.set('n','<leader>th',':TimerSession pomodoroHour<CR>',{noremap = true, desc = '[h]our: start 2 pomodoros'})
 
+
 --neo-tree
 vim.keymap.set('n', '<C-n>', ':Neotree filesystem toggle reveal left<CR>',{desc = "view neotree filesystem"})
+
 
 --session  management
 vim.keymap.set('n','<leader>ss',function()

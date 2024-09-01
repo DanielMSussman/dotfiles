@@ -114,7 +114,8 @@ return {
                             buffer = "[Buffer]",
                             nvim_lsp = "[LSP]",
                             luasnip = "[LuaSnip]",
-                            vimtex = "[Vimtex]",
+                            vimtex = vim_item.menu,
+--                            vimtex = "[Vimtex]",
                         })[entry.source.name]
                         return vim_item
                     end

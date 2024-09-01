@@ -93,7 +93,7 @@ return {
             window = {
                 config = {width = 50,
                         },
-                delay = 300,
+                delay = 100,
                 },
             clues = {
                 -- Enhance this by adding descriptions for <Leader> mapping groups

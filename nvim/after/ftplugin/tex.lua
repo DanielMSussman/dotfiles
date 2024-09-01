@@ -6,7 +6,7 @@ vim.keymap.set('n','<localleader>b',':VimtexCompileSS<CR>',{noremap=true, desc="
 vim.keymap.set('n','<localleader>c',':VimtexCompile<CR>',{noremap=true, desc="VimTex: [c]ontinuous compile"})
 vim.keymap.set('n','<localleader>Z',':VimtexStopAll<CR>',{noremap=true, desc="VimTex: [Z] stop all compilation"})
 
-vim.keymap.set('n','<localleader>o',':VimtexCompileSS<CR><bar>:VimtexCompileOutput<CR><bar>:wincmd J<CR><bar>:resize 10<CR>',{noremap=true, desc="VimTex: see compiler [o]utput"})
+vim.keymap.set('n','<localleader>lo',':VimtexCompileSS<CR><bar>:VimtexCompileOutput<CR><bar>:wincmd J<CR><bar>:resize 10<CR>',{noremap=true, desc="VimTex: see compiler [o]utput"})
 vim.keymap.set('n','<localleader>v',':VimtexView<CR>',{noremap=true, desc="VimTex: [v]iew  forward search"})
 
 vim.keymap.set('n','<localleader>t',':VimtexTocToggle<CR>',{noremap=true, desc="VimTex: toggle [t]able of contents"})
