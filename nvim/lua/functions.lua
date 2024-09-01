@@ -20,11 +20,14 @@ function update_currentGitStatus()
                     if not ok then ahead, behind = 0, 0 end
                     currentGitStatus = {ahead = ahead, behind = behind}
 
-                    if currentGitStatus.ahead ~=0 then  
+                    if currentGitStatus.ahead ~="0" then  
                         vim.notify("Local ahead of remote",3) -- 3 is DiagnosticWarn hl_group
                     end
-                    if currentGitStatus.behind ~= 0 then
-                        vim.notify("Local is behind remote!",4) -- 4 is DiagnosticError hl_group. I think
+                    if currentGitStatus.behind ~= "0" then
+                        vim.notify("Local is behind remote!",4) -- 4 is DiagnosticError hl_group.
+                    end
+                    if currentGitStatus.ahead =="0" and currentGitStatus.behind=="0" then
+                        vim.notify("Local and remote are in sync")
                     end
                 end,
                 }):start()
