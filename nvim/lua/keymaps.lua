@@ -1,14 +1,14 @@
 --vim-fugitive
-vim.keymap.set('n','<leader>gs',':Git<CR>',{noremap=true,desc ='git status'})
+vim.keymap.set('n','<leader>gs',':Git<CR>',{noremap=true,desc ='git status'}) --git status
 vim.keymap.set('n','<leader>ga',':Git add ',{noremap=true,desc ='git add '})
 vim.keymap.set('n','<leader>gA',':Git add .<CR>',{noremap=true,desc ='git add .'})
-vim.keymap.set('n','<leader>gc',':Git commit -am "',{noremap=true,desc ='git commit -am'})
-vim.keymap.set('n','<leader>gp',':Git push <CR>',{noremap=true,desc ='git push'})
+vim.keymap.set('n','<leader>gp',':Git push --quiet <CR>',{noremap=true,desc ='git push'})
+vim.keymap.set('n','<leader>gc',':Git commit -qam "',{noremap=true,desc ='git commit -am'})
 --gitsigns
 vim.keymap.set("n", "<leader>gh", ":Gitsigns preview_hunk<CR>", {noremap=true,desc = "Gitsigns: preview [h]unk"})
-vim.keymap.set("n", "<leader>gi", ":Gitsigns preview_hunk_inline<CR>", {noremap=true,desc = "Gitsigns: preview hunk [i]nline"})
+vim.keymap.set("n", "<leader>gi", ":Gitsigns preview_hunk_inline<CR>", {noremap=true,desc = "Gitsigns: preview hunk [i]nline"}) 
 --other git maps
-vim.keymap.set("n","<leader>gr",function () vim.cmd("lua update_currentGitStatus()") end, {desc = "check [g]it [r]emote (fetch)"})
+vim.keymap.set("n","<leader>gr",function () vim.cmd("lua update_currentGitStatus()") end, {desc = "check [g]it [r]emote (fetch)"})-- calls a "fetch and notify" function
 
 --vim.keymap.set("n","<leader>p",'\"0p',{desc = 'paste last yank'})
 --vim.keymap.set("n","<leader>P",'\"0P',{desc = 'Paste last yank'})
