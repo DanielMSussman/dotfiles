@@ -1,5 +1,15 @@
---the filetype.lua name of the file means these snippets will be available in filetype. Hence, here: any .tex file will see these
-
+-- "getVisual" Adapted from https://ejmastnak.com/tutorials/vim-latex/luasnip
+-- ----------------------------------------------------------------------------
+-- Summary: When `LS_SELECT_RAW` is populated with a visual selection, the function
+-- returns an insert node whose initial text is set to the visual selection.
+-- When `LS_SELECT_RAW` is empty, the function simply returns an empty insert node.
+local getVisual = function(args, parent)
+  if (#parent.snippet.env.LS_SELECT_RAW > 0) then
+    return sn(nil, i(1, parent.snippet.env.LS_SELECT_RAW))
+  else  -- If LS_SELECT_RAW is empty, return a blank insert node
+    return sn(nil, i(1))
+  end
+end
     -- this file first describes snippets for equations, figures, environments... 
     -- after that are a bunch of greek letter autosnippets 
     -- at the bottom is a template for a blank new PRL-style document
@@ -111,6 +121,21 @@ return {
         )
     ),
 
+    s({trig = "textbf", dscr = "the textbf command, easily wrapping a visual selection"},
+        fmta("\\textbf{<>}",
+            {
+                d(1, getVisual),
+            }
+        )
+    ),
+
+    s({trig = "emph", dscr = "the emph command, easily wrapping a visual selection"},
+        fmta("\\emph{<>}",
+            {
+                d(1, getVisual),
+            }
+        )
+    ),
     --autotrigger fractions
     s({trig="//",snippetType="autosnippet",desc = "fraction",wordTrig=false},
         fmta([[\frac{<>}{<>}]],
@@ -119,7 +144,7 @@ return {
         )
     ),
 
-    --autotrigger greek letters
+    --autotrigger greek letters, with choice nodes for pi/phi, epsilon/eta, tau/theta...
     s({trig=";a", snippetType="autosnippet", desc="alpha",wordTrig=false},
         {
             t("\\alpha"),
@@ -155,24 +180,9 @@ return {
             t("\\Delta"),
         }
     ),
-    s({trig=";e", snippetType="autosnippet", desc="eta",wordTrig=false},
-        {
-            t("\\eta"),
-        }
-    ),
     s({trig=";z", snippetType="autosnippet", desc="zeta",wordTrig=false},
         {
             t("\\zeta"),
-        }
-    ),
-    s({trig=";t", snippetType="autosnippet", desc="theta",wordTrig=false},
-        {
-            t("\\theta"),
-        }
-    ),
-    s({trig=";p", snippetType="autosnippet", desc="pi",wordTrig=false},
-        {
-            t("\\pi"),
         }
     ),
     s({trig=";r", snippetType="autosnippet", desc="rho",wordTrig=false},
@@ -200,8 +210,43 @@ return {
             t("\\Omega"),
         }
     ),
+    s({trig=";t",snippetType="autosnippet",desc="tau/theta",wordTrig=false},
+        fmta([[
+            <>
+            ]],
+            {
+            c(1,{
+                sn(nil,{i(1,"\\tau")}),
+                sn(nil,{i(1,"\\theta")})
+                })
+            }
+        )
+    ),
+    s({trig=";e",snippetType="autosnippet",desc="episilon/eta",wordTrig=false},
+        fmta([[
+            <>
+            ]],
+            {
+            c(1,{
+                sn(nil,{i(1,"\\epsilon")}),
+                sn(nil,{i(1,"\\eta")})
+                })
+            }
+        )
+    ),
 
-
+    s({trig=";p",snippetType="autosnippet",desc="pi/phi",wordTrig=false},
+        fmta([[
+            <>
+            ]],
+            {
+            c(1,{
+                sn(nil,{i(1,"\\pi")}),
+                sn(nil,{i(1,"\\phi")})
+                })
+            }
+        )
+    ),
 
     --create, for convenience, a compilable template
     s({trig="blankTemplate", snippetType="snippet", dscr="Set up a bare-bones article"},
