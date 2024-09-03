@@ -1,5 +1,8 @@
+-- use vimtex to determine if we are in a math context
+local function math()
+    return vim.api.nvim_eval('vimtex#syntax#in_mathzone()') == 1
+end 
 return {
-
     s({trig="//",snippetType="autosnippet",desc = "fraction",wordTrig=false},
         fmta([[\frac{<>}{<>}]],
         {i(1,"numerator"),
@@ -7,7 +10,7 @@ return {
         )
     ),
 
-    require("luasnip").snippet(
+    s(
         {trig="eq", snippetType="snippet", dscr="A LaTeX equation environment"},
         fmta(
             [[
@@ -20,7 +23,7 @@ return {
         )
     ),
 
-    require("luasnip").snippet(
+    s(
         {trig="fig", snippetType="snippet", dscr="A basic figure environment"},
         fmta(
             [[
@@ -40,7 +43,7 @@ return {
         )
     ),
 
-    require("luasnip").snippet(
+    s(
         {trig="env", snippetType="snippet", dscr="Begin and end an arbitrary environment"},
         fmta(
             [[
@@ -56,7 +59,7 @@ return {
         )
     ),
 
-    require("luasnip").snippet(
+    s(
         {trig="cases", snippetType="snippet", dscr="Set up a case statement (requires amsmath)"},
         fmta(
             [[
@@ -75,7 +78,7 @@ return {
         )
     ),
 
-    require("luasnip").snippet(
+    s(
         {trig="mat", snippetType="snippet", dscr="Set up a 2x2 matrix (requires amsmath)"},
         fmta(
             [[
@@ -93,11 +96,18 @@ return {
         )
     ),
 
-    s({trig=";v", snippetType="autosnippet", desc="vector",wordTrig=false},
-        fmta(
-        [[\vec{<>}]],
-            {i(1),
-            }
-        )
+    --postfixes for vectors, hats, etc.
+    postfix({trig="hat",snippetType="autosnippet",dscr="postfix hat when in math mode"},
+        {l("\\hat{" .. l.POSTFIX_MATCH .. "}")}, 
+        { condition=math }
+    ) ,
+    postfix({trig="vec",snippetType="autosnippet",dscr="postfix vec when in math mode"},
+        {l("\\vec{" .. l.POSTFIX_MATCH .. "}")}, 
+        { condition=math }
+    ) ,
+
+    postfix({trig="df",snippetType="autosnippet",desc="postfix differential (physics package)"},
+        {l("\\dd{" .. l.POSTFIX_MATCH .. "}")}, 
+        {condition = math}
     ),
 }

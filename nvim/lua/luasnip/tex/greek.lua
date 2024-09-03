@@ -103,8 +103,8 @@ return {
             ]],
             {
             c(1,{
-                sn(nil,{i(1,"\\tau")}),
-                sn(nil,{i(1,"\\theta")})
+                t("\\tau"),
+                t("\\theta")
                 })
             }
         )
@@ -115,8 +115,8 @@ return {
             ]],
             {
             c(1,{
-                sn(nil,{i(1,"\\epsilon")}),
-                sn(nil,{i(1,"\\eta")})
+                t("\\epsilon"),
+                t("\\eta")
                 })
             }
         )
@@ -128,9 +128,9 @@ return {
             ]],
             {
             c(1,{
-                sn(nil,{i(1,"\\pi")}),
-                sn(nil,{i(1,"\\phi")}),
-                sn(nil,{i(1,"\\psi")}),
+                t("\\pi"),
+                t("\\phi"),
+                t("\\psi")
                 })
             }
         )

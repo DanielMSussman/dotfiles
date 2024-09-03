@@ -31,7 +31,7 @@ return {
         )
     ),
 
-    require("luasnip").snippet(
+    s(
         {trig="href", snippetType="snippet", dscr="href with placeholders to remind you of the order"},
         fmta(
             [[\href{<>}{<>}]],
