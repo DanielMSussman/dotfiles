@@ -12,12 +12,14 @@ return {
             update_events = {"TextChanged", "TextChangedI"},
             enable_autosnippets = true,
             store_selection_keys = "<Tab>",
+            --add some virtual text for active choice nodes and active/passive insert nodes
             ext_opts = {
                 [types.choiceNode] = {
-                    active = { virt_text = {{"●", "Todo"}}, hl_mode = "combine" }
+                    active = { virt_text = {{"●", "NotifyWarnTitle"}}, }
                 },
                 [types.insertNode] = {
-                    active = { virt_text = {{"●", "Blue"}}, hl_mode = "combine" }
+                    active = { virt_text = {{"●", "NotifyInfoTitle"}}, },
+                    passive = { virt_text = {{"●", "NotifyHintTitle"}}, }
                 }
             },
         })
