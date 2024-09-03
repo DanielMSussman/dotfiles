@@ -6,7 +6,6 @@ local vimtexGroup = vim.api.nvim_create_augroup("vimtex_events", {})
 local yankGroup = autogroup('HighlightYank', {})
 
 local autocmd=vim.api.nvim_create_autocmd
-
 -- resize splits if the window itself is resized
 autocmd('VimResized',{
         group=sussmanGroup,
