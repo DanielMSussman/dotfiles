@@ -46,7 +46,7 @@ return{
                     },
                 },
             },
-            disable_frontmatter = true,
+            disable_frontmatter = false,
             notes_subdir = "notes",
             new_notes_location = "notes_subdir",
             ui = {enable = false},
