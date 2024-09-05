@@ -14,8 +14,8 @@ config.font = wezterm.font {
     }
 config.font_size = 13
 config.window_background_opacity =1
-config.window_decorations = "RESIZE"
-config.hide_tab_bar_if_only_one_tab = false
+config.window_decorations = "TITLE | RESIZE"
+config.hide_tab_bar_if_only_one_tab = true
 
 config.initial_rows = 40
 config.initial_cols = 100
