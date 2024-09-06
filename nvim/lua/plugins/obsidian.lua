@@ -63,7 +63,15 @@ return{
                 end
                 return suffix
             end,
-            
+            preferred_link_style = "markdown",
+            -- a function that allows for github-flavored markdown links (links relative to root)
+            markdown_link_func = function(opts)
+                local util = require("obsidian").util
+                local anchor = opts.anchor and opts.anchor.anchor or ""
+                local header = opts.anchor and util.format_anchor_label(opts.anchor) or ""
+                local path = util.urlencode(opts.path, { keep_path_sep = true })
+                return string.format("[%s%s](/%s%s)", opts.label, header, path, anchor)
+            end,
             templates = {
                 folder = "templates",
                 date_format = "%Y-%m-%d",
