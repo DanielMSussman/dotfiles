@@ -11,7 +11,7 @@ return {
             --vimtex_view_settings
             -- set viewer based on operating system (windows = sumatraPDF via general, mac= skim, etc)
             if isWindows then 
-                vim.g.vimtex_view_method = 'sioyek'
+                vim.g.vimtex_view_method = 'general'
             elseif isMac then 
                 vim.g.vimtex_view_method = "sioyek"
             else
