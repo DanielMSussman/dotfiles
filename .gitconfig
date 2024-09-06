@@ -13,6 +13,7 @@ lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(
 [core]
     editor = vim
 	excludesFile = ~/.globalGitignore
+    autocrlf = input
 
 [init]
     defaultBranch = main
