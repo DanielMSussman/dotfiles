@@ -17,10 +17,6 @@ vim.keymap.set('n', '<C-z>', ':sp<bar>term<cr><c-w>J:resize8<cr>i',{noremap = tr
 --when in terminal mode, ESC gets back to normal mode
 vim.keymap.set('t', '<ESC>', '<C-\\><C-n>',{noremap = true})
 
---clean up carriage returns from windows
---vim.keymap.set('n','<leader>z',':%s/\r//<CR>',{noremap=true,desc = 'delete dos encoding carriage returns'})
-
-
 --
 --plugin keymaps
 --

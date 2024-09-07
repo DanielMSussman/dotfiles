@@ -20,6 +20,11 @@ return {
                         ignore = {},
                     },
             },
+            filesystem = {
+                filteredItems = {
+                    hide_hidden = false,
+                },
+            },
 
         })
     end

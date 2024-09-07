@@ -1,32 +1,5 @@
 return {
     {
-    "williamboman/mason.nvim",
-    event = "VeryLazy",
-    config = function()
-        require("mason").setup()
-    end
-    },
-    {
-    "williamboman/mason-lspconfig.nvim",
-    event = "VeryLazy",
-    config = function()
-        require("mason-lspconfig").setup({
-            ensure_installed = {"clangd","texlab"}
-            }
-            )
-    end
-    },
-    {
-    "neovim/nvim-lspconfig",
-    event = { "BufReadPre", "BufNewFile" },
-    config = function()
-        local lspconfig = require("lspconfig")
-            --advertise cmp-nvim-lsp
-        local capabilities = require('cmp_nvim_lsp').default_capabilities()
-        lspconfig.clangd.setup {capabilities = capabilities}
-    end
-    },
-    {
     "micangl/cmp-vimtex",
     --event = "VeryLazy", -- don't lazy load, or else it'll show up twice in nvim-cmp sources
     config = function()
@@ -46,7 +19,7 @@ return {
     {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
-		"hrsh7th/cmp-nvim-lsp",
+--		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
@@ -112,7 +85,7 @@ return {
                         -- Source
                         vim_item.menu = ({
                             buffer = "[Buffer]",
-                            nvim_lsp = "[LSP]",
+--                            nvim_lsp = "[LSP]",
                             luasnip = "[LuaSnip]",
                             vimtex = vim_item.menu,
 --                            vimtex = "[Vimtex]",
@@ -172,7 +145,7 @@ return {
 
                 sources = cmp.config.sources({
                     { name = 'luasnip' },
-                    { name = 'nvim_lsp' },
+--                    { name = 'nvim_lsp' },
                     { name = 'buffer'},
                 }),
             })
