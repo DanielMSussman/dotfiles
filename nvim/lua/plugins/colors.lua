@@ -2,6 +2,7 @@
 return {
     {
         "sho-87/kanagawa-paper.nvim",
+        lazy=true,
         -- lazy = false,
         -- priority = 1000,
         config  =  function()
@@ -22,6 +23,7 @@ return {
     {
         "folke/tokyonight.nvim",
         -- lazy = false,
+        lazy=true,
         -- priority = 1000,
         opts = {},
     },
@@ -29,6 +31,7 @@ return {
         'sainnhe/everforest',
         -- lazy = false,
         -- priority = 1000,
+        lazy=true,
         config = function()
             -- Optionally configure and load the colorscheme
             -- directly inside the plugin declaration.
@@ -39,6 +42,7 @@ return {
     },
     {
       'sainnhe/gruvbox-material',
+        lazy=true,
       -- lazy = false,
       -- priority = 1000,
       config = function()

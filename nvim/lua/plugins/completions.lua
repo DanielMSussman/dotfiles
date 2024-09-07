@@ -1,6 +1,7 @@
 return {
     {
     "micangl/cmp-vimtex",
+    ft = "tex",
     --event = "VeryLazy", -- don't lazy load, or else it'll show up twice in nvim-cmp sources
     config = function()
             if isWindows then
@@ -17,16 +18,16 @@ return {
     vim.keymap.set("i", "<C-s>", function() require('cmp_vimtex.search').search_menu() end)
     },
     {
-	"hrsh7th/nvim-cmp",
-	dependencies = {
---		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-buffer",
-		"hrsh7th/cmp-path",
-		"hrsh7th/cmp-cmdline",
-		"saadparwaiz1/cmp_luasnip",
-		"L3MON4D3/LuaSnip",
-	    },
-    event = "VeryLazy",
+        "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
+        dependencies = {
+            --		"hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-cmdline",
+            "saadparwaiz1/cmp_luasnip",
+            "L3MON4D3/LuaSnip",
+        },
 
     config = function()
         local luasnip = require("luasnip")
@@ -90,6 +91,7 @@ return {
                             vimtex = vim_item.menu,
 --                            vimtex = "[Vimtex]",
                         })[entry.source.name]
+                        vim_item.dup = 0 -- lazy loading seems to sometimes duplicate vimtex as a source?
                         return vim_item
                     end
                 },
@@ -169,7 +171,7 @@ return {
 
             cmp.setup.filetype("tex", {
                 sources = {
-                    { name = 'vimtex' },
+                    { name = 'vimtex'},
                     { name = 'luasnip' },
                     { name = 'buffer'},
                 },

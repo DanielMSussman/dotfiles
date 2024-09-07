@@ -2,7 +2,8 @@ return {
     {
         "epwalsh/pomo.nvim",
         version = "*",  -- Recommended, use latest release instead of latest commit
-        event = "VeryLazy",
+        --event = "VeryLazy",
+        lazy = true,
         cmd = { "TimerStart", "TimerRepeat", "TimerSession" },
         dependencies = {"telescope.nvim"},
         opts = {

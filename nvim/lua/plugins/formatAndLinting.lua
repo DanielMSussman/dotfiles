@@ -1,7 +1,8 @@
 return {
     {
     'mhartington/formatter.nvim',
-    event = {'VeryLazy'},
+--    event = {'VeryLazy'},
+    ft = "tex",
     config = function()
         local devnullstring 
         if isWindows then
