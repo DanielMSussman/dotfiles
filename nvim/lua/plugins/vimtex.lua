@@ -7,7 +7,11 @@ return {
             --global vimtex settings
             vim.g.vimtex_imaps_enabled = 0 --i.e., disable them
             vim.g.vimtex_compiler_silent = 1 -- i.e., don't emit compilation notifications
-            vim.g.vimtex_compiler_latexmk = {aux_dir = 'auxFiles'}
+            if isWindows then
+                vim.g.vimtex_compiler_latexmk = {aux_dir = 'auxFiles'}
+            else
+                vim.g.vimtex_compiler_latexmk = {out_dir = 'auxFiles'}
+            end
             --vimtex_view_settings
             -- set viewer based on operating system (windows = sumatraPDF via general, mac= skim, etc)
             if isWindows then 
