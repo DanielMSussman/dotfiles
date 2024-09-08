@@ -2,7 +2,7 @@ return  {
     {
         "goolord/alpha-nvim",
         event  = "VimEnter",
-        dependencies  =  {"nvim-tree/nvim-web-devicons","Shatur/neovim-session-manager"},
+        dependencies  =  {"nvim-tree/nvim-web-devicons","Shatur/neovim-session-manager","nvim-neo-tree/neo-tree.nvim"},
         config  =  function()
             local alpha = require("alpha")
             local dashboard = require("alpha.themes.dashboard")
@@ -17,7 +17,6 @@ return  {
             dashboard.section.header.opts.hl = "Title"
             dashboard.section.buttons.val = {
                 dashboard.button("s","  Sessions",":SessionManager load_session<CR>"),
-                dashboard.button("r","󰈚  Recent files",":Telescope oldfiles <CR>"),
                 dashboard.button("e", "󰱼 Explorer",":Neotree filesystem reveal left<CR>"),
                 dashboard.button( "n", "  > New file" , ":ene <BAR> startinsert <CR>"),
                 dashboard.button("p"," Plugins",":Lazy<CR>"),

@@ -4,8 +4,9 @@ return {
         version = "*",  -- Recommended, use latest release instead of latest commit
         --event = "VeryLazy",
         lazy = true,
+        --keys ={"<leader>t"},
         cmd = { "TimerStart", "TimerRepeat", "TimerSession" },
-        dependencies = {"telescope.nvim"},
+--        dependencies = {"telescope.nvim"},
         opts = {
         },
         config = function()
@@ -65,6 +66,13 @@ return {
                 },
             },
             })
+--            require("telescope").load_extension("pomodori")
+ --           vim.keymap.set("n", "<leader>tt", function()
+--                require("telescope").extensions.pomodori.timers()
+ --           end, { desc = "Manage Pomodori [t]imers"})
+            vim.keymap.set('n','<leader>tc',':TimerSession classicPomodoro<CR>',{noremap = true, desc = '[c]lassic: start 4 pomodoros'})
+            vim.keymap.set('n','<leader>tp',':TimerSession pomodoroPod<CR>',{noremap = true, desc = 'start 1 [p]omodoro'})
+            vim.keymap.set('n','<leader>th',':TimerSession pomodoroHour<CR>',{noremap = true, desc = '[h]our: start 2 pomodoros'})
         end,
     },
 }

@@ -23,6 +23,29 @@ return {
                 autosave_only_in_session = false, -- Always autosaves session. If true, only autosaves after a session is active.
                 max_path_length = 80,  -- Shorten the display path if length exceeds this threshold. Use 0 if don't want to shorten the path at all.
             })
-        end,
+            --session  management
+            vim.keymap.set('n','<leader>ss',function()
+                vim.cmd("SessionManager save_current_session")
+                vim.notify("Session saved")
+            end,
+                {noremap=true,desc = "[s]ave current session"})
+            vim.keymap.set('n','<leader>sd',function()
+                vim.cmd("SessionManager delete_session")
+                vim.notify("Session deleted")
+            end,
+                {noremap=true,desc = "[d]elete session (picker)"})
+
+            vim.keymap.set('n','<leader>sl',function()
+                vim.cmd("SessionManager load_session")
+                vim.notify("Session loaded")
+            end,
+                {noremap=true,desc = "[l]oad session"})
+            vim.keymap.set('n','<leader>sx',function()
+                vim.cmd("SessionManager save_current_session")
+                vim.notify("Session saved")
+                vim.cmd("wqa<CR>")
+            end,
+                {noremap=true,desc = "save session and e[x]it"})
+        end
     },
 }

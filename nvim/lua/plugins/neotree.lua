@@ -6,7 +6,7 @@ return {
     dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-            "MunifTanjim/nui.nvim",
+        "MunifTanjim/nui.nvim",
     },
     config = function()
         require("neo-tree").setup({
@@ -27,5 +27,7 @@ return {
             },
 
         })
+        --neo-tree
+        vim.keymap.set('n', '<C-n>', ':Neotree filesystem toggle reveal left<CR>',{desc = "view neotree filesystem"})
     end
 }

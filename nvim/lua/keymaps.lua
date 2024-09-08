@@ -21,15 +21,6 @@ vim.keymap.set('t', '<ESC>', '<C-\\><C-n>',{noremap = true})
 --plugin keymaps
 --
 
---vim-fugitive
-vim.keymap.set('n','<leader>gs',':Git<CR>',{noremap=true,desc ='git status'}) --git status
-vim.keymap.set('n','<leader>ga',':Git add ',{noremap=true,desc ='git add '})
-vim.keymap.set('n','<leader>gA',':Git add .<CR>',{noremap=true,desc ='git add .'})
-vim.keymap.set('n','<leader>gp',':Git push --quiet <CR>',{noremap=true,desc ='git push'})
-vim.keymap.set('n','<leader>gc',':Git commit -qam "',{noremap=true,desc ='git commit -am'})
---gitsigns
-vim.keymap.set("n", "<leader>gh", ":Gitsigns preview_hunk<CR>", {noremap=true,desc = "Gitsigns: preview [h]unk"})
-vim.keymap.set("n", "<leader>gi", ":Gitsigns preview_hunk_inline<CR>", {noremap=true,desc = "Gitsigns: preview hunk [i]nline"}) 
 --other git maps
 vim.keymap.set("n","<leader>gr",function () vim.cmd("lua update_currentGitStatus()") end, {desc = "check [g]it [r]emote (fetch)"})-- calls a "fetch and notify" function
 
@@ -60,7 +51,6 @@ vim.api.nvim_create_autocmd('LspDetach', {
 vim.keymap.set('n','[d',vim.diagnostic.goto_next, {desc = 'Next warning or error'})
 vim.keymap.set('n',']d',vim.diagnostic.goto_prev, {desc = 'Next warning or error'})
 
-
 -- obsidian
 vim.keymap.set('n','<localleader>ov',':ObsidianOpen<CR>',
     {noremap=true, desc="Obsidian: [v]iew in app"})
@@ -74,44 +64,3 @@ vim.keymap.set('n','<localleader>ot',':ObsidianTemplate<CR>',
     {noremap=true, desc="Obsidian: [t]emplate picker"})
 vim.keymap.set('v','L',':ObsidianLinkNew<CR>',
     {noremap=true, desc="Obsidian: create new note from selected text"})
-vim.keymap.set('n', '<localleader>om', ':RenderMarkdown toggle <CR>',{desc = "toggle render [m]arkdown"})
-
-
--- pomodoro
-require("telescope").load_extension("pomodori")
-
-vim.keymap.set("n", "<leader>tt", function()
-  require("telescope").extensions.pomodori.timers()
-end, { desc = "Manage Pomodori [t]imers"})
-vim.keymap.set('n','<leader>tc',':TimerSession classicPomodoro<CR>',{noremap = true, desc = '[c]lassic: start 4 pomodoros'})
-vim.keymap.set('n','<leader>tp',':TimerSession pomodoroPod<CR>',{noremap = true, desc = 'start 1 [p]omodoro'})
-vim.keymap.set('n','<leader>th',':TimerSession pomodoroHour<CR>',{noremap = true, desc = '[h]our: start 2 pomodoros'})
-
-
---neo-tree
-vim.keymap.set('n', '<C-n>', ':Neotree filesystem toggle reveal left<CR>',{desc = "view neotree filesystem"})
-
-
---session  management
-vim.keymap.set('n','<leader>ss',function()
-                                    vim.cmd("SessionManager save_current_session")
-                                    vim.notify("Session saved")
-                                end,
-                                {noremap=true,desc = "[s]ave current session"})
-vim.keymap.set('n','<leader>sd',function()
-                                    vim.cmd("SessionManager delete_session")
-                                    vim.notify("Session deleted")
-                                end,
-                                {noremap=true,desc = "[d]elete session (picker)"})
-
-vim.keymap.set('n','<leader>sl',function()
-                                    vim.cmd("SessionManager load_session")
-                                    vim.notify("Session loaded")
-                                end,
-                                {noremap=true,desc = "[l]oad session"})
-vim.keymap.set('n','<leader>sx',function()
-                                    vim.cmd("SessionManager save_current_session")
-                                    vim.notify("Session saved")
-                                    vim.cmd("wqa<CR>")
-                                end,
-                                {noremap=true,desc = "save session and e[x]it"})

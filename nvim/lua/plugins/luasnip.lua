@@ -4,6 +4,7 @@ return {
 	-- follow latest release.
 	version = "v2.*",
     build = "make install_jsregexp",
+    event = "InsertEnter",
     config = function()
         require("luasnip.loaders.from_lua").lazy_load({paths = "./lua/luasnip/"})
         local ls = require("luasnip")

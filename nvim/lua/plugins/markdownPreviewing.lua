@@ -14,6 +14,8 @@ return {
                     position = 'inline'
                 },
             })
+
+        vim.keymap.set('n', '<localleader>om', ':RenderMarkdown toggle <CR>',{desc = "toggle render [m]arkdown"})
     end
     },
 }
