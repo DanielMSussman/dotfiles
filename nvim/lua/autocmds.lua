@@ -88,6 +88,7 @@ vim.api.nvim_create_autocmd("User", {
     callback =  function()
         vim.cmd('VimtexView')
         vim.cmd('sleep 100m') -- tweak per hardware...a bit janky
+        --vim.cmd('!goto wezterm')
         vim.cmd('!open -a wezterm')
     end
     }
