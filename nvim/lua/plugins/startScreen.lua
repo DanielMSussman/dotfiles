@@ -18,6 +18,8 @@ return  {
             dashboard.section.buttons.val = {
                 dashboard.button("s","  Sessions",":SessionManager load_session<CR>"),
                 dashboard.button("e", "󰱼 Explorer",":Neotree filesystem reveal left<CR>"),
+                dashboard.button("r", "󰈚  Recent", ":Telescope oldfiles <CR>"),
+                dashboard.button("f", "  Find", ":Telescope find_files <CR>"),
                 dashboard.button( "n", "  > New file" , ":ene <BAR> startinsert <CR>"),
                 dashboard.button("p"," Plugins",":Lazy<CR>"),
                 dashboard.button("q"," Quit",":qa!<CR>"),

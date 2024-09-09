@@ -5,8 +5,8 @@ return {
         "nvim-telescope/telescope-ui-select.nvim",
         "nvim-telescope/telescope-bibtex.nvim",
     },
-    keys = {"<leader>f"},
-    --event = {"VimEnter"},
+--    keys = {"<leader>f"}, -- leader f for usual functionality, s if we're in the start screen
+    event = {"VimEnter"},
     config = function()
         require('telescope').setup({
             extensions = {

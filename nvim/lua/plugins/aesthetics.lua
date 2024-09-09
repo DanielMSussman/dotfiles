@@ -54,6 +54,7 @@ return {
         config = function()
             require("lualine").setup({
                 options = {
+                    always_divide_middle = false,
                     refresh = {statusline = 1000, tabline = 1000, winbar = 1000}
                     },
                 sections = {
@@ -85,7 +86,21 @@ return {
                     },
                     lualine_y = {'progress'},
                     lualine_z = {'location'},
-                },    
+                },
+                tabline = {
+                    lualine_a = {
+                        {
+                        'buffers',
+                        mode = 4,
+                        max_length = vim.o.columns,
+                        }
+                    },
+                    lualine_b = {''},
+                    lualine_c = {''},
+                    lualine_x = {},
+                    lualine_y = {},
+                    lualine_z = {''}
+                }
             })
         end
     },
