@@ -74,9 +74,9 @@ return {
                     max_view_entries = 20,
                 },
                 window = {
-                    completion = cmp.config.window.bordered({
-                        winhighlight = "Normal:completionWindowNormal,FloatBorder:completionFloatBorder,CursorLine:completionWindowCursorLine,Search:None"
-                    }),
+--                     completion = cmp.config.window.bordered({
+-- --                        winhighlight = "Normal:completionWindowNormal,FloatBorder:completionFloatBorder,CursorLine:completionWindowCursorLine,Search:None"
+--                     }),
                     documentation = cmp.config.window.bordered(),
                 },
                 formatting = {
