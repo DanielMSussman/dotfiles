@@ -15,7 +15,7 @@ return {
                 },
                 ['bibtex'] = {
                     depth = 1,
-                    global_files = {}, -- Path to global bibliographies (placed outside of the project)
+                    global_files = {'~/repos/dotfiles/bibtex/zoteroBBT.bib'}, -- Path to global bibliographies (placed outside of the project)
                     search_keys = { 'author', 'year', 'title' },-- Define the search keys to use in the picker
                     citation_format = '{{author}} ({{year}}), {{title}}.',
                     -- Template for the formatted citation
