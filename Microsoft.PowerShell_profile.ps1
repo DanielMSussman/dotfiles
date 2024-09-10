@@ -2,6 +2,7 @@ Import-Module PSReadLine
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadlineKeyHandler -Key "Tab" -Function Complete
+Set-PSReadlineOption -BellStyle None 
 
 function prompt {
         $p = $executionContext.SessionState.Path.CurrentLocation
@@ -23,7 +24,7 @@ if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
 
-oh-my-posh init pwsh --config 'C:\Users\dmsussm\AppData\Local\Programs\oh-my-posh\themes\kali.omp.json' | Invoke-Expression
+oh-my-posh init pwsh --config 'C:\Users\dmsussm\AppData\Local\Programs\oh-my-posh\themes\peru.omp.json' | Invoke-Expression
 #oh-my-posh init pwsh --config 'C:\Users\dmsussm\AppData\Local\Programs\oh-my-posh\themes\nordtron.omp.json' | Invoke-Expression
 Import-WslCommand "awk", "find", "grep", "head", "less", "ls", "man", "sed", "seq", "ssh", "sudo", "tail", "xdotool"
 $WslDefaultParameterValues = @{}
