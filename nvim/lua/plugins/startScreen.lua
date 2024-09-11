@@ -1,8 +1,17 @@
 return  {
     {
         "goolord/alpha-nvim",
-        event  = "VimEnter",
-        dependencies  =  {"nvim-tree/nvim-web-devicons","Shatur/neovim-session-manager","nvim-neo-tree/neo-tree.nvim"},
+--        event  = "VimEnter",
+        lazy = false,
+        cond = function()
+            return vim.api.nvim_buf_get_name(0) == ""
+        end,
+        dependencies  =  {
+            "nvim-tree/nvim-web-devicons",
+            "Shatur/neovim-session-manager",
+            "nvim-neo-tree/neo-tree.nvim",
+            'nvim-telescope/telescope.nvim'
+        },
         config  =  function()
             local alpha = require("alpha")
             local dashboard = require("alpha.themes.dashboard")
