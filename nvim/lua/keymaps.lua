@@ -1,4 +1,3 @@
--- non-plugin keymaps
 
 vim.keymap.set("n","<S-h>" ,"ge",{noremap=true,desc="go to the end of last word"})
 --vim.keymap.set("n","<leader>p",'\"0p',{desc = 'paste last yank'})
@@ -8,9 +7,15 @@ vim.keymap.set("n","<leader>z","a<C-x>s",{noremap = true, desc = '[z] drop-down 
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz",{desc = 'move down and center'})
 vim.keymap.set("n", "<C-u>", "<C-u>zz",{desc = 'move up and center'})
+vim.keymap.set("n", "n", "nzzzv",{desc = 'find  next, center, and open any fold'})
+vim.keymap.set("n", "N", "Nzzzv",{desc = 'find prev, center, and open any  fold'})
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", {desc ='switch the current line with the one below'})
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv",{desc ='switch current line with the one below'})
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv",{desc = 'switch current  line with the one above'})
+
+vim.keymap.set("n","gn",":bnext<cr>",{desc='next buffer'})
+vim.keymap.set("n","gp",":bprev<cr>",{desc='prev buffer'})
+vim.keymap.set("n","gq",":bdelete<cr>",{desc='delete buffer'})
 
 -- open a small terminal window at the bottom, and start it in insert mode
 vim.keymap.set('n', '<C-z>', ':sp<bar>term<cr><c-w>J:resize8<cr>i',{noremap = true, desc = "open terminal"})
