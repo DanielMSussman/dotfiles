@@ -40,7 +40,7 @@ return{
                         notes_subdir = vim.NIL,  -- have to use 'vim.NIL' instead of 'nil'
                         new_notes_location = "current_dir",
                         templates = {
---                            folder = vim.NIL, -- if a templates folder exists locally, use it
+                            folder = vim.NIL, -- if a templates folder exists locally, use it
                         },
                         disable_frontmatter = true,
                     },
