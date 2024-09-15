@@ -2,10 +2,11 @@ vim.cmd("filetype plugin indent on")
 vim.cmd("syntax enable")
 
 vim.cmd("set number")
+vim.cmd("set ruler")
 vim.cmd("set relativenumber")
 vim.cmd("set wrap linebreak")
 vim.cmd("set breakindent")
-vim.cmd("set ruler")
+vim.cmd("set showbreak=")
 
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
