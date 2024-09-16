@@ -20,7 +20,7 @@ return {
                                 exe = "latexindent",
                                 args = {
                                     "-g",devnullstring,
-                                    "-y", "modifyLineBreaks:oneSentencePerLine:manipulateSentences:1,modifyLineBreaks:oneSentencePerLine:multipleSpacesToSingle:1,dos2unixlinebreaks:1",
+                                    "-y", "modifyLineBreaks:oneSentencePerLine:manipulateSentences:1,modifyLineBreaks:oneSentencePerLine:multipleSpacesToSingle:1,dos2unixlinebreaks:1,modifyLineBreaks:oneSentencePerLine:sentencesdoNOTcontain:other:\\begin",
                                     "-m"
                                 },
                                 stdin = true,
