@@ -5,6 +5,11 @@ return {
             t("\\nabla"),
         }
     ),
+    s({trig=";i", snippetType="autosnippet", desc="nabla",wordTrig=false},
+        {
+            t("\\infty"),
+        }
+    ),
     --autotrigger greek letters, with choice nodes for pi/phi, epsilon/eta, tau/theta...
     s({trig=";a", snippetType="autosnippet", desc="alpha",wordTrig=false},
         {
