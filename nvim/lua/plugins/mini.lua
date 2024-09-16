@@ -47,8 +47,9 @@ return {
     -- clue
     { 'echasnovski/mini.clue', version = '*', 
         event = "VimEnter",
-        config = function() local
-        miniclue = require('mini.clue')
+        config = function() 
+        local miniclue = require('mini.clue')
+        local anchor = 'NE'
         miniclue.setup({
             triggers = {
                 -- Leader triggers
@@ -91,10 +92,9 @@ return {
                 { mode = 'x', keys = 'z' },
             },
             window = {
-                config = {width = 50,
-                        },
-                delay = 100,
-                },
+                config = { anchor = anchor, row = 'auto', col = 'auto',width=50 },
+                delay=200,
+            },
             clues = {
                 -- Enhance this by adding descriptions for <Leader> mapping groups
                 --miniclue.gen_clues.builtin_completion(),
