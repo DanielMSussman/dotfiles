@@ -85,7 +85,7 @@ return {
                         vim_item.kind = string.format('%s', kind_icons[vim_item.kind]) -- This concatenates the icons with the name of the item kind
                         -- Source
                         vim_item.menu = ({
-                            buffer = "[Buffer]",
+--                            buffer = "[Buffer]",
 --                            nvim_lsp = "[LSP]",
                             luasnip = "[LuaSnip]",
                             vimtex = vim_item.menu,
@@ -148,7 +148,7 @@ return {
                 sources = cmp.config.sources({
                     { name = 'luasnip' },
 --                    { name = 'nvim_lsp' },
-                    { name = 'buffer'},
+--                    { name = 'buffer'},
                 }),
             })
 
@@ -173,7 +173,7 @@ return {
                 sources = {
                     { name = 'vimtex'},
                     { name = 'luasnip' },
-                    { name = 'buffer'},
+--                    { name = 'buffer'},
                 },
             })
             vim.cmd("highlight FloatBorder guibg=NONE")
