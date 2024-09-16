@@ -1,3 +1,4 @@
+require('texpresso').attach()
 -- Formatter--quick call to latexindent to enforce oneSentencePerline
 vim.keymap.set('n','<leader>q','vip:Format<CR>',{noremap=true,desc="[q] Format: call latexindent"})
 
@@ -9,7 +10,7 @@ vim.keymap.set('n','<localleader>Z',':VimtexStopAll<CR>',{noremap=true, desc="Vi
 vim.keymap.set('n','<localleader>lo',':VimtexCompileSS<CR><bar>:VimtexCompileOutput<CR><bar>:wincmd J<CR><bar>:resize 10<CR>',{noremap=true, desc="VimTex: see compiler [o]utput"})
 vim.keymap.set('n','<localleader>v',':VimtexView<CR>',{noremap=true, desc="VimTex: [v]iew  forward search"})
 
-vim.keymap.set('n','<localleader>t',':VimtexTocToggle<CR>',{noremap=true, desc="VimTex: toggle [t]able of contents"})
+vim.keymap.set('n','<localleader>t',':TeXpresso %<CR>',{noremap=true, desc="[T]eXpresso on current file"})
 vim.keymap.set('n','<localleader>i',':VimtexInfo<CR>',{noremap=true, desc="VimTex: [i]nfo"})
 vim.keymap.set('n','<localleader>x',':VimtexClean<CR>',{noremap=true, desc="VimTex: clean au[x] files"})
 vim.keymap.set('n','<localleader>X',':VimtexClean!<CR>',{noremap=true, desc="VimTex: clean au[X] files and output"})
