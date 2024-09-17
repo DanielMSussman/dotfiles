@@ -27,18 +27,21 @@ return {
         {trig="fig", snippetType="snippet", dscr="A basic figure environment"},
         fmta(
             [[
-            \begin{figure}
-            \centerline
-            \includegraphics[width=1.0\linewidth]{<>}
-            \caption{\label{fig:<>}
+            \begin{figure*}
+            \centering
+            \includegraphics[width=0.9\linewidth]{<>}
+            \caption{
+                \textbf{<>}
                 <>
                 }
-            \end{figure}
+            \label{fig:<>}
+            \end{figure*}
 
             ]],
             { i(1,"filename"),
-              i(2,"figureLabel"),
+              i(2, "captionBold"),
               i(3, "captionText"),
+              i(4,"figureLabel"),
              }
         )
     ),

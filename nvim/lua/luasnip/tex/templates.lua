@@ -36,16 +36,12 @@ return {
             \usepackage[utf8]{inputenc}
             \usepackage{graphicx}
             \usepackage[dvipsnames,x11names]{xcolor}
-            \usepackage{float}
-            \usepackage{mathrsfs}
             \usepackage{amsmath,amssymb}
             \usepackage{hyperref}
             \usepackage{physics}
             \usepackage[capitalize]{cleveref}
 
             \newcommand{\dms}[1]{{\color{blue} #1}}
-
-            %\bibliographystyle{unsrt}
 
 
             \begin{document}
