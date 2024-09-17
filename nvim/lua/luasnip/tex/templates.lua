@@ -40,7 +40,8 @@ return {
             \usepackage{mathrsfs}
             \usepackage{amsmath,amssymb}
             \usepackage{hyperref}
-
+            \usepackage{physics}
+            \usepackage[capitalize]{cleveref}
 
             \newcommand{\dms}[1]{{\color{blue} #1}}
 
