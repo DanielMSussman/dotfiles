@@ -86,5 +86,55 @@ return {
             }
         )
     ),
+    -- homework assignment template
+    s({trig="problemSet", snippetType="snippet", dscr="A template for physics problem sets"},
+        fmta(
+            [[
+            \documentclass[12pt]{article}
+            \usepackage{graphicx}
+            \usepackage{bm}
+            \usepackage{hyperref}
+            \usepackage{amsmath, amssymb, graphics}
+            \usepackage[%paper=letterpaper,
+            %includefoot, % Uncomment to put page number above margin
+            marginparwidth=1.2in,     % Length of section titles
+            marginparsep=.05in,       % Space between titles and text
+            margin=1.in,               % 1 inch margins
+            ]{geometry}
+            \usepackage{fancyhdr}
+            \pagestyle{fancy}
+            \lhead{\textbf{PHYS <>}}
+            \rhead{\textbf{Problem set <>}}
 
+
+            \begin{document}
+            %\maketitle
+
+            \begin{center}
+            \section*{Due on: <>}
+            \end{center}
+
+            \begin{quote}
+            Note: An important part of science is communicating your understanding to other people. That is to say, a solution that may be technically correct but which I (the grader) cannot understand is not much better than an incorrect solution. So, please answer the following questions neatly, clearly, and logically -- Thanks!
+            \end{quote}
+
+            \subsection*{Problem 1:<>}
+            <>
+
+            \subsection*{Question: Self-assessment and measurement of difficulty}
+            How do you think you did on this assignment? I.e., are you confident in the work you've submitted, or are you unsure of how you approached and/or completed some of the problems? 
+
+            How much time did you spend on this homework? Feel free to answer either in absolute terms (i.e., number of hours worked) or in qualitative terms relative to the average homework from last semester. 
+            Thanks!
+            \end{document}
+            ]],
+            { 
+                i(1,"504"),
+                i(2,"1"),
+                i(3,"dueDate"),
+                i(4,"problemTitle"),
+                i(0),
+            }
+        )
+    ),
 }
