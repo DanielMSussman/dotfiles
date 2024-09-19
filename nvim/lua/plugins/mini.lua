@@ -93,7 +93,7 @@ return {
             },
             window = {
                 config = { anchor = anchor, row = 'auto', col = 'auto',width=50 },
-                delay=200,
+                delay=50,
             },
             clues = {
                 -- Enhance this by adding descriptions for <Leader> mapping groups

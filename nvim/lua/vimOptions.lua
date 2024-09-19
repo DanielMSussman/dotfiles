@@ -25,7 +25,7 @@ vim.cmd("set inccommand")
 vim.cmd("set signcolumn =yes")
 vim.cmd("set numberwidth=2")
 vim.cmd("set termguicolors")
---vim.cmd("set cursorline")
+vim.cmd("set cursorline")
 
 vim.cmd("set spell spelllang=en_us")
 
