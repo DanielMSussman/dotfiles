@@ -111,6 +111,7 @@ return {
             %\maketitle
 
             \begin{center}
+            <>
             \section*{Due on: <>}
             \end{center}
 
@@ -131,6 +132,7 @@ return {
             { 
                 i(1,"504"),
                 i(2,"1"),
+                rep(2),
                 i(3,"dueDate"),
                 i(4,"problemTitle"),
                 i(0),
