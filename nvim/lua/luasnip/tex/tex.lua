@@ -15,21 +15,34 @@ end
 
 return {
 
-    s({trig = "textbf", dscr = "the textbf command, easily wrapping a visual selection"},
-        fmta("\\textbf{<>}",
-            {
-                d(1, getVisual),
-            }
-        )
-    ),
+    s("textbf", 
+        f(function(args, snip)
+            local res, env = {}, snip.env
+            for _, ele in ipairs(env.LS_SELECT_RAW) do table.insert(res, "\\textbf{" .. ele .. "}") end
+            return res
+        end, {})),
+    s("emph", 
+        f(function(args, snip)
+            local res, env = {}, snip.env
+            for _, ele in ipairs(env.LS_SELECT_RAW) do table.insert(res, "\\emph{" .. ele .. "}") end
+            return res
+        end, {})),
+    
+    -- s({trig = "textbf", dscr = "the textbf command, easily wrapping a visual selection"},
+    --     fmta("\\textbf{<>}",
+    --         {
+    --             d(1, getVisual),
+    --         }
+    --     )
+    -- ),
 
-    s({trig = "emph", dscr = "the emph command, easily wrapping a visual selection"},
-        fmta("\\emph{<>}",
-            {
-                d(1, getVisual),
-            }
-        )
-    ),
+    -- s({trig = "emph", dscr = "the emph command, easily wrapping a visual selection"},
+    --     fmta("\\emph{<>}",
+    --         {
+    --             d(1, getVisual),
+    --         }
+    --     )
+    -- ),
 
     s(
         {trig="href", snippetType="snippet", dscr="href with placeholders to remind you of the order"},
