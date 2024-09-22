@@ -38,6 +38,18 @@ return {
         },
         { condition=math }
     ),
+    s({trig=";I",snippetType="autosnippet",desc="integral with infinite or inserted limits",wordTrig=false},
+        fmta([[
+            <>
+            ]],
+            {
+            c(1,{
+                t("\\int_{-\\infty}^\\infty"),
+                sn(nil, {t("\\int_{"), i(1), t("}^{"), i(2), t("}") }),
+                })
+            }
+        )
+    ),
     --postfixes for vectors, hats, etc. The match pattern is '\\' plus the default (so that hats get put on greek letters, etc)
     postfix({trig="hat", match_pattern = [[[\\%w%.%_%-%"%']+$]], snippetType="autosnippet",dscr="postfix hat when in math mode"},
         {l("\\hat{" .. l.POSTFIX_MATCH .. "}")}, 
