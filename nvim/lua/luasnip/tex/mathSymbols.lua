@@ -45,7 +45,7 @@ return {
             {
             c(1,{
                 t("\\int_{-\\infty}^\\infty"),
-                sn(nil, {t("\\int_{"), i(1), t("}^{"), i(2), t("}") }),
+                sn(nil,fmta([[ \int_{<>}^{<>} ]],{i(1),i(2)})),
                 })
             }
         )

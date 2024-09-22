@@ -119,14 +119,18 @@ return {
         )
     ),
     -- arbitrarily sized matrices
-    s({trig = "([bBpvV])Mat(%d+)x(%d+)", snippetType="autosnippet", regTrig = true, dscr = "[bBpvV]matrix of A x B size"},
+    s({trig = "([%sbBpvV])Mat(%d+)x(%d+)", snippetType="autosnippet", regTrig = true, wordTrig=false, dscr = "[bBpvV]matrix of A x B size"},
         fmta([[
         \begin{<>}
         <>
         \end{<>}]],
         {
         f(function(_, snip)
-            return snip.captures[1] .. "matrix"
+            if  snip.captures[1] ==" " then
+                return "matrix"
+            else
+                return snip.captures[1] .. "matrix"
+            end
         end),
         d(1, generate_matrix),
         f(function(_, snip)
