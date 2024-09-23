@@ -34,6 +34,7 @@ return {
             end
         end, {silent = true, desc = "cycle through choice nodes"})
 
+        vim.keymap.set({"i", "s"}, "<C-y>", function() ls.unlink_current() choice_popup_close() vim.cmd("stopinsert") end, {silent = true, desc = "use this to leave choice node, close the popup and be in normal mode"})
         -- have a popup window associated with choice node options?
         local current_nsid = vim.api.nvim_create_namespace("LuaSnipChoiceListSelections")
         local current_win = nil
