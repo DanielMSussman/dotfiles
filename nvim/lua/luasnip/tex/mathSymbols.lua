@@ -44,8 +44,8 @@ return {
             ]],
             {
             c(1,{
-                t("\\int_{-\\infty}^\\infty"),
-                sn(nil,fmta([[ \int_{<>}^{<>} ]],{i(1),i(2)})),
+                t("\\int_{-\\infty}^\\infty",{key = "integral over all reals"}),
+                sn(nil,fmta([[ \int_{<>}^{<>} ]],{i(1),i(2)}),{key = "integral with insert-node limits"}),
                 })
             }
         )
