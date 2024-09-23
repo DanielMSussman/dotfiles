@@ -67,3 +67,5 @@ wavevector
 discretization
 parallelizable
 rigidified
+executables
+reproducibility

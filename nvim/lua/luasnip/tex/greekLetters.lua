@@ -1,15 +1,5 @@
 return {
 
-    s({trig=";N", snippetType="autosnippet", desc="nabla",wordTrig=false},
-        {
-            t("\\nabla"),
-        }
-    ),
-    s({trig=";i", snippetType="autosnippet", desc="nabla",wordTrig=false},
-        {
-            t("\\infty"),
-        }
-    ),
     --autotrigger greek letters, with choice nodes for pi/phi, epsilon/eta, tau/theta...
     s({trig=";a", snippetType="autosnippet", desc="alpha",wordTrig=false},
         {
@@ -92,12 +82,12 @@ return {
             t("\\chi"),
         }
     ),
-    s({trig=";o", snippetType="autosnippet", desc="omega",wordTrig=false},
+    s({trig=";w", snippetType="autosnippet", desc="omega",wordTrig=false},
         {
             t("\\omega"),
         }
     ),
-    s({trig=";O", snippetType="autosnippet", desc="Omega",wordTrig=false},
+    s({trig=";W", snippetType="autosnippet", desc="Omega",wordTrig=false},
         {
             t("\\Omega"),
         }

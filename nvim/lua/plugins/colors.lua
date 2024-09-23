@@ -28,6 +28,13 @@ return {
         opts = {},
     },
     {
+        "EdenEast/nightfox.nvim",
+        -- lazy = false,
+        lazy=true,
+        -- priority = 1000,
+        opts = {},
+    },
+    {
         'sainnhe/everforest',
         -- lazy = false,
         -- priority = 1000,
