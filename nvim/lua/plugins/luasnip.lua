@@ -28,7 +28,6 @@ return {
         vim.keymap.set({"i", "s"}, "<C-j>", function() ls.jump( 1) end, {silent = true, desc = "next autocomplete"})
         vim.keymap.set({"i", "s"}, "<C-L>", function() ls.jump(-1) end, {silent = true, desc = "previous autocomplete"})
 
-        vim.keymap.set({"i"},"<C-c>",function() require('luasnip.extras.select_choice')() end, {noremap=true,desc="ui picker to select choice node options"})
         vim.keymap.set({"i", "s"}, "<C-E>", function()
             if ls.choice_active() then
                 ls.change_choice(1)
