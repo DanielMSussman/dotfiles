@@ -22,7 +22,7 @@ return {
     ),
     s({trig="div", snippetType="autosnippet", desc="nabla",wordTrig=false},
         {
-            t("\\nabla\\cdot"),
+            t("\\nabla \\cdot"),
         },
         { condition=math }
     ),
@@ -34,7 +34,7 @@ return {
     ),
     s({trig="curl", snippetType="autosnippet", desc="curl",wordTrig=false},
         {
-            t("\\nabla\\times"),
+            t("\\nabla \\times"),
         },
         { condition=math }
     ),

@@ -134,7 +134,11 @@ return {
         end),
         d(1, generate_matrix),
         f(function(_, snip)
-            return snip.captures[1] .. "matrix"
+            if  snip.captures[1] ==" " then
+                return "matrix"
+            else
+                return snip.captures[1] .. "matrix"
+            end
         end)
         }),
         { condition=math }
