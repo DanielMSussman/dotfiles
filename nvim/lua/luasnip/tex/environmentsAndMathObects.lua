@@ -48,7 +48,7 @@ return {
         {trig="fig", snippetType="snippet", dscr="A basic figure environment"},
         fmta(
             [[
-            \begin{figure*}
+            \begin{figure}
             \centering
             \includegraphics[width=0.9\linewidth]{<>}
             \caption{
@@ -56,7 +56,7 @@ return {
                 <>
                 }
             \label{fig:<>}
-            \end{figure*}
+            \end{figure}
 
             ]],
             { i(1,"filename"),
