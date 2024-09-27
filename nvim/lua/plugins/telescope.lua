@@ -10,6 +10,11 @@ return {
     lazy=true,
     config = function()
         require('telescope').setup({
+            defaults = {
+                file_ignore_patterns = {
+                    ".nb",
+                },       
+            },
             extensions = {
                 ['ui-select'] = {
                     require('telescope.themes').get_dropdown(),
