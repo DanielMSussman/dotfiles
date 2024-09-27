@@ -1,4 +1,4 @@
-auxFiles/*
+outputFiles/*
 ##spelling files for vim
 *.spl
 

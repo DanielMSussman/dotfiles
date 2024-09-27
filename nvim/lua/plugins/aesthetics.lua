@@ -36,9 +36,9 @@ return {
                         PmenuThumb = { bg = theme.ui.bg_p2 },
 
                         -- ridiculous tweaking of nvim-cmp completion menus
-                        completionWindowNormal = {fg = theme.ui.shade0, bg=theme.ui.bg},
-                        completionWindowCursorLine = {fg="NONE", bg = theme.ui.bg_p1, blend=0},
-                        completionFloatBorder = { fg = theme.ui.shade0, bg = theme.ui.bg,blend=0},
+                        -- completionWindowNormal = {fg = theme.ui.shade0, bg=theme.ui.bg},
+                        -- completionWindowCursorLine = {fg="NONE", bg = theme.ui.bg_p1, blend=0},
+                        -- completionFloatBorder = { fg = theme.ui.shade0, bg = theme.ui.bg,blend=0},
                     }
                 end
             })

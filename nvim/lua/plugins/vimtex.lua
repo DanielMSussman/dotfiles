@@ -6,12 +6,11 @@ return {
     config = function()
             --global vimtex settings
             vim.g.vimtex_imaps_enabled = 0 --i.e., disable them
+            -- 
+            -- compiler settings
             vim.g.vimtex_compiler_silent = 1 -- i.e., don't emit compilation notifications
-            if isWindows then
-                vim.g.vimtex_compiler_latexmk = {aux_dir = 'auxFiles'}
-            else
-                vim.g.vimtex_compiler_latexmk = {out_dir = 'auxFiles'}
-            end
+            vim.g.vimtex_compiler_latexmk = {out_dir = 'outputFiles'} -- the previous if/else setting depends on whether I'm using the latexmk bundled with miktex or not, and I didn't like that dependence
+
             --vimtex_view_settings
             -- set viewer based on operating system (windows = sumatraPDF via general, mac= skim, etc)
             if isWindows then 
@@ -19,7 +18,6 @@ return {
             elseif isMac then 
                 vim.g.vimtex_view_method = "sioyek"
             else
-                --vim.g.vimtex_view_method = "zathura"
                 vim.g.vimtex_view_method = 'general'
             end
             vim.g.vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
