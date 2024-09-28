@@ -69,6 +69,7 @@ return {
     --         \usepackage{hyperref}
     --         \usepackage{amsmath, amssymb, graphics}
     --         \usepackage{physics}
+    --          \usepackage{csquotes}
     --         \usepackage[%paper=letterpaper,
     --         %includefoot, % Uncomment to put page number above margin
     --         marginparwidth=1.2in,     % Length of section titles

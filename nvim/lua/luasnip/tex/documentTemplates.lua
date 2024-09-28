@@ -27,6 +27,7 @@ s({trig="latexTemplate",snippetType="snippet",dscr="cycle through blank, problem
                     %Template for problem sets
                     \usepackage{graphicx}
                     \usepackage{bm}
+                    \usepackage{csquotes}
                     \usepackage{hyperref}
                     \usepackage{amsmath, amssymb}
                     \usepackage{physics}
@@ -72,6 +73,7 @@ s({trig="latexTemplate",snippetType="snippet",dscr="cycle through blank, problem
                     \documentclass[reprint,amsmath,amssymb,aps]{revtex4-2}
                     %PRL-like template
                     \usepackage[utf8]{inputenc}
+                    \usepackage{csquotes}
                     \usepackage[dvipsnames,x11names]{xcolor}
                     \usepackage{graphicx,physics,hyperref}
                     \usepackage[capitalize]{cleveref}
