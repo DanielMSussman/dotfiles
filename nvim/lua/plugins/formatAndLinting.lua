@@ -2,7 +2,7 @@ return {
     {
     'mhartington/formatter.nvim',
 --    event = {'VeryLazy'},
-    ft = "tex",
+    ft = {"tex","cpp"},
     config = function()
         local devnullstring 
         if isWindows then
@@ -11,6 +11,7 @@ return {
             devnullstring = "/dev/null"
         end
 
+        vim.keymap.set('n','<leader>q','vip:Format<CR>',{noremap=true,desc="[q] Format paragraph"})
         require("formatter").setup({
             logging = false,
             filetype = {
@@ -33,7 +34,7 @@ return {
                             return {
                                 exe = "clang-format",
                                 args = {
-                                    "-style='{BasedOnStyle: WebKit, AccessModifierOffset: 0,AlignAfterOpenBracket: Align, AlignOperands: Align, AllowShortIfStatementsOnASingleLine: Never, AllowShortLoopsOnASingleLine: false, BinPackArguments: false, BinPackParameters: false, BreakBeforeBraces: Whitesmiths, BreakConstructorInitializers: BeforeColon, Cpp11BracedListStyle: true, FixNamespaceComments: true, IndentWidth: 4, Language: Cpp, PointerAlignment: Left, SpaceAfterTemplateKeyword: false, SpaceBeforeParens: ControlStatements, SpacesInAngles: Never, Standard: Cpp11, TabWidth: 4, UseTab: Never }' "
+                                    "-style='{BasedOnStyle: WebKit, AccessModifierOffset: 0,AlignAfterOpenBracket: Align, AlignOperands: Align, AllowShortIfStatementsOnASingleLine: Never, AllowShortLoopsOnASingleLine: false, BinPackArguments: false, BinPackParameters: false, BreakBeforeBraces: Whitesmiths, BreakConstructorInitializers: BeforeColon, Cpp11BracedListStyle: true, FixNamespaceComments: true, IndentWidth: 4, Language: Cpp, PointerAlignment: Left, SpaceAfterTemplateKeyword: false, SpaceBeforeParens: ControlStatements, SpacesInAngles: Never, Standard: Cpp11, TabWidth: 4, UseTab: Never }'"
                                 },
                                 stdin = true,
                             }
@@ -41,8 +42,6 @@ return {
                     },
                 },
             })
-        vim.keymap.set('n','<leader>q','vip:Format<CR>',{noremap=true,desc="[q] Format paragraph"})
     end
-
     },
 }
