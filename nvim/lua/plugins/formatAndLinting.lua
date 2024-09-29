@@ -14,6 +14,7 @@ return {
         require("formatter").setup({
             logging = false,
             filetype = {
+                --quick call to latexindent to enforce oneSentencePerline
                 tex = {
                         function()
                             return {
@@ -28,7 +29,22 @@ return {
                         end,
                     },
                 },
+                cpp = {
+                        function()
+                            return {
+                                exe = "clang-format",
+                                args = {
+                                    "-style='{BasedOnStyle: WebKit, AccessModifierOffset: 0,AlignAfterOpenBracket: Align, AlignOperands: Align, AllowShortIfStatementsOnASingleLine: Never, AllowShortLoopsOnASingleLine: false, BinPackArguments: false, BinPackParameters: false, BreakBeforeBraces: Whitesmiths, BreakConstructorInitializers: BeforeColon, Cpp11BracedListStyle: true, FixNamespaceComments: true, IndentWidth: 4, Language: Cpp, PointerAlignment: Left, SpaceAfterTemplateKeyword: false, SpaceBeforeParens: ControlStatements, SpacesInAngles: Never, Standard: Cpp11, TabWidth: 4, UseTab: Never }' "
+                                },
+                                stdin = true,
+                            }
+                        end,
+                    },
+                },
         })
+    vim.keymap.set('n','<leader>q','vip:Format<CR>',{noremap=true,desc="[q] Format paragraph"})
+
+
     end
     },
 }

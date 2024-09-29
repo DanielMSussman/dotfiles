@@ -1,6 +1,3 @@
--- Formatter--quick call to latexindent to enforce oneSentencePerline
-vim.keymap.set('n','<leader>q','vip:Format<CR>',{noremap=true,desc="[q] Format: call latexindent"})
-
 -- Vimtex: a set of localleader keymaps I call a lot
 vim.keymap.set('n','<localleader>b',':VimtexCompileSS<CR>',{noremap=true, desc="VimTex: single-shot [b]uild"})
 vim.keymap.set('n','<localleader>c',':VimtexCompile<CR>',{noremap=true, desc="VimTex: [c]ontinuous compile"})
