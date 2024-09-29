@@ -4,6 +4,7 @@ return {
 --    event = {'VeryLazy'},
     ft = {"tex","cpp"},
     config = function()
+        local util = require "formatter.util"
         local devnullstring 
         if isWindows then
             devnullstring = "NUL"
@@ -34,9 +35,12 @@ return {
                             return {
                                 exe = "clang-format",
                                 args = {
-                                    "-style='{BasedOnStyle: WebKit, AccessModifierOffset: 0,AlignAfterOpenBracket: Align, AlignOperands: Align, AllowShortIfStatementsOnASingleLine: Never, AllowShortLoopsOnASingleLine: false, BinPackArguments: false, BinPackParameters: false, BreakBeforeBraces: Whitesmiths, BreakConstructorInitializers: BeforeColon, Cpp11BracedListStyle: true, FixNamespaceComments: true, IndentWidth: 4, Language: Cpp, PointerAlignment: Left, SpaceAfterTemplateKeyword: false, SpaceBeforeParens: ControlStatements, SpacesInAngles: Never, Standard: Cpp11, TabWidth: 4, UseTab: Never }'"
+                                    '-style="{BasedOnStyle: WebKit, AccessModifierOffset: 0,AlignAfterOpenBracket: Align, AlignOperands: Align, AllowShortIfStatementsOnASingleLine: Never, AllowShortLoopsOnASingleLine: false, BinPackArguments: false, BinPackParameters: false, BreakBeforeBraces: Whitesmiths, BreakConstructorInitializers: BeforeColon, Cpp11BracedListStyle: true, FixNamespaceComments: true, IndentWidth: 4, Language: Cpp, PointerAlignment: Left, SpaceAfterTemplateKeyword: false, SpaceBeforeParens: ControlStatements, SpacesInAngles: Never, Standard: Cpp11, TabWidth: 4, UseTab: Never }"',
+                                    "-assume-filename",
+                                    util.escape_path(util.get_current_buffer_file_name()),
                                 },
                                 stdin = true,
+                                try_node_modules = true,
                             }
                         end,
                     },
