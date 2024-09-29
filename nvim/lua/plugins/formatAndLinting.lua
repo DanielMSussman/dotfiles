@@ -28,7 +28,6 @@ return {
                             }
                         end,
                     },
-                },
                 cpp = {
                         function()
                             return {
@@ -41,10 +40,9 @@ return {
                         end,
                     },
                 },
-        })
-    vim.keymap.set('n','<leader>q','vip:Format<CR>',{noremap=true,desc="[q] Format paragraph"})
-
-
+            })
+        vim.keymap.set('n','<leader>q','vip:Format<CR>',{noremap=true,desc="[q] Format paragraph"})
     end
+
     },
 }
