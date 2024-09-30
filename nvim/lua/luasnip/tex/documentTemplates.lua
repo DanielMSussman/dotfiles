@@ -17,6 +17,8 @@ s({trig="latexTemplate",snippetType="snippet",dscr="cycle through blank, problem
 
                     <>
 
+                    %\bibliographystyle{unsrt}
+                    %\bibliography{\string~/repos/dotfiles/bibtex/zoteroBBT}
                     \end{document}
                     ]],
                     {i(1,"Start typing!"),}
@@ -111,13 +113,13 @@ s({trig="latexTemplate",snippetType="snippet",dscr="cycle through blank, problem
 
                     discussion text
 
-                    %\bibliography{<>}
+                    \bibliography{<>}
 
                     \end{document}
                     ]],
                     { i(1,"Title goes here"),
                       i(2,"An extremely good abstract"),
-                      i(3,"bibliographyFileName"),
+                      i(3,"\\string~/repos/dotfiles/bibtex/zoteroBBT"),
                     }
                 ),{key = "RevTex template"}),
         })
