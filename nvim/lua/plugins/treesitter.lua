@@ -21,9 +21,10 @@ return {
     event="VimEnter",
     config = function()
         local tsc = require("treesitter-context").setup({
-            max_lines=1,
+            enable=false,
+            max_lines=2,
             })
-        vim.keymap.set("n","<leader>vt", ":TSContextToggle<CR>", {noremap=true,desc='toggle treesitter context'})
+        vim.keymap.set("n","<leader>y", ":TSContextToggle<CR>", {noremap=true,desc='[y] toggle treesitter context'})
     end
     }
 }
