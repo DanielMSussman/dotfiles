@@ -14,14 +14,15 @@ return {
             formatters = {
                 cppFormatter= {
                         command = "clang-format",
-                        args = '-style="{BasedOnStyle: WebKit, AccessModifierOffset: 0,AlignAfterOpenBracket: Align, AlignOperands: Align, AllowShortIfStatementsOnASingleLine: Never, AllowShortLoopsOnASingleLine: false, BinPackArguments: false, BinPackParameters: false, BreakBeforeBraces: Whitesmiths, BreakConstructorInitializers: BeforeColon, Cpp11BracedListStyle: true, FixNamespaceComments: true, IndentWidth: 4, Language: Cpp, PointerAlignment: Left, SpaceAfterTemplateKeyword: false, SpaceBeforeParens: ControlStatements, Standard: Cpp11, TabWidth: 4, UseTab: False }"',
+                        args = '-style="{BasedOnStyle: WebKit, AccessModifierOffset: 0,AlignAfterOpenBracket: Align, AlignOperands: Align, AllowShortIfStatementsOnASingleLine: Never, AllowShortLoopsOnASingleLine: false, BinPackArguments: false, BinPackParameters: false, BreakBeforeBraces: Whitesmiths, BreakConstructorInitializers: BeforeColon, Cpp11BracedListStyle: true, FixNamespaceComments: true, IndentWidth: 4, Language: Cpp, PointerAlignment: Left, SpaceAfterTemplateKeyword: false, SpaceBeforeParens: ControlStatements, Standard: c++14, TabWidth: 4, UseTab: Never, IndentCaseBlocks: true, AllowShortCaseLabelsOnASingleLine: true}"',
                         stdin = true,
                     },
                 texFormatter= {
                         command = "latexindent",
                                 args = {
-                                    "-y", "modifyLineBreaks:oneSentencePerLine:manipulateSentences:1,modifyLineBreaks:oneSentencePerLine:multipleSpacesToSingle:1,dos2unixlinebreaks:1,modifyLineBreaks:oneSentencePerLine:sentencesdoNOTcontain:other:\\begin",
-                                    "-m"
+                                    "-y",
+                                    "modifyLineBreaks:oneSentencePerLine:manipulateSentences:1,modifyLineBreaks:oneSentencePerLine:multipleSpacesToSingle:1,dos2unixlinebreaks:1, modifyLineBreaks:environments:BeginStartsOnOwnLine:1, modifyLineBreaks:environments:BodyStartsOnOwnLine:1, modifyLineBreaks:environments:EndStartsOnOwnLine:1, modifyLineBreaks:environments:EndFinishesWithLineBreak:1, ",
+                                    "-m",
                                 },
                                 stdin = true,
 
