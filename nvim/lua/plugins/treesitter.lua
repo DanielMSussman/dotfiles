@@ -1,12 +1,13 @@
 return {
     {
     "nvim-treesitter/nvim-treesitter",
+    event="VimEnter",
     lazy=true,
     build=":TSUpdate",
     config = function()
        local config = require("nvim-treesitter.configs")
         config.setup({
-        ensure_installed = {"lua","cpp", "markdown", "vim", "vimdoc","markdown_inline","html"},
+        ensure_installed = {"lua","cpp", "c","cuda","markdown", "vim", "vimdoc","markdown_inline","html"},
         sync_install = true,
         highlight = {enable = true,
                     disable = {"tex"},
@@ -17,9 +18,10 @@ return {
     },
     {
     "nvim-treesitter/nvim-treesitter-context",
-    event = "VeryLazy",
+    event="VimEnter",
     config = function()
         local tsc = require("treesitter-context").setup({
+            max_lines=1,
             })
         vim.keymap.set("n","<leader>vt", ":TSContextToggle<CR>", {noremap=true,desc='toggle treesitter context'})
     end
