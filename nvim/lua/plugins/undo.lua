@@ -8,7 +8,7 @@ return {
                 dependencies = { "nvim-lua/plenary.nvim" },
             },
         },
-        keys = {"<leader>u"},
+        event="VimEnter",
         opts = {
             -- don't use `defaults = { }` here, do this in the main telescope spec
             extensions = {
