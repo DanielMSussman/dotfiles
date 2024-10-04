@@ -23,8 +23,8 @@ vim.cmd("let workLaptopName='PHY-DMSUSSM-01M'")
 -- vim.cmd("let computerName=system('hostname')")
 --flag for the framework laptop
 -- isFramework= vim.startswith(computerName,'Sussman-Framework')
-isFramework= vim.api.nvim_eval('computerName==frameworkName')
-isEmoryWindows= vim.api.nvim_eval('computerName==workLaptopName')
+isFramework= vim.api.nvim_eval('computerName==frameworkName') == 1
+isEmoryWindows= vim.api.nvim_eval('computerName==workLaptopName') == 1
 isWindows = vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win16") == 1
 isMac = vim.fn.has("mac") == 1 
 
