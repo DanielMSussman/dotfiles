@@ -19,10 +19,12 @@ vim.opt.rtp:prepend(lazypath)
 -- potential flags for some platform-specific options in plugins
 vim.cmd("let computerName=split(system('hostname'))[0]")
 vim.cmd("let frameworkName='Sussman-Framework'")
+vim.cmd("let workLaptopName='PHY-DMSUSSM-01M'")
 -- vim.cmd("let computerName=system('hostname')")
 --flag for the framework laptop
 -- isFramework= vim.startswith(computerName,'Sussman-Framework')
-isFramework= computerName==frameworkName
+isFramework= vim.api.nvim_eval('computerName==frameworkName')
+isEmoryWindows= vim.api.nvim_eval('computerName==workLaptopName')
 isWindows = vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win16") == 1
 isMac = vim.fn.has("mac") == 1 
 
