@@ -50,9 +50,9 @@ return {
     ),
 
     --autotrigger latex quotation marks
-    s({trig="\"", snippetType="autosnippet", desc="quotation marks (enquote)"},
+    s({trig="quote", snippetType="snippet", desc="quotation marks (enquote)"},
         fmta(
-            [[``<>'']],
+            [[\enquote{<>}]],
             {
             i(1, "text"),
             }
