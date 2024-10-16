@@ -38,7 +38,7 @@ require("lazy").setup("plugins")
 
 require("keymaps")
 require("autocmds")
-
+require("filetypes")
 --recommended settings to use pwsh instead of cmd.exe
 if isWindows then
     vim.o.shell="pwsh"
