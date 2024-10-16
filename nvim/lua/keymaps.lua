@@ -7,11 +7,13 @@ vim.keymap.set("n","<leader>z","a<C-x>s",{noremap = true, desc = '[z] drop-down 
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz",{desc = 'move down and center'})
 vim.keymap.set("n", "<C-u>", "<C-u>zz",{desc = 'move up and center'})
-vim.keymap.set("n", "n", "nzzzv",{desc = 'find  next, center, and open any fold'})
+vim.keymap.set("n", "n", "nzzzv",{desc = 'find next, center, and open any fold'})
 vim.keymap.set("n", "N", "Nzzzv",{desc = 'find prev, center, and open any  fold'})
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv",{desc ='switch current line with the one below'})
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv",{desc = 'switch current  line with the one above'})
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv",{desc ='move current line(s) down'})
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv",{desc = 'move current line(s) up'})
+
+vim.keymap.set("n","<leader>r",':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',{desc="find and [r]eplace word under cursor"})
 
 vim.keymap.set("n","gn",":bnext<cr>",{desc='next buffer'})
 vim.keymap.set("n","gp",":bprev<cr>",{desc='prev buffer'})
