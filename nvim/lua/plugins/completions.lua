@@ -148,7 +148,7 @@ return {
                 sources = cmp.config.sources({
                     { name = 'luasnip' },
 --                    { name = 'nvim_lsp' },
---                    { name = 'buffer'},
+                   { name = 'buffer'},
                 }),
             })
 
@@ -173,7 +173,7 @@ return {
                 sources = {
                     { name = 'vimtex'},
                     { name = 'luasnip' },
---                    { name = 'buffer'},
+                   { name = 'buffer'},
                 },
             })
             vim.cmd("highlight FloatBorder guibg=NONE")
