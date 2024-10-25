@@ -9,8 +9,8 @@ return  {
         dependencies  =  {
             "nvim-tree/nvim-web-devicons",
             "Shatur/neovim-session-manager",
-            "nvim-neo-tree/neo-tree.nvim",
-            'nvim-telescope/telescope.nvim'
+            -- "nvim-neo-tree/neo-tree.nvim",
+            -- 'nvim-telescope/telescope.nvim'
         },
         config  =  function()
             local alpha = require("alpha")

@@ -111,7 +111,7 @@ return {
             { mode = 'n', keys = '<Leader>s', desc = '([S]ession management)' },
             { mode = 'n', keys = '<Leader>t', desc = '([t]imer sessions)' },
             { mode = 'n', keys = '<localLeader>l', desc = '(additional [l]atex/VimTex commands)' },
-            { mode = 'n', keys = '<Leader>x', desc = '([x] Trouble commands)' },
+            -- { mode = 'n', keys = '<Leader>x', desc = '([x] Trouble commands)' },
             { mode = 'n', keys = '<C-x><C-n>', desc = 'neotree show filesystem'},
 
             --completion clues

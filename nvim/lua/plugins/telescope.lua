@@ -6,8 +6,8 @@ return {
         "nvim-telescope/telescope-bibtex.nvim",
     },
     keys = {"<leader>"}, -- leader f for usual functionality, s if we're in the start screen
---    event = {"VimEnter"},
-    lazy=true,
+   -- event = {"VimEnter"},
+    -- lazy=true,
     config = function()
         require('telescope').setup({
             defaults = {
