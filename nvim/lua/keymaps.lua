@@ -45,7 +45,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
         map('<leader>ln',vim.lsp.buf.rename,'[r]e[n]ame all references to symbol')
         map('gr', require('telescope.builtin').lsp_references, '[g]oto [r]eferences')
-        map('<leader>c',vim.lsp.buf.code_action,'[c]ode action')
+        map('<leader>lc',vim.lsp.buf.code_action,'[c]ode action')
         map('[K]',vim.lsp.buf.hover,'[K] hover information')
     end
 })
