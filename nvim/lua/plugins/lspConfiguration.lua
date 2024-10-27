@@ -11,7 +11,7 @@ return {
     event = "VeryLazy",
     config = function()
         require("mason-lspconfig").setup({
-            ensure_installed = {"clangd"}
+            -- ensure_installed = {"clangd"}
             }
             )
     end
@@ -23,7 +23,8 @@ return {
         local lspconfig = require("lspconfig")
             --advertise cmp-nvim-lsp
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
-        lspconfig.clangd.setup {capabilities = capabilities}
+        lspconfig.clangd.setup {capabilities = capabilities,
+            autostart=false,}
     end
     },
 

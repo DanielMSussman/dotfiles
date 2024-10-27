@@ -32,6 +32,8 @@ vim.keymap.set('t', '<ESC>', '<C-\\><C-n>',{noremap = true})
 vim.keymap.set("n","<leader>gr",function () vim.cmd("lua update_currentGitStatus()") end, {desc = "check [g]it [r]emote (fetch)"})-- calls a "fetch and notify" function
 
 -- LSP and diagnostic section (as an autocomplete)
+vim.keymap.set("n","<leader>ll", function() vim.cmd("LspStart") end, {desc="[l]aunch lsp (start)",noremap=true})
+
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
     callback = function(event)
@@ -51,7 +53,7 @@ vim.api.nvim_create_autocmd('LspDetach', {
               group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
               callback = function(event2)
                 vim.lsp.buf.clear_references()
-                vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
+                -- vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
               end,
             })
 
