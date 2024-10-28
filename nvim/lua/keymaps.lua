@@ -41,8 +41,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.keymap.set('n',keys,func,{buffer = event.buf,desc='LSP: ' .. desc})
         end
         map('gd', require('telescope.builtin').lsp_definitions, '[g]oto [d]efinition')
-        map('gD', require('telescope.builtin').lsp_definitions, '[g]oto [D]eclaration')
-        map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+        map('gD', vim.lsp.buf.declaration, '[g]oto [D]eclaration')
+        map('gi', require('telescope.builtin').lsp_implementations, '[G]oto [i]mplementation')
         map('<leader>ls',vim.lsp.buf.signature_help,'[s]ignature help')
         map('<leader>lr',vim.lsp.buf.references,'[r]eferences')
         map('<leader>ln',vim.lsp.buf.rename,'re[n]ame all references to symbol')
@@ -50,6 +50,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         map('<leader>lc',vim.lsp.buf.code_action,'[c]ode action')
         map('<leader>ld',vim.diagnostic.open_float,'[d]iagnostic window for error or warning')
         map('[K]',vim.lsp.buf.hover,'[K] hover information')
+        vim.keymap.set('n','<leader>q',vim.diagnostic.setloclist,{desc='[q]uickfix list'})
     end
 })
 vim.api.nvim_create_autocmd('LspDetach', {
