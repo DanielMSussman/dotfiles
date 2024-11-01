@@ -173,7 +173,7 @@ return {
                 sources = {
                     { name = 'vimtex'},
                     { name = 'luasnip' },
-                   { name = 'buffer'},
+                   -- { name = 'buffer'},
                 },
             })
             cmp.setup.filetype("cpp", {
