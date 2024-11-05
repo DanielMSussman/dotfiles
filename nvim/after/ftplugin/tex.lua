@@ -19,6 +19,15 @@ vim.keymap.set('n','<localleader>X',':VimtexClean!<CR>',{noremap=true, desc="Vim
 vim.keymap.set('n', '<leader>fc', ':Telescope bibtex<CR>', { desc = '[f]ind [c]itation' })
 
 local autocmd=vim.api.nvim_create_autocmd
+
+--resync texpresso on leaving insert mode
+autocmd({"InsertLeave"},{
+    group = vim.api.nvim_create_augroup('texpressoGroup',{}),
+    callback = function()
+        vim.cmd("TeXpressoSync")
+    end
+    })
+
 autocmd({"BufEnter","BufRead","BufNewFile"},{
     group = vim.api.nvim_create_augroup('miniClues',{}),
     pattern = '*.tex',
