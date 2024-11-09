@@ -12,7 +12,9 @@ return {
         highlight = {enable = true,
                     disable = {"tex"},
                 },
-        indent = {enable = true},
+        indent = {enable = true,
+                disable = {"cpp","c","cuda"},
+            }
         })
     end
     },
