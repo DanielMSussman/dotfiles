@@ -18,15 +18,15 @@ return {
         })
     end
     },
-    {
-    "nvim-treesitter/nvim-treesitter-context",
-    event="VimEnter",
-    config = function()
-        local tsc = require("treesitter-context").setup({
-            enable=false,
-            max_lines=2,
-            })
-        vim.keymap.set("n","<leader>y", ":TSContextToggle<CR>", {noremap=true,desc='[y] toggle treesitter context'})
-    end
-    }
+    -- {
+    -- "nvim-treesitter/nvim-treesitter-context",
+    -- event="VimEnter",
+    -- config = function()
+    --     local tsc = require("treesitter-context").setup({
+    --         enable=false,
+    --         max_lines=2,
+    --         })
+    --     vim.keymap.set("n","<leader>y", ":TSContextToggle<CR>", {noremap=true,desc='[y] toggle treesitter context'})
+    -- end
+    -- }
 }
