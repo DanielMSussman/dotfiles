@@ -14,7 +14,7 @@ return {
             formatters = {
                 cppFormatter= {
                         command = "clang-format",
-                        args = '-style="{BasedOnStyle: WebKit, AccessModifierOffset: 0,AlignAfterOpenBracket: Align, AlignOperands: Align, AllowShortIfStatementsOnASingleLine: Never, AllowShortLoopsOnASingleLine: false, BinPackArguments: false, BinPackParameters: false, BreakBeforeBraces: Whitesmiths, BreakConstructorInitializers: BeforeColon, Cpp11BracedListStyle: true, FixNamespaceComments: true, IndentWidth: 4, Language: Cpp, PointerAlignment: Left, SpaceAfterTemplateKeyword: false, SpaceBeforeParens: ControlStatements, Standard: c++14, TabWidth: 4, UseTab: Never, IndentCaseLabels: true, AllowShortCaseLabelsOnASingleLine: true}"',
+                        args = '-style="{BasedOnStyle: WebKit, AccessModifierOffset: 0,AlignAfterOpenBracket: Align, AlignOperands: Align, AllowShortIfStatementsOnASingleLine: Never, AllowShortLoopsOnASingleLine: false, BinPackArguments: false, BinPackParameters: false, BreakBeforeBraces: Whitesmiths, BreakConstructorInitializers: BeforeColon, Cpp11BracedListStyle: true, FixNamespaceComments: true, IndentWidth: 4, Language: Cpp, PointerAlignment: Left, SpaceAfterTemplateKeyword: false, SpaceBeforeParens: ControlStatements, Standard: c++14, TabWidth: 4, UseTab: Never, IndentCaseLabels: true, IndentAccessModifiers: true, AllowShortCaseLabelsOnASingleLine: true, ColumnLimit: 120}"',
                         stdin = true,
                     },
                 texFormatter= {
