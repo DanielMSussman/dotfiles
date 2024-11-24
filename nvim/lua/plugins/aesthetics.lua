@@ -68,39 +68,39 @@ return {
                         shorting_target = 40,    -- Shortens path to leave 40 spaces in the window
                                 }},
                     lualine_x = {
-                        function()
-                            local ok, pomo = pcall(require, "pomo")
-                            if not ok then
-                                return ""
-                            end
-
-                            local timer = pomo.get_first_to_finish()
-                            if timer == nil then
-                                return ""
-                            end
-
-                            return "󰄉 " .. tostring(timer)
-                        end,
+                        -- function()
+                        --     local ok, pomo = pcall(require, "pomo")
+                        --     if not ok then
+                        --         return ""
+                        --     end
+                        --
+                        --     local timer = pomo.get_first_to_finish()
+                        --     if timer == nil then
+                        --         return ""
+                        --     end
+                        --
+                        --     return "󰄉 " .. tostring(timer)
+                        -- end,
                         "fileformat",
                         "filetype",
                     },
                     lualine_y = {'progress'},
                     lualine_z = {'location'},
                 },
-                tabline = {
-                    lualine_a = {
-                        {
-                        'buffers',
-                        mode = 4,
-                        max_length = vim.o.columns,
-                        }
-                    },
-                    lualine_b = {''},
-                    lualine_c = {''},
-                    lualine_x = {},
-                    lualine_y = {},
-                    lualine_z = {''}
-                }
+                -- tabline = {
+                --     lualine_a = {
+                --         {
+                --         'buffers',
+                --         mode = 4,
+                --         max_length = vim.o.columns,
+                --         }
+                --     },
+                --     lualine_b = {''},
+                --     lualine_c = {''},
+                --     lualine_x = {},
+                --     lualine_y = {},
+                --     lualine_z = {''}
+                -- }
             })
         end
     },

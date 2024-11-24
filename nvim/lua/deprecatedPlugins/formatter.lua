@@ -12,7 +12,8 @@ return {
             devnullstring = "/dev/null"
         end
 
-        vim.keymap.set('n','<leader>q','vip:Format<CR>',{noremap=true,desc="[q] Format paragraph"})
+        vim.keymap.set("n","<leader>cf", ':Format<CR>', {noremap=true,desc="format [f]ile"})
+        vim.keymap.set("n","<leader>cp", 'vip:Format<CR>', {noremap=true,desc="format [p]aragraph"})
         require("formatter").setup({
             logging = false,
             filetype = {
