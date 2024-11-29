@@ -1,19 +1,54 @@
 return {
-    require("luasnip").snippet(
-        {trig="cmt",snippetType="snippet",desc="set up a quick doxygen comment block"},
-            fmt(
-                [[
+
+    s({trig="ONCE", snippetType="snippet",desc="header include guard based on file fname"},
+        d(1, function(args, parent)
+            local env = parent.snippet.env
+            return sn(nil,{ 
+                t {
+                    "#ifndef " .. string.upper(string.gsub(env.TM_FILENAME,"%.","_")),
+                    "#define " .. string.upper(string.gsub(env.TM_FILENAME,"%.","_")),
+                    "",
+                    "",
+                },
+                i(1,"text"),
+                t {
+                    "",
+                    "",
+                    "#endif"        
+                },
+            })
+        end, {})),
+
+    s({trig="CLASS",snippetType="snippet",desc="set up a blank class"},
+        fmt(
+            [[
+            /*!
+            This class...
+            */
+            class <>
+                {
+                public:
+                    <>
+                };
+            ]],
+            { i(1,"className"), i(0) },
+            { delimiters = "<>"}
+        )
+    ),
+
+    s({trig="cmt",snippetType="snippet",desc="set up a quick doxygen comment block"},
+        fmt(
+            [[
                 /*!
                 <>
                 */
                 ]],
             { i(1) },
             { delimiters = "<>"}
-            )
-        ),
+        )
+    ),
 
-    require("luasnip").snippet(
-        {trig="maincpp", snippetType="snippet", dscr="set up a bare-bones int main with some includes"},
+    s({trig="maincpp", snippetType="snippet", dscr="set up a bare-bones int main with some includes"},
         fmt(
             [[
             #include <cmath>
@@ -25,7 +60,7 @@ return {
             int main(int argc, char*argv[])
             {
                 int c;
-    
+
                 double x = 0.0;
                 while((c=getopt(argc,argv,"n:")) != -1)
                     switch(c)
@@ -44,14 +79,14 @@ return {
                         };
                 printf("x = %f\n",x);
                 89
-            
+
                 return 0;
             };
             ]],
             { i(1) },
             { delimiters = "89"}
-            )
-        ),
+        )
+    ),
 
 
 }
