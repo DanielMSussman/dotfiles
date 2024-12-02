@@ -53,6 +53,24 @@ local function functionDeclarationExistsInFile(cppFilename, functionDeclarationT
     return false
 end
 
+local function conditionallyConstructSignature(fileIsReadable, contentToAppend,signature,cppFilename,classAndFunction) 
+    local contentHolder = contentToAppend
+    if fileIsReadable == 0 then
+        vim.notify("adding "..classAndFunction.." to cpp file")
+        appendSignatureToTable(contentHolder,signature)
+    end 
+    if fileIsReadable ~= 0 then
+        if functionDeclarationExistsInFile(cppFilename,classAndFunction) then
+            vim.notify("implementation for "..classAndFunction.." already written")
+        else
+            vim.notify("adding "..classAndFunction.." to cpp file")
+            appendSignatureToTable(contentHolder,signature)
+        end
+    end
+    return contentHolder
+end
+
+
 local function appendAllImplementationsToCPP()
     local currentFile = vim.fn.expand("%:p")
     local cppFilename = currentFile:gsub("%.h$", ".cpp")
@@ -91,7 +109,25 @@ local function appendAllImplementationsToCPP()
         end
     end
 
+    -- from the class node, query for constructors and destructors
+    local classQuery = vim.treesitter.query.parse(
+        "cpp",
+        [[
+        (declaration
+          (function_declarator) @function_declarator)
+      ]]
+    )
+    local constructorMatches = classQuery:iter_matches(classNode:root(), 0)
+    for _, match in constructorMatches do 
+        local functionNode = match[1]
+        local functionDeclarationText = vim.treesitter.get_node_text(functionNode,0)
+        local classAndFunction = string.format("%s::%s",className,functionDeclarationText)
+        contentToAppend = conditionallyConstructSignature(fileIsReadable,contentToAppend,classAndFunction,cppFilename,classAndFunction)
+    end
+
     -- from the class node, query for pairs of types and function declarations
+    --  By starting with field_declaration, we filter out cases where the
+    --  implementation is in the header itself
     local query = vim.treesitter.query.parse(
         "cpp",
         [[
@@ -100,27 +136,16 @@ local function appendAllImplementationsToCPP()
           (function_declarator) @function_declarator)
       ]]
     )
+
     local matches = query:iter_matches(classNode:root(), 0)
     for _, match in matches do 
         local primitiveNode = match[1]
         local functionNode = match[2]
-
         local primitiveTypeText = vim.treesitter.get_node_text(primitiveNode,0)
         local functionDeclarationText = vim.treesitter.get_node_text(functionNode,0)
-        local signature = string.format(
-            "%s %s::%s",primitiveTypeText,className,functionDeclarationText)
-        if fileIsReadable == 0 then
-            vim.notify("adding "..functionDeclarationText.." to cpp file")
-            appendSignatureToTable(contentToAppend,signature)
-        end 
-        if fileIsReadable ~= 0 then
-            if functionDeclarationExistsInFile(cppFilename,tostring(className.."::"..functionDeclarationText)) then
-                vim.notify("implementation for "..functionDeclarationText.." already written")
-            else
-                vim.notify("adding "..functionDeclarationText.." to cpp file")
-                appendSignatureToTable(contentToAppend,signature)
-            end
-        end
+        local classAndFunction = string.format("%s::%s",className,functionDeclarationText)
+        local signature = string.format("%s %s",primitiveTypeText,classAndFunction)
+        contentToAppend = conditionallyConstructSignature(fileIsReadable,contentToAppend,signature,cppFilename,classAndFunction)
     end
     
     --append function implementation stub to the cpp file
