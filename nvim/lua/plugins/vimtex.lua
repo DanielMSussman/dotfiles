@@ -12,7 +12,7 @@ return {
             -- vim.g.vimtex_compiler_latexmk = {out_dir = 'build'} -- the previous if/else setting depends on whether I'm using the latexmk bundled with miktex or not, and I didn't like that dependence
 
             vim.g.vimtex_compiler_latexmk = {
-                out_dir = 'build',
+                -- out_dir = 'build',
                 options = {
                     '-shell-escape',
                     '-verbose',

@@ -48,3 +48,9 @@ if isWindows then
     vim.o.shellquote = ""
     vim.o.shellxquote = "" 
 end
+
+P = function(v)
+    print(vim.inspect(v))
+    return v
+end
+
