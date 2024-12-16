@@ -1,5 +1,6 @@
 return {
     {
+    -- dir = '~/repos/simpleCppTreesitterTools.nvim',
     "DanielMSussman/simpleCppTreesitterTools.nvim",
     dependencies = { 'nvim-treesitter/nvim-treesitter'},
     ft = "cpp",
