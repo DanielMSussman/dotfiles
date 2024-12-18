@@ -25,11 +25,15 @@ return {
     -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
     lazy = true,
     -- make sure to set opts so that lazy.nvim calls blink.compat's setup
-    opts = {},
+    opts = {impersonate_nvim_cmp = true,},
     },
     {
     'saghen/blink.cmp',
-    dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
+    dependencies = {
+            { 'L3MON4D3/LuaSnip', version = 'v2.*' },
+            { 'dmitmel/cmp-digraphs' },
+            {"micangl/cmp-vimtex"},
+        },
     lazy = false, -- lazy loading handled internally
     -- optional: provides snippets for the snippet source
     -- dependencies = 'rafamadriz/friendly-snippets',
@@ -69,23 +73,32 @@ return {
             jump = function(direction) require('luasnip').jump(direction) end,
         },
         -- default list of enabled providers defined so that you can extend it
+        providers = {
+            vimtex = {
+                name = 'vimtex',
+                module = 'blink.compat.source',
+                score_offset = -3,
+                },
+            digraphs = {
+                name = 'digraphs', -- IMPORTANT: use the same name as you would for nvim-cmp
+                module = 'blink.compat.source',
+                score_offset = -3,
+
+                opts = {
+                    cache_digraphs_on_start = true,
+                    },
+                },
+            },
         -- elsewhere in your config, without redefining it, via `opts_extend`
         sources = {
             -- default = { 'lsp', 'path', 'luasnip','buffer' },
             completion = {
-                enabled_providers = { 'lsp', 'path', 'luasnip', 'buffer' },
+                enabled_providers = { 'lsp', 'path', 'luasnip', 'buffer','digraphs' },
             },
             -- optionally disable cmdline completions
             -- cmdline = {},
         },
 
-        providers = {
-            vimtex = {
-                name = 'vimtex',
-                module = 'blink.compat.source',
-                },
-
-            },
 
         -- experimental signature help support
         signature = { enabled = true }
