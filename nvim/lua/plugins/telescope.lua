@@ -1,9 +1,11 @@
 --finding files by text string is nice...live grepping in large projects is awesome
 return {
-    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+    'nvim-telescope/telescope.nvim', 
+    tag = '0.1.8',
     dependencies = { 'nvim-lua/plenary.nvim',
         "nvim-telescope/telescope-ui-select.nvim",
         "nvim-telescope/telescope-bibtex.nvim",
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
     },
     keys = {"<leader>"}, -- leader f for usual functionality, s if we're in the start screen
    -- event = {"VimEnter"},
@@ -16,6 +18,7 @@ return {
                 },       
             },
             extensions = {
+                ['fzf'] = {},
                 ['ui-select'] = {
                     require('telescope.themes').get_dropdown(),
                 },
@@ -47,10 +50,11 @@ return {
                 }
             },
         })
+        require('telescope').load_extension('fzf')
         pcall(require('telescope').load_extension, 'ui-select')
         pcall(require('telescope').load_extension, 'bibtex')
         builtin = require("telescope.builtin")
-        local  dropdown = require('telescope.themes').get_dropdown()
+        local  dropdown = require('telescope.themes').get_ivy()
         vim.keymap.set('n', '<leader>fh', function() builtin.help_tags(dropdown) end, { desc = '[f]ind [h]elp' })
         vim.keymap.set('n', '<leader>fk', function() builtin.keymaps(dropdown) end, { desc = '[f]ind [k]eymaps' })
         vim.keymap.set('n', '<leader>ff', function() builtin.find_files(dropdown) end, { desc = '[f]ind [f]iles' })
