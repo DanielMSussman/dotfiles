@@ -23,15 +23,14 @@ return {
     -- use the latest release, via version = '*', if you also use the latest release for blink.cmp
     version = '*',
     -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
-    lazy = true,
+    -- lazy = true,
     -- make sure to set opts so that lazy.nvim calls blink.compat's setup
-    opts = {impersonate_nvim_cmp = true,},
+    opts = {impersonate_nvim_cmp = false},
     },
     {
     'saghen/blink.cmp',
     dependencies = {
             { 'L3MON4D3/LuaSnip', version = 'v2.*' },
-            { 'dmitmel/cmp-digraphs' },
             {"micangl/cmp-vimtex"},
         },
     lazy = false, -- lazy loading handled internally
@@ -49,7 +48,7 @@ return {
         -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
         -- see the "default configuration" section below for full documentation on how to define
         -- your own keymap.
-        keymap = { preset = 'default' },
+        keymap = { preset = 'enter' },
 
         appearance = {
             -- Sets the fallback highlight groups to nvim-cmp's highlight groups
@@ -73,38 +72,29 @@ return {
             jump = function(direction) require('luasnip').jump(direction) end,
         },
         -- default list of enabled providers defined so that you can extend it
-        providers = {
-            vimtex = {
-                name = 'vimtex',
-                module = 'blink.compat.source',
-                score_offset = -3,
-                },
-            digraphs = {
-                name = 'digraphs', -- IMPORTANT: use the same name as you would for nvim-cmp
-                module = 'blink.compat.source',
-                score_offset = -3,
-
-                opts = {
-                    cache_digraphs_on_start = true,
-                    },
-                },
-            },
         -- elsewhere in your config, without redefining it, via `opts_extend`
         sources = {
             -- default = { 'lsp', 'path', 'luasnip','buffer' },
             completion = {
-                enabled_providers = { 'lsp', 'path', 'luasnip', 'buffer','digraphs' },
-            },
+                enabled_providers = {'lsp', 'path', 'luasnip', 'buffer','vimtex'},
+                },
             -- optionally disable cmdline completions
             -- cmdline = {},
+            providers = {
+                -- create provider
+                vimtex = {
+                    name = 'vimtex',
+                    module = 'blink.compat.source',
+                    },
+                },
+            },
+        -- experimental signature help support
+        signature = { enabled = true },
         },
 
 
-        -- experimental signature help support
-        signature = { enabled = true }
-    },
     -- allows extending the providers array elsewhere in your config
     -- without having to redefine it
-    opts_extend = { "sources.default" }
+    opts_extend = { "sources.default" },
     },
 }
