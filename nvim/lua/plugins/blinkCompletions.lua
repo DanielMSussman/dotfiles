@@ -85,6 +85,7 @@ return {
                 vimtex = {
                     name = 'vimtex',
                     module = 'blink.compat.source',
+                    score_offset = 3,
                     },
                 },
             },
