@@ -92,43 +92,41 @@ return {
             t("\\Omega"),
         }
     ),
-    s({trig=";t",snippetType="autosnippet",desc="tau/theta",wordTrig=false},
-        fmta([[
-            <>
-            ]],
-            {
-            c(1,{
-                t("\\tau"),
-                t("\\theta")
-                })
-            }
-        )
+    s({trig=";t", snippetType="autosnippet", desc="tau",wordTrig=false},
+        {
+            t("\\tau"),
+        }
     ),
-    s({trig=";e",snippetType="autosnippet",desc="episilon/eta",wordTrig=false},
-        fmta([[
-            <>
-            ]],
-            {
-            c(1,{
-                t("\\epsilon"),
-                t("\\eta")
-                })
-            }
-        )
+    s({trig="\\tauh", snippetType="autosnippet", desc="theta",wordTrig=false},
+        {
+            t("\\theta"),
+        }
+    ),
+    s({trig=";e", snippetType="autosnippet", desc="epsilon",wordTrig=false},
+        {
+            t("\\epsilon"),
+        }
+    ),
+    s({trig="\\epsilont", snippetType="autosnippet", desc="eta",wordTrig=false},
+        {
+            t("\\eta"),
+        }
     ),
 
-    s({trig=";p",snippetType="autosnippet",desc="pi/phi/psi",wordTrig=false},
-        fmta([[
-            <>
-            ]],
-            {
-            c(1,{
-                t("\\pi"),
-                t("\\phi"),
-                t("\\psi")
-                })
-            }
-        )
+    s({trig=";p", snippetType="autosnippet", desc="pi",wordTrig=false},
+        {
+            t("\\pi"),
+        }
+    ),
+    s({trig="\\pih", snippetType="autosnippet", desc="phi",wordTrig=false},
+        {
+            t("\\phi"),
+        }
+    ),
+    s({trig="\\pis", snippetType="autosnippet", desc="psi",wordTrig=false},
+        {
+            t("\\psi"),
+        }
     ),
 
 }
