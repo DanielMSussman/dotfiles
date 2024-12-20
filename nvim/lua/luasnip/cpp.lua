@@ -1,3 +1,12 @@
+--test whether the parent snippet has content from a visual selection. If yes, put into a text  node, if no then start an insert node
+local visualSelectionOrInsert = function(args, parent)
+  if (#parent.snippet.env.LS_SELECT_RAW > 0) then
+    return sn(nil, t( parent.snippet.env.LS_SELECT_RAW))
+  else  -- If LS_SELECT_RAW is empty, return a blank insert node
+    return sn(nil, i(1))
+  end
+end
+
 return {
 
     s({trig="ONCE", snippetType="snippet",desc="header include guard based on file fname"},
@@ -48,6 +57,17 @@ return {
         )
     ),
 
+    s({trig = "enablecuda", dscr = "add preprocessor directives based on ENABLE_CUDA either in insert mode or wrapping a visual selection"},
+        fmt(
+            [[
+            #ifdef ENABLE_CUDA
+            <>
+            #endif
+            ]],
+            { d(1, visualSelectionOrInsert) },
+            { delimiters = "<>"}
+        )
+    ),
     s({trig="maincpp", snippetType="snippet", dscr="set up a bare-bones int main with some includes"},
         fmt(
             [[
