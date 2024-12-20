@@ -1,7 +1,8 @@
 --convenient quick view of files in a tree view
 return {
     "nvim-neo-tree/neo-tree.nvim",
-    event = "VimEnter",
+    -- event = "VimEnter",
+    keys = {"<C-n>"},
     branch = "v3.x",
     dependencies = {
         "nvim-lua/plenary.nvim",
