@@ -1,11 +1,30 @@
 local autogroup = vim.api.nvim_create_augroup
+local autocmd=vim.api.nvim_create_autocmd
 
 --do I understand autogroups? not really. I guess it's about disabling whole groups of them at a time?
 local sussmanGroup = autogroup('DMS',{})
 local vimtexGroup = vim.api.nvim_create_augroup("vimtex_events", {})
 local yankGroup = autogroup('HighlightYank', {})
 
-local autocmd=vim.api.nvim_create_autocmd
+
+--call that function when moving between windows
+autocmd({"WinEnter","WinLeave"},{
+    group=autogroup("windowSettings", {clear = false}),
+    pattern = "*",
+    callback = function ()
+        local current_win = vim.api.nvim_get_current_win()
+        local all_wins = vim.api.nvim_list_wins()
+
+        for _, wind in ipairs(all_wins) do
+            if wind == current_win then
+                vim.api.nvim_set_option_value("relativenumber",true,{scope="local",win=wind})
+            else
+                vim.api.nvim_set_option_value("relativenumber",false,{scope="local",win=wind})
+            end
+        end
+    end
+})
+
 -- resize splits if the window itself is resized
 autocmd('VimResized',{
         group=sussmanGroup,
