@@ -14,7 +14,7 @@ return {
             vim.g.vimtex_compiler_latexmk = {
                 -- out_dir = 'build',
                 options = {
-                    '-shell-escape',
+                    -- '-shell-escape',
                     '-verbose',
                     '-file-line-error',
                     '-interaction=nonstopmode',
