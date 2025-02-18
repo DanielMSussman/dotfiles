@@ -50,4 +50,24 @@ return {
       --      vim.cmd.colorscheme("nord")
         end,
     },
+    {
+        "EdenEast/nightfox.nvim",
+        lazy = true,
+      -- lazy = false,
+      -- priority = 1000,
+        config = function()
+            -- require("nordic").setup({})
+      --      vim.cmd.colorscheme("nord")
+        end,
+    },
+    {
+        "sainnhe/gruvbox-material",
+        lazy = true,
+      -- lazy = false,
+      -- priority = 1000,
+        config = function()
+            -- require("nordic").setup({})
+      --      vim.cmd.colorscheme("nord")
+        end,
+    },
 }
