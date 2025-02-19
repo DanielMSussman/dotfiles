@@ -11,10 +11,12 @@ return {
                         width = "0.9\\textwidth",
                         fontupper = "\\footnotesize",
                         top = "0.5pt",
-                        bottom = "0.5pt",
+                            bottom = "0.5pt",
+                        colbacktitle="{rgb,255:red,67;green,67;blue,108}",
+                        coltitle = "{rgb,255:red,213;green,206;blue,163}",
+                        fonttitle="\\scshape\\ttfamily",
                     },
         })
     end
     },
 }
-
