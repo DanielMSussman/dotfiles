@@ -22,7 +22,6 @@
   "nvim-lspconfig": { "branch": "master", "commit": "1110787f1b464888c59a044c48c5119d14078044" },
   "nvim-treesitter": { "branch": "master", "commit": "2c4c8c10ed440ddf8df5ac8811d5c8ee5fc23d11" },
   "nvim-web-devicons": { "branch": "master", "commit": "1020869742ecb191f260818234517f4a1515cfe8" },
-  "obsidian.nvim": { "branch": "main", "commit": "ae1f76a75c7ce36866e1d9342a8f6f5b9c2caf9b" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "simpleCppTreesitterTools.nvim": { "branch": "main", "commit": "123fd98ffb5b77df1428bb5df60e06cf2b8a71d4" },
   "telescope-bibtex.nvim": { "branch": "master", "commit": "289a6f86ebec06e8ae1590533b732b9981d84900" },
