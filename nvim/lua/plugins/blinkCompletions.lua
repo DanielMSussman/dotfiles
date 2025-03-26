@@ -50,7 +50,7 @@ return {
             -- ensure you have the `snippets` source (enabled by default)
             sources = {
                 -- default = { 'lsp', 'path', 'snippets', 'buffer','vimtex' },
-                default = { 'lsp', 'snippets', 'buffer','vimtex' },
+                default = { 'lsp', 'path','cmdline','snippets', 'buffer','vimtex' },
                 providers = {
                     snippets = {
                         score_offset = 1,
