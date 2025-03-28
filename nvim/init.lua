@@ -39,6 +39,9 @@ require("lazy").setup("plugins")
 require("keymaps")
 require("autocmds")
 require("filetypes")
+
+vim.lsp.enable({'luals', 'clangd'})
+
 --recommended settings to use pwsh instead of cmd.exe
 if isWindows then
     vim.o.shell="pwsh"
@@ -53,4 +56,3 @@ P = function(v)
     print(vim.inspect(v))
     return v
 end
-
