@@ -20,13 +20,11 @@ vim.opt.rtp:prepend(lazypath)
 vim.cmd("let computerName=split(system('hostname'))[0]")
 vim.cmd("let frameworkName='Sussman-Framework'")
 vim.cmd("let workLaptopName='PHY-DMSUSSM-01M'")
--- vim.cmd("let computerName=system('hostname')")
 --flag for the framework laptop
--- isFramework= vim.startswith(computerName,'Sussman-Framework')
 isFramework= vim.api.nvim_eval('computerName==frameworkName') == 1
 isEmoryWindows= vim.api.nvim_eval('computerName==workLaptopName') == 1
 isWindows = vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win16") == 1
-isMac = vim.fn.has("mac") == 1 
+isMac = vim.fn.has("mac") == 1
 
 -- set up leader and local leader, and set vim options before loading plugins
 vim.g.mapleader = " "
@@ -39,8 +37,7 @@ require("lazy").setup("plugins")
 require("keymaps")
 require("autocmds")
 require("filetypes")
-
-vim.lsp.enable({'luals', 'clangd'})
+require("lspAndDiagnostics")
 
 --recommended settings to use pwsh instead of cmd.exe
 if isWindows then
@@ -49,10 +46,5 @@ if isWindows then
     vim.o.shellredir = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
     vim.o.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
     vim.o.shellquote = ""
-    vim.o.shellxquote = "" 
-end
-
-P = function(v)
-    print(vim.inspect(v))
-    return v
+    vim.o.shellxquote = ""
 end

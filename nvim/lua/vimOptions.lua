@@ -42,6 +42,6 @@ vim.o.pumblend=20
 vim.cmd("set history=1000")
 -- vim.cmd("set scrolloff=10")
 
-vim.cmd("highlight Spellbad  cterm=underline gui=underline") 
+vim.cmd("highlight Spellbad  cterm=underline gui=underline")
 vim.cmd("highlight SpellRare  cterm=underdashed gui=underdashed")
 vim.cmd("highlight SpellCap  cterm=underdotted gui=underdotted")
