@@ -1,12 +1,25 @@
 vim.lsp.enable({'luals', 'clangd'})
-vim.diagnostic.config({
-  -- Use the default configuration
-  -- virtual_lines = true
 
-  -- Alternatively, customize specific options
+vim.diagnostic.config({
+  virtual_text = {
+    severity = {
+      max = vim.diagnostic.severity.WARN,
+    },
+  },
   virtual_lines = {
-   -- Only show virtual line diagnostics for the current cursor line
-   current_line = true,
+    severity = {
+      min = vim.diagnostic.severity.ERROR,
+    },
   },
 })
 
+-- vim.diagnostic.config({
+--   -- Use the default configuration
+--   -- virtual_lines = true
+--
+--   -- Alternatively, customize specific options
+--   virtual_lines = {
+--    -- Only show virtual line diagnostics for the current cursor line
+--    current_line = true,
+--   },
+-- })
