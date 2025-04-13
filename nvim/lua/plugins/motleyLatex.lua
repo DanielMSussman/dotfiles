@@ -4,6 +4,7 @@ return {
     "DanielMSussman/motleyLatex.nvim",
     config = function()
         require("motleyLatex").setup({
+                --colbacktitle and coltitle are sumiInk5 and fujiWhite from kanagawa
                     tcolorbox_opts = {
                     --overwrite any default options, or add new ones
                         colframe = "black!40",
@@ -12,8 +13,8 @@ return {
                         fontupper = "\\footnotesize",
                         top = "0.5pt",
                             bottom = "0.5pt",
-                        colbacktitle="{rgb,255:red,67;green,67;blue,108}",
-                        coltitle = "{rgb,255:red,213;green,206;blue,163}",
+                        colbacktitle="{rgb,255:red,54;green,54;blue,70}",
+                        coltitle = "{rgb,255:red,220;green,215;blue,186}",
                         fonttitle="\\scshape\\ttfamily",
                     },
         })
