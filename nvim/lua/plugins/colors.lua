@@ -7,17 +7,51 @@ return {
     --     -- priority = 1000,
     --     opts = {},
     -- },
+    -- {
+    --     "webhooked/kanso.nvim",
+        -- lazy = false,
+        -- lazy = true,
+    --     priority=10000,
+    --     config = function()
+    --         require('kanso').setup({
+    --             compile = false, -- enable compiling the colorscheme
+    --             undercurl = true, -- enable undercurls
+    --             commentStyle = { italic = true },
+    --             functionStyle = {},
+    --             keywordStyle = { italic = true },
+    --             statementStyle = {},
+    --             typeStyle = {},
+    --             disableItalics = false,
+    --             transparent = false, -- do not set background color
+    --             dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+    --             terminalColors = true, -- define vim.g.terminal_color_{0,17}
+    --             colors = { -- add/modify theme and palette colors
+    --                 palette = {},
+    --                 theme = { zen = {}, pearl = {}, ink = {}, all = {} },
+    --             },
+    --             overrides = function(colors) -- add/modify highlights
+    --                 return {}
+    --             end,
+    --             theme = "pearl", -- Load "zen" theme
+    --             background = { -- map the value of 'background' option to a theme
+    --                 dark = "zen", -- try "ink" !
+    --                 light = "pearl"
+    --             },
+    --         })
+    --         -- vim.cmd.colorscheme('kanso')
+    --     end
+    -- },
     {
         'sainnhe/everforest',
         -- lazy = false,
         -- priority = 1000,
-        lazy=true,
+        lazy = true,
         config = function()
             -- Optionally configure and load the colorscheme
             -- directly inside the plugin declaration.
-            vim.g.everforest_background ='hard'
+            vim.g.everforest_background = 'hard'
             vim.g.everforest_enable_italic = true
---            vim.cmd.colorscheme('everforest')
+            --            vim.cmd.colorscheme('everforest')
         end
     },
     -- {
@@ -31,18 +65,18 @@ return {
     --     end,
     -- },
     {
-    "zenbones-theme/zenbones.nvim",
-    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
-    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
-    -- In Vim, compat mode is turned on as Lush only works in Neovim.
-    dependencies = "rktjmp/lush.nvim",
-    lazy = true,
-    priority = 1000,
-    -- you can set set configuration options here
-    -- config = function()
-    --     vim.g.zenbones_darken_comments = 45
-    --     vim.cmd.colorscheme('zenbones')
-    -- end
+        "zenbones-theme/zenbones.nvim",
+        -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+        -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+        -- In Vim, compat mode is turned on as Lush only works in Neovim.
+        dependencies = "rktjmp/lush.nvim",
+        lazy = true,
+        priority = 1000,
+        -- you can set set configuration options here
+        -- config = function()
+        --     vim.g.zenbones_darken_comments = 45
+        --     vim.cmd.colorscheme('zenbones')
+        -- end
     },
     -- {
     --     "EdenEast/nightfox.nvim",
