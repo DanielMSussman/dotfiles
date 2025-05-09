@@ -45,7 +45,7 @@ return {
         -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
         -- see the "default configuration" section below for full documentation on how to define
         -- your own keymap.
-        keymap = { preset = 'default' },
+        keymap = { preset = 'super-tab' },
             snippets = { preset = 'luasnip' },
             -- ensure you have the `snippets` source (enabled by default)
             sources = {
@@ -53,7 +53,7 @@ return {
                 default = { 'lsp', 'path','cmdline','snippets', 'buffer','vimtex' },
                 providers = {
                     snippets = {
-                        score_offset = 1,
+                        score_offset = 5,
                     },
                     vimtex = {
                         name = 'vimtex',
