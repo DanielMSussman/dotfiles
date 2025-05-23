@@ -11,6 +11,7 @@ return {
                         boxrule = "0.5pt", 
                         width = "0.9\\textwidth",
                         fontupper = "\\footnotesize",
+                        breakable="true",
                         top = "0.5pt",
                             bottom = "0.5pt",
                         colbacktitle="{rgb,255:red,54;green,54;blue,70}",
