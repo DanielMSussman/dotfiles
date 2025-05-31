@@ -1,9 +1,12 @@
 ENV["EDITOR"] = "nvim"
-atreplinit() do repl
-    @eval using Revise
-    @eval using BenchmarkTools
-    @eval using JET
-end
+using Revise
+using BenchmarkTools
+
+# atreplinit() do repl
+#     @eval using Revise
+#     @eval using BenchmarkTools
+#     @eval using JET
+# end
 
 # if isinteractive()
 #     using OhMyREPL
