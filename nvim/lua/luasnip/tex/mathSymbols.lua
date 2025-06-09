@@ -53,15 +53,15 @@ return {
     --postfixes for vectors, hats, etc. The match pattern is '\\' plus the default (so that hats get put on greek letters, etc)
     postfix({trig="hat", match_pattern = [[[\\%w%.%_%-%"%']+$]], snippetType="autosnippet",dscr="postfix hat when in math mode"},
         {l("\\hat{" .. l.POSTFIX_MATCH .. "}")}, 
-        { show_condition=math }
+        { condition=math }
     ) ,
     postfix({trig="vec", match_pattern = [[[\\%w%.%_%-%"%']+$]] ,snippetType="autosnippet",dscr="postfix vec when in math mode"},
         {l("\\vec{" .. l.POSTFIX_MATCH .. "}")}, 
-        { show_condition=math }
+        { condition=math }
     ) ,
 
     postfix({trig="df",snippetType="autosnippet",desc="postfix differential (physics package)"},
         {l("\\dd{" .. l.POSTFIX_MATCH .. "}")}, 
-        {show_condition = math}
+        {condition = math}
     ),
 }
