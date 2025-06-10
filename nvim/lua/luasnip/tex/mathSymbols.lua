@@ -24,19 +24,19 @@ return {
         {
             t("\\nabla\\cdot"),
         },
-        { show_condition=math }
+        { condition=math }
     ),
     s({trig="grad", snippetType="autosnippet", desc="gradient",wordTrig=false},
         {
             t("\\nabla"),
         },
-        { show_condition=math }
+        { condition=math }
     ),
     s({trig="curl", snippetType="autosnippet", desc="curl",wordTrig=false},
         {
             t("\\nabla\\times"),
         },
-        { show_condition=math }
+        { condition=math }
     ),
     s({trig=";I",snippetType="autosnippet",desc="integral with infinite or inserted limits",wordTrig=false},
         fmta([[
