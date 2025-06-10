@@ -8,7 +8,7 @@ using BenchmarkTools
 #     @eval using JET
 # end
 
-# if isinteractive()
+# if isinteractive() # use PackageCompiler to precompile this into a system image
 #     using OhMyREPL
 #     using Crayons
 #     import OhMyREPL: Passes.SyntaxHighlighter
