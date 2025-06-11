@@ -41,6 +41,16 @@ return {
         end
     },
 
+    {
+        'folke/styler.nvim',
+        config = function()
+            require("styler").setup({
+                themes = {
+                    julia = { colorscheme = "kanagawa-lotus",background = "light" },
+                },
+            })
+        end,
+    },
     --lualine
     {
         'nvim-lualine/lualine.nvim',
