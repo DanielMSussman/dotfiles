@@ -9,6 +9,7 @@ return {
                 file_icons = false,
                 color_icons = false,
                 },
+                file_ignore_patterns = {"%.nc","%.h5","%.dat"},
         })
         vim.keymap.set('n', '<leader>ff', require("fzf-lua").files, { desc = '[f]ind [f]iles' })
         vim.keymap.set('n', '<leader>fg', require("fzf-lua").live_grep, { desc = '[f]ind by [g]rep' })
