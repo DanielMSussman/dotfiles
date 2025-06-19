@@ -3,8 +3,6 @@ vim.keymap.set("n","<S-h>" ,"ge",{noremap=true,desc="go to the end of last word"
 --vim.keymap.set("n","<leader>p",'\"0p',{desc = 'paste last yank'})
 --vim.keymap.set("n","<leader>P",'\"0P',{desc = 'Paste last yank'})
 
-vim.keymap.set("n","<leader>z","a<C-x>s",{noremap = true, desc = '[z] drop-down spelling suggestion of word under cursor'})
-
 vim.keymap.set("n", "<C-d>", "<C-d>zz",{desc = 'move down and center'})
 vim.keymap.set("n", "<C-u>", "<C-u>zz",{desc = 'move up and center'})
 vim.keymap.set("n", "n", "nzzzv",{desc = 'find next, center, and open any fold'})
@@ -40,13 +38,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local map = function(keys,func,desc)
             vim.keymap.set('n',keys,func,{buffer = event.buf,desc='LSP: ' .. desc})
         end
-        map('gd', require('telescope.builtin').lsp_definitions, '[g]oto [d]efinition')
+        map('gd', require("fzf-lua").lsp_definitions, '[g]oto [d]efinition')
         map('gD', vim.lsp.buf.declaration, '[g]oto [D]eclaration')
-        map('gi', require('telescope.builtin').lsp_implementations, '[G]oto [i]mplementation')
+        map('gi', require("fzf-lua").lsp_implementations, '[G]oto [i]mplementation')
         map('<leader>ls',vim.lsp.buf.signature_help,'[s]ignature help')
         map('<leader>lr',vim.lsp.buf.references,'[r]eferences')
         map('<leader>ln',vim.lsp.buf.rename,'re[n]ame all references to symbol')
-        map('<leader>ltr', require('telescope.builtin').lsp_references, '[t]elescope [r]eferences')
         map('<leader>lc',vim.lsp.buf.code_action,'[c]ode action')
         map('<leader>ld',vim.diagnostic.open_float,'[d]iagnostic window for error or warning')
         map('[K]',vim.lsp.buf.hover,'[K] hover information')
