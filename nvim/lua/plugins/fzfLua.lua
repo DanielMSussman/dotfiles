@@ -15,6 +15,7 @@ return {
         vim.keymap.set('n', '<leader>fg', require("fzf-lua").live_grep, { desc = '[f]ind by [g]rep' })
         vim.keymap.set('n', '<leader>fh', require("fzf-lua").helptags, { desc = '[f]ind [h]elp' })
         vim.keymap.set('n', '<leader>fb', require("fzf-lua").buffers ,{ desc = '[f]ind existing [b]uffers' })
+        vim.keymap.set('n', '<leader>fr', require("fzf-lua").resume ,{ desc = '[f]ind [r]esume (last picker)' })
         vim.keymap.set('n', '<leader>fk', require("fzf-lua").keymaps, { desc = '[f]ind [k]eymaps' })
         vim.keymap.set('n', '<leader>fc', require("fzf-lua").git_bcommits , { desc = '[f]ind [c]ommits for file' })
 
