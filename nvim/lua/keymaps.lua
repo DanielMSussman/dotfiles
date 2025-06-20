@@ -60,17 +60,3 @@ vim.api.nvim_create_autocmd('LspDetach', {
 
 vim.keymap.set('n','[d',vim.diagnostic.goto_next, {desc = 'Next warning or error'})
 vim.keymap.set('n',']d',vim.diagnostic.goto_prev, {desc = 'Next warning or error'})
-
--- obsidian
-vim.keymap.set('n','<localleader>ov',':ObsidianOpen<CR>',
-    {noremap=true, desc="Obsidian: [v]iew in app"})
-vim.keymap.set('n','<localleader>on',':ObsidianNew<CR>',
-    {noremap=true, desc="Obsidian: [n]ew note"})
-vim.keymap.set('n','<localleader>of',':ObsidianFollowLink vsplit<CR>',
-    {noremap=true, desc="Obsidian: [f]ollow link in split"})
-vim.keymap.set('n','<localleader>ob',':ObsidianBacklinks<CR>',
-    {noremap=true, desc="Obsidian: list [b]acklinks"})
-vim.keymap.set('n','<localleader>ot',':ObsidianTemplate<CR>',
-    {noremap=true, desc="Obsidian: [t]emplate picker"})
-vim.keymap.set('v','L',':ObsidianLinkNew<CR>',
-    {noremap=true, desc="Obsidian: create new note from selected text"})

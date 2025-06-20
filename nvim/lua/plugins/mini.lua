@@ -107,8 +107,6 @@ return {
             { mode = 'n', keys = '<Leader>g', desc = '([g]it commands)' },
             { mode = 'n', keys = '<Leader>c', desc = '([c]onform formatting)' },
             { mode = 'n', keys = '<Leader>l', desc = '([L]SP commands)' },
-            { mode = 'n', keys = '<localLeader>o', desc = '([o]bsidian and md commands)' },
-            { mode = 'n', keys = '<Leader>s', desc = '([S]ession management)' },
             -- { mode = 'n', keys = '<Leader>t', desc = '([t]rouble)' },
             { mode = 'n', keys = '<localLeader>l', desc = '(additional [l]atex/VimTex commands)' },
             { mode = 'n', keys = '<C-x><C-n>', desc = 'neotree show filesystem'},
