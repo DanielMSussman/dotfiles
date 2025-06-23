@@ -1,6 +1,12 @@
 ENV["EDITOR"] = "nvim"
-using Revise
-using BenchmarkTools
+if isinteractive()
+    using Revise
+    using BenchmarkTools
+    using Pkg
+    if isfile("Project.toml")
+        Pkg.activate(".")
+    end
+end
 
 # atreplinit() do repl
 #     @eval using Revise
