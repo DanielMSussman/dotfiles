@@ -6,6 +6,33 @@ if isinteractive()
     if isfile("Project.toml")
         Pkg.activate(".")
     end
+
+    if !any(path -> path == "@plotting", LOAD_PATH)
+        push!(LOAD_PATH, "@plotting")
+        @info "Added @plotting environment to LOAD_PATH."
+    end
+    function usePlots(backend::Symbol = :interactive)
+        @eval using juliaPlottingKit
+        @eval using Makie
+
+        if backend in (:interactive, :gl)
+            @eval using GLMakie
+            Base.invokelatest(GLMakie.activate!)
+            println("Plotting enabled with GLMakie (interactive).... `usePlots(:cairo)` for svg")
+        elseif backend in (:publication, :cairo)
+            @eval using CairoMakie
+            # Set CairoMakie to produce vector graphics (svg) or raster (png)
+            Base.invokelatest(CairoMakie.activate!, type = "svg")
+            println("Plotting enabled with CairoMakie... `usePlots(:gl)` for GLMakie .")
+        else
+            @error "Unknown backend: `$backend`. Use `:interactive` or `:publication`."
+            return
+        end
+    
+        # Apply your custom theme by default
+        Base.invokelatest(juliaPlottingKit.setMyPlotTheme!)
+        println("Base theme from generalAesthetics")
+    end
 end
 
 # atreplinit() do repl
