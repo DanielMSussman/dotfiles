@@ -1,8 +1,15 @@
 Import-Module PSReadLine
+Import-Module PSFzf
+
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 Set-PSReadLineOption -PredictionViewStyle ListView
-Set-PSReadlineKeyHandler -Key "Tab" -Function Complete
+Set-PSReadlineKeyHandler -Key "Tab" -ScriptBlock { Invoke-FzfTabCompletion }
+# Set-PSReadlineKeyHandler -Key "Tab" -Function Complete
 Set-PSReadlineOption -BellStyle None 
+
+# Override PSReadLine's history search
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' `
+                -PSReadlineChordReverseHistory 'Ctrl+r'
 
 Import-Module Get-ChildItemColor
 Set-Alias -Name ls -Value Get-ChildItemColorFormatWide
@@ -15,13 +22,18 @@ $WslDefaultParameterValues["less"] = "-i"
 $WslDefaultParameterValues["ls"] = "-hl --group-directories-first --color=always"
 $WslEnvironmentVariables = @{}
 
-Function goLeviathan {ssh -p 51151 user@leviathan.physics.emory.edu}
+Function goLeviathan {ssh dmsussma@leviathan.physics.emory.edu}
 Function goNCSA {ssh dsussman@login.delta.ncsa.illinois.edu}
 Function goBehemoth {ssh sussman@behemoth.physics.emory.edu}
 Set-Alias -Name lev -Value goLeviathan
 Set-Alias -Name ncsa -Value goNCSA
 Set-Alias -Name behemoth -Value goBehemoth
 
+function juliaImage {
+    julia --sysimage=C:\Users\dmsussm\OMR-sysimage.so
+}
+
+Set-Alias jul juliaImage
 
 function prompt {
         $p = $executionContext.SessionState.Path.CurrentLocation
@@ -43,7 +55,7 @@ if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
 
-oh-my-posh init pwsh --config 'C:\Users\daniel\AppData\Local\Programs\oh-my-posh\themes\peru.omp.json' | Invoke-Expression
+oh-my-posh init pwsh --config 'C:\Users\dmsussm\AppData\Local\Programs\oh-my-posh\themes\peru.omp.json' | Invoke-Expression
 #oh-my-posh init pwsh --config 'C:\Users\dmsussm\AppData\Local\Programs\oh-my-posh\themes\nordtron.omp.json' | Invoke-Expression
 
 $WslEnvironmentVariables["LS_COLORS"]= "di=1;38;2;143;188;187:or=1;38;2;236;239;244;48;2;191;97;106:ln=1;38;2;163;190;140:ca=0:su=0:mi=1;38;2;236;239;244;48;2;191;97;106:ex=1;38;2;208;135;112:do=1;38;2;180;142;173;48;2;67;76;94:fi=0;38;2;76;86;106:so=1;38;2;180;142;173;48;2;67;76;94:ow=0:st=0:*~=0;38;2;67;76;94:pi=1;38;2;235;203;139;48;2;67;76;94:rs=0;38;2;76;86;106:mh=0:sg=0:cd=1;38;2;235;203;139;48;2;67;76;94:bd=1;38;2;235;203;139;48;2;67;76;94:no=0;38;2;76;86;106:tw=0"
