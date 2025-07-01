@@ -18,12 +18,12 @@ if isinteractive()
         if backend in (:interactive, :gl)
             @eval using GLMakie
             Base.invokelatest(GLMakie.activate!)
-            println("Plotting enabled with GLMakie (interactive).... `usePlots(:cairo)` for svg")
+            println("Plotting enabled with GLMakie... Use `usePlots(:cairo)` for svg")
         elseif backend in (:publication, :cairo)
             @eval using CairoMakie
             # Set CairoMakie to produce vector graphics (svg) or raster (png)
             Base.invokelatest(CairoMakie.activate!, type = "svg")
-            println("Plotting enabled with CairoMakie... `usePlots(:gl)` for GLMakie .")
+            println("Plotting enabled with CairoMakie... Use `usePlots(:gl)` for GLMakie")
         else
             @error "Unknown backend: `$backend`. Use `:interactive` or `:publication`."
             return
@@ -31,7 +31,7 @@ if isinteractive()
     
         # Apply your custom theme by default
         Base.invokelatest(juliaPlottingKit.setMyPlotTheme!)
-        println("Base theme from generalAesthetics")
+        println("Base theme from generalAesthetics set")
     end
 end
 
