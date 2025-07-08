@@ -7,11 +7,23 @@ if isinteractive()
         Pkg.activate(".")
     end
 
-    if !any(path -> path == "@plotting", LOAD_PATH)
-        push!(LOAD_PATH, "@plotting")
-        @info "Added @plotting environment to LOAD_PATH."
-    end
     function usePlots(backend::Symbol = :interactive)
+        deps = Pkg.dependencies()
+        if any(info -> info.name == "juliaPlottingKit", values(deps))
+            println("juliaPlottingKit is already an explicit dependency of the current project. Returning without doing anything")
+            return nothing
+        end
+
+        if any(info -> info.name == "Makie", values(deps))
+            println("Makie is already an explicit dependency of the current project. Returning without doing anything.")
+            return nothing
+        end
+
+        if !any(path -> path == "@plotting", LOAD_PATH)
+            push!(LOAD_PATH, "@plotting")
+            @info "Added @plotting environment to LOAD_PATH."
+        end
+
         @eval using juliaPlottingKit
         @eval using Makie
 
