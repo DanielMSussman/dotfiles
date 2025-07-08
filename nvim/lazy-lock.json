@@ -12,6 +12,7 @@
   "lualine.nvim": { "branch": "master", "commit": "a94fc68960665e54408fe37dcf573193c4ce82c9" },
   "lush.nvim": { "branch": "main", "commit": "45a79ec4acb5af783a6a29673a999ce37f00497e" },
   "mini.clue": { "branch": "main", "commit": "8b8598afa285f2a25cfd15a67e7eaa210ad405c3" },
+  "mini.files": { "branch": "main", "commit": "49c855977e9f4821d1ed8179ed44fe098b93ea2a" },
   "mini.notify": { "branch": "main", "commit": "3a06b21dd0b335b95d125eae813276113b5e9ce7" },
   "motleyLatex.nvim": { "branch": "main", "commit": "47954d0791a2d986319cee6a8565d4b51746179b" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "f481de16a0eb59c985abac8985e3f2e2f75b4875" },
@@ -21,7 +22,6 @@
   "nvim-web-devicons": { "branch": "master", "commit": "1fb58cca9aebbc4fd32b086cb413548ce132c127" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "simpleCppTreesitterTools.nvim": { "branch": "main", "commit": "f693dcd37bd8e053bb02c3d1c4b192f84f4ae906" },
-  "vim-be-better": { "branch": "master", "commit": "c303f23dbddde79ee9e1ae1db42b53e38ffc362a" },
   "vimtex": { "branch": "master", "commit": "4b4f18b1b181cdea35fdc418e5eb511f20e1f0fb" },
   "zenbones.nvim": { "branch": "main", "commit": "510819be60a7e470f244488bc705c1fbcd88c4fc" }
 }
