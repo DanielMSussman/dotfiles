@@ -40,10 +40,6 @@ if isinteractive()
             @error "Unknown backend: `$backend`. Use `:interactive` or `:publication`."
             return
         end
-    
-        # Apply your custom theme by default
-        Base.invokelatest(juliaPlottingKit.setMyPlotTheme!)
-        println("Base theme from generalAesthetics set")
     end
 end
 
