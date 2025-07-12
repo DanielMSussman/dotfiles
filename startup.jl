@@ -9,13 +9,8 @@ if isinteractive()
 
     function usePlots(backend::Symbol = :interactive)
         deps = Pkg.dependencies()
-        if any(info -> info.name == "juliaPlottingKit", values(deps))
-            println("juliaPlottingKit is already an explicit dependency of the current project. Returning without doing anything")
-            return nothing
-        end
-
-        if any(info -> info.name == "Makie", values(deps))
-            println("Makie is already an explicit dependency of the current project. Returning without doing anything.")
+        if any(info -> info.name == "juliaPlottingKit" || info.name == "Makie", values(deps))
+            println("juliaPlottingKit or Makie is already an explicit dependency of the current project. Returning without doing anything")
             return nothing
         end
 
@@ -25,14 +20,14 @@ if isinteractive()
         end
 
         @eval using juliaPlottingKit
-        @eval using Makie
+        @eval import Makie
 
         if backend in (:interactive, :gl)
-            @eval using GLMakie
+            @eval import GLMakie
             Base.invokelatest(GLMakie.activate!)
             println("Plotting enabled with GLMakie... Use `usePlots(:cairo)` for svg")
         elseif backend in (:publication, :cairo)
-            @eval using CairoMakie
+            @eval import CairoMakie
             # Set CairoMakie to produce vector graphics (svg) or raster (png)
             Base.invokelatest(CairoMakie.activate!, type = "svg")
             println("Plotting enabled with CairoMakie... Use `usePlots(:gl)` for GLMakie")
