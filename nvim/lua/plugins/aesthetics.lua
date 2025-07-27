@@ -9,6 +9,11 @@ return {
                 undercurl = false,
                 colors = {
                     theme = {
+                        lotus ={
+                            ui = {
+                                bg = "#fefce1"
+                            }
+                        },
                         all = {
                             ui = {
                                 bg_gutter = "none"
