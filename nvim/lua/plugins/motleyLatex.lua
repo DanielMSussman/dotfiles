@@ -9,8 +9,8 @@ return {
                     --overwrite any default options, or add new ones
                         colframe = "black!40",
                         boxrule = "0.5pt", 
-                        width = "0.9\\textwidth",
-                        fontupper = "\\footnotesize",
+                        width = "1.0\\textwidth",
+                        fontupper = "\\small",
                         breakable="false",
                         top = "0.5pt",
                             bottom = "0.5pt",
