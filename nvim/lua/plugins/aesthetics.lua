@@ -11,7 +11,7 @@ return {
                     theme = {
                         lotus ={
                             ui = {
-                                bg = "#fefce1"
+                                bg = "#fffdea"
                             }
                         },
                         all = {
