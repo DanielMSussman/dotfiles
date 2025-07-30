@@ -15,18 +15,19 @@ return {
             }
 
             --vimtex_view_settings
+            vim.g.vimtex_view_method = 'general'
             -- set viewer based on operating system (windows = sumatraPDF via general, mac= skim, etc)
-            if isWindows then 
-                if isFramework then
-                    vim.g.vimtex_view_method = 'sioyek'
-                else
-                    vim.g.vimtex_view_method = 'general'
-                end
-            elseif isMac then 
-                vim.g.vimtex_view_method = "sioyek"
-            else
-                vim.g.vimtex_view_method = 'general'
-            end
+            -- if isWindows then 
+            --     if isFramework then
+            --         vim.g.vimtex_view_method = 'sioyek'
+            --     else
+            --         vim.g.vimtex_view_method = 'general'
+            --     end
+            -- elseif isMac then 
+            --     vim.g.vimtex_view_method = "sioyek"
+            -- else
+            --     vim.g.vimtex_view_method = 'general'
+            -- end
             vim.g.vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
             vim.g.vimtex_view_reverse_search_edit_cmd = 'vsplit'
 

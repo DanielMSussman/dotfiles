@@ -8,9 +8,9 @@ return {
                     tcolorbox_opts = {
                     --overwrite any default options, or add new ones
                         colframe = "black!40",
-                        boxrule = "0.5pt", 
+                        boxrule = "0.5pt",
                         width = "1.0\\textwidth",
-                        fontupper = "\\small",
+                        fontupper = "\\normalsize",
                         breakable="false",
                         top = "0.5pt",
                             bottom = "0.5pt",
