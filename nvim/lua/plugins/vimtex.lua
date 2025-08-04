@@ -29,7 +29,7 @@ return {
             --     vim.g.vimtex_view_method = 'general'
             -- end
             vim.g.vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
-            vim.g.vimtex_view_reverse_search_edit_cmd = 'vsplit'
+            -- vim.g.vimtex_view_reverse_search_edit_cmd = 'vsplit'
 
             --quickfix settings
             vim.g.vimtex_quickfix_open_on_warning = 0 --  don't open quickfix if there are only warnings
