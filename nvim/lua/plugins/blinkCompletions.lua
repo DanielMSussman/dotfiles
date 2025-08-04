@@ -1,7 +1,7 @@
 return {
     {
     'saghen/blink.cmp',
-    dependencies = {
+        dependencies = {
             { 'L3MON4D3/LuaSnip', version = 'v2.*' },
             {
                 "micangl/cmp-vimtex",
@@ -13,9 +13,10 @@ return {
                 },
             },
         },
-    lazy = false,
+    -- lazy = false,
+        event = "InsertEnter",
 
-    version = '*',
+        version = '*',
 
         opts = {
             -- 'default' for mappings similar to built-in completion
