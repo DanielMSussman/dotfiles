@@ -7,8 +7,8 @@ return {
                 --colbacktitle and coltitle are sumiInk5 and fujiWhite from kanagawa
                     tcolorbox_opts = {
                     --overwrite any default options, or add new ones
-                        colframe = "black!40",
-                        boxrule = "0.5pt",
+                        colframe = "black!60",
+                        boxrule = "1.0pt",
                         width = "1.0\\textwidth",
                         fontupper = "\\normalsize",
                         breakable="false",

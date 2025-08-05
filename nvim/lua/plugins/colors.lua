@@ -91,11 +91,28 @@ return {
     -- {
     --     "sainnhe/gruvbox-material",
     --     lazy = true,
-    --   -- lazy = false,
-    --   -- priority = 1000,
+    --     -- lazy = false,
+    --     -- priority = 1000,
     --     config = function()
     --         -- require("nordic").setup({})
-    --   --      vim.cmd.colorscheme("nord")
+    --         vim.g.gruvbox_material_background = 'hard'
+    --         vim.g.gruvbox_material_forground = 'original'
+    --         vim.g.gruvbox_material_enable_bold = '1'
+    --         vim.cmd.set('background=light')
+    --         vim.cmd.colorscheme('gruvbox-material')
+    --     end,
+    -- },
+    --
+    -- {
+    --     'ribru17/bamboo.nvim',
+    --     lazy = true,
+    --     config = function()
+    --         require('bamboo').setup {
+    --             style = 'light'
+    --             -- optional configuration here
+    --         }
+    --         vim.cmd.set('background=light')
+    --         require('bamboo').load()
     --     end,
     -- },
 }
