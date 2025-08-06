@@ -6,7 +6,7 @@ return {
         "nvim-telescope/telescope-ui-select.nvim",
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
     },
-    keys = {"<leader>"}, -- leader f for usual functionality, s if we're in the start screen
+    -- keys = {"<leader>"}, -- leader f for usual functionality, s if we're in the start screen
    -- event = {"VimEnter"},
     -- lazy=true,
     config = function()
