@@ -38,17 +38,16 @@ return {
 
         vim.keymap.set('n', '<leader>z', builtin.spell_suggest, { desc = 'Spelling suggestions' })
 
-        vim.keymap.set('n', '<leader>fc', builtin.git_bcommits , { desc = '[f]ind [c]ommits for file' })
+        vim.keymap.set('n', '<leader>gc', builtin.git_bcommits , { desc = '[g]it [c]ommits for file' })
+        vim.keymap.set('n', '<leader>gs', builtin.git_status , { desc = '[g]it [s]tatus' })
 
-        vim.keymap.set('n', '<leader>fs', builtin.git_status , { desc = '[f]ind git [s]tatus' })
-
-        -- Slightly advanced example of overriding default behavior and theme
-        -- vim.keymap.set('n', '<leader>fs', function()
-        --     -- You can pass additional configuration to Telescope to change the theme, layout, etc.
-        --     builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-        --         winblend = 10,
-        --         previewer = false,
-        --     })
-        -- end, { desc = '[F]uzzily [s]earch in current buffer' })
+        -- example of overriding default behavior and theme
+        vim.keymap.set('n', '<leader>fs', function()
+            -- You can pass additional configuration to Telescope to change the theme, layout, etc.
+            builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+                winblend = 10,
+                previewer = false,
+            })
+        end, { desc = '[F]uzzily [s]earch in current buffer' })
     end,
 }

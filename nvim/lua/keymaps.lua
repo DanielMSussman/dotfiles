@@ -27,7 +27,7 @@ vim.keymap.set('t', '<ESC>', '<C-\\><C-n>',{noremap = true})
 --
 
 --other git maps
-vim.keymap.set("n","<leader>gr",function () vim.cmd("lua update_currentGitStatus()") end, {desc = "check [g]it [r]emote (fetch)"})-- calls a "fetch and notify" function
+-- vim.keymap.set("n","<leader>gr",function () vim.cmd("lua update_currentGitStatus()") end, {desc = "check [g]it [r]emote (fetch)"})-- calls a "fetch and notify" function
 
 -- LSP and diagnostic section (as an autocomplete)
 vim.keymap.set("n","<leader>ll", function() vim.cmd("LspStart") end, {desc="[l]aunch lsp (start)",noremap=true})
