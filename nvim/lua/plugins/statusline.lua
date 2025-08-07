@@ -11,10 +11,10 @@ return {
             end
 
             local contents = function()
-                local mode, mode_hl = statusline.section_mode({ trunc_width = 80 })
+                local mode, mode_hl = statusline.section_mode({ trunc_width = 50 })
                 local diagnostics   = statusline.section_diagnostics({ trunc_width = 75 })
                 local lsp           = statusline.section_lsp({ trunc_width = 75 })
-                local filename      = statusline.section_filename({ trunc_width = 140 })
+                local filename      = statusline.section_filename({ trunc_width = 100 })
                 -- local fileinfo      = statusline.section_fileinfo({ trunc_width = 80 })
                 -- local location      = statusline.section_location({ trunc_width = 75 })
                 --                       '%l|%L|%2v|%-2{virtcol("$") -1}'   
