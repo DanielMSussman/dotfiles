@@ -11,7 +11,8 @@ vim.keymap.set("n", "N", "Nzzzv",{desc = 'find prev, center, and open any  fold'
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv",{desc ='move current line(s) down'})
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv",{desc = 'move current line(s) up'})
 
-vim.keymap.set("n","<leader>r",':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',{desc="find and [r]eplace word under cursor"})
+-- vim.keymap.set("n","<leader>r",':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',{desc="find and [r]eplace word under cursor"})
+vim.keymap.set("n","<leader>r",':%s/\\<<C-r><C-w>\\>//gI<Left><Left><Left>',{desc="find and [r]eplace word under cursor"})
 
 vim.keymap.set("n","gn",":bnext<cr>",{desc='next buffer'})
 vim.keymap.set("n","gp",":bprev<cr>",{desc='prev buffer'})
@@ -27,7 +28,7 @@ vim.keymap.set('t', '<ESC>', '<C-\\><C-n>',{noremap = true})
 --
 
 --other git maps
--- vim.keymap.set("n","<leader>gr",function () vim.cmd("lua update_currentGitStatus()") end, {desc = "check [g]it [r]emote (fetch)"})-- calls a "fetch and notify" function
+vim.keymap.set("n","<leader>gr",function () vim.cmd("lua update_currentGitStatus()") end, {desc = "check [g]it [r]emote (fetch)"})-- calls a "fetch and notify" function defined in the /nvim/lua/functions.lua file
 
 -- LSP and diagnostic section (as an autocomplete)
 vim.keymap.set("n","<leader>ll", function() vim.cmd("LspStart") end, {desc="[l]aunch lsp (start)",noremap=true})

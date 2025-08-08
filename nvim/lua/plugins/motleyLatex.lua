@@ -5,9 +5,10 @@ return {
     config = function()
         require("motleyLatex").setup({
                 --colbacktitle and coltitle are sumiInk5 and fujiWhite from kanagawa
+                --colframe is lotusInk1
                     tcolorbox_opts = {
                     --overwrite any default options, or add new ones
-                        colframe = "black!60",
+                        colframe = "{rgb,255:red,84;green,84;blue,100}",
                         boxrule = "1.0pt",
                         width = "1.0\\textwidth",
                         fontupper = "\\normalsize",

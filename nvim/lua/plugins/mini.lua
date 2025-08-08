@@ -73,8 +73,6 @@ return {
                 {mode = 'n',keys='c'},
                 {mode = 'n',keys='d'},
 
-                -- normal mode control functions
-                { mode = 'n', keys = '<C-x>' },
                 -- Built-in completion
                 { mode = 'i', keys = '<C-x>' },
 
@@ -120,7 +118,6 @@ return {
             { mode = 'n', keys = '<Leader>l', desc = '([L]SP commands)' },
             -- { mode = 'n', keys = '<Leader>t', desc = '([t]rouble)' },
             { mode = 'n', keys = '<localLeader>l', desc = '(additional [l]atex/VimTex commands)' },
-            { mode = 'n', keys = '<C-x><C-n>', desc = 'neotree show filesystem'},
 
             --completion clues
             { mode = 'i', keys = '<C-x><Tab>', desc = 'completion and snippet jump' },
