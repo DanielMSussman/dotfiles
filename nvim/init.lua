@@ -41,13 +41,13 @@ require("lspAndDiagnostics")
 
 
 local currentProject = "simpleJuliaTreesitterTools.nvim"
-vim.keymap.set("n", "<leader>a", function()
-    vim.cmd("Lazy reload " .. currentProject)
-  -- require("lazy").reload({currentProject})
-  -- vim.notify("(init.lua) Reloaded: " .. currentProject, vim.log.levels.INFO, {
-    title = "Plugin Reload"
-  })
-end, { desc = "Reload " .. currentProject })
+vim.keymap.set("n", "<leader>a", 
+    function()
+        vim.cmd("Lazy reload " .. currentProject)
+        -- require("lazy").reload({currentProject})
+        -- vim.notify("(init.lua) Reloaded: " .. currentProject, vim.log.levels.INFO, { title = "Plugin Reload" })
+    end,
+    { desc = "Reload " .. currentProject })
 
 --recommended settings to use pwsh instead of cmd.exe
 if isWindows then
