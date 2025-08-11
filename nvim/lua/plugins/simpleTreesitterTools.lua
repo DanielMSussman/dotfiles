@@ -7,10 +7,10 @@ return {
     config = function()
         require("simpleJuliaTreesitterTools").setup({
             rules = {
-                ["Constant"] = "screaming_snake_case",
+                ["Constant"] = "SCREAMING_SNAKE_CASE",
                 ["Module"] = "UpperCamelCase",
                 ["Struct"] = "UpperCamelCase",
-                ["AbstractType"] = "UpperCamelCase", -- eventually implement a rule for this, like "must start with abstract"?
+                ["AbstractType"] = "AbstractUpperCamelCase", -- eventually implement a rule for this, like "must start with abstract"?
                 ["Function"] = "snake_case",
             },
             defaultApproach = "treesitter", --or "lsp"...
