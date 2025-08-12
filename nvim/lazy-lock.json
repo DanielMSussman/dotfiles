@@ -18,6 +18,7 @@
   "oil.nvim": { "branch": "master", "commit": "bbad9a76b2617ce1221d49619e4e4b659b3c61fc" },
   "plenary.nvim": { "branch": "master", "commit": "b9fd5226c2f76c951fc8ed5923d85e4de065e509" },
   "simpleCppTreesitterTools.nvim": { "branch": "main", "commit": "6c57b478dac61c4e9940482cc4dafebd22fadcb4" },
+  "simpleJuliaTreesitterTools.nvim": { "branch": "main", "commit": "f4389c80e308489eb85f61c3cfb494c922d3b89b" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "1f08ed60cafc8f6168b72b80be2b2ea149813e55" },
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },

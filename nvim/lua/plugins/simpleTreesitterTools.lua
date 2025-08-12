@@ -1,7 +1,7 @@
 return {
     {
-    dir = '~/repos/simpleJuliaTreesitterTools.nvim',
-    -- "DanielMSussman/simpleJuliaTreesitterTools.nvim",
+    -- dir = '~/repos/simpleJuliaTreesitterTools.nvim',
+    "DanielMSussman/simpleJuliaTreesitterTools.nvim",
     dependencies = { 'nvim-treesitter/nvim-treesitter'},
     ft = "julia",
     config = function()
