@@ -1,5 +1,17 @@
 --For colorschemes that I am not using right now
 return {
+    {
+        "miikanissi/modus-themes.nvim",
+        lazy = true,
+        config = function()
+            require("modus-themes").setup({
+                -- Theme comes in two styles `modus_operandi` and `modus_vivendi`
+                -- `auto` will automatically set style based on background set with vim.o.background
+                style = "modus_operandi",
+                variant = "tinted", -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
+            })
+        end
+    },
     -- {
     --     "folke/tokyonight.nvim",
     --     -- lazy = false,
@@ -9,8 +21,8 @@ return {
     -- },
     -- {
     --     "webhooked/kanso.nvim",
-        -- lazy = false,
-        -- lazy = true,
+    -- lazy = false,
+    -- lazy = true,
     --     priority=10000,
     --     config = function()
     --         require('kanso').setup({
