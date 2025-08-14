@@ -5,13 +5,13 @@ return {
         config = function()
             local colors = require("kanagawa.colors")
             require('kanagawa').setup({
-                compile = true,
                 undercurl = false,
                 colors = {
                     theme = {
                         lotus ={
                             ui = {
                                 bg = "#fff8c7"
+                                -- bg = "#ffffd0"
                             }
                         },
                         all = {
