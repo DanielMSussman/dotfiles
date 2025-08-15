@@ -10,7 +10,8 @@ return {
                     theme = {
                         lotus ={
                             ui = {
-                                bg = "#fff8c7"
+                                bg = "#fffad4"
+                                -- bg = "#fff8c7"
                                 -- bg = "#ffffd0"
                             }
                         },
