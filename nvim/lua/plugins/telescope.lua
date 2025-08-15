@@ -1,6 +1,6 @@
 --finding files by text string is nice...live grepping in large projects is awesome
 return {
-    'nvim-telescope/telescope.nvim', 
+    'nvim-telescope/telescope.nvim',
     tag = '0.1.8',
     dependencies = { 'nvim-lua/plenary.nvim',
         "nvim-telescope/telescope-ui-select.nvim",
@@ -14,7 +14,7 @@ return {
             defaults = {
                 file_ignore_patterns = {
                     ".nb",
-                },       
+                },
             },
             extensions = {
                 ['fzf'] = {},
@@ -26,7 +26,7 @@ return {
         require('telescope').load_extension('fzf')
         pcall(require('telescope').load_extension, 'ui-select')
         builtin = require("telescope.builtin")
-        local  dropdown = require('telescope.themes').get_ivy()
+        local  dropdown = require('telescope.themes').get_dropdown()
         vim.keymap.set('n', '<leader>ff', function() builtin.find_files(dropdown) end, { desc = '[f]ind [f]iles' })
         vim.keymap.set('n', '<leader>fg', function() builtin.live_grep(dropdown) end, { desc = '[f]ind by [g]rep' })
         vim.keymap.set('n', '<leader>fh', function() builtin.help_tags(dropdown) end, { desc = '[f]ind [h]elp' })
