@@ -10,7 +10,7 @@
   "mini.notify": { "branch": "main", "commit": "3a06b21dd0b335b95d125eae813276113b5e9ce7" },
   "mini.statusline": { "branch": "main", "commit": "f6917f4da995d64edf3728b1302dbd5d4561c912" },
   "modus-themes.nvim": { "branch": "master", "commit": "61b8c10ec636f42baf6c845edb14b9ae2723711f" },
-  "motleyLatex.nvim": { "branch": "main", "commit": "8c1656830f1c0ddf0554d1e0400db6ec5484718d" },
+  "motleyLatex.nvim": { "branch": "main", "commit": "82da60fb86311e092c6126f0ae2fa99e35e6895a" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "cea666ef965884414b1b71f6b39a537f9238bdb2" },
   "neogen": { "branch": "main", "commit": "d7f9461727751fb07f82011051338a9aba07581d" },
   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
