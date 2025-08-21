@@ -40,7 +40,7 @@ require("filetypes")
 require("lspAndDiagnostics")
 
 
-local currentProject = "simpleJuliaTreesitterTools.nvim"
+local currentProject = "vermeer.nvim"
 vim.keymap.set("n", "<leader>t",
     function()
         vim.cmd("Lazy reload " .. currentProject)
