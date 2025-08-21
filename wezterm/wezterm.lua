@@ -4,10 +4,11 @@ local config = wezterm.config_builder()
 local launch_menu={}
 
 --- Set Pwsh as the default on Windows
---config.default_prog = { 'powershell.exe', '-NoLogo' }
-
+config.default_prog = { 'pwsh.exe', '-NoLogo' }
+config.front_end = "WebGpu"
 --aesthetics
 config.color_scheme = 'Kanagawa (Gogh)'
+config.colors= {scrollbar_thumb = '#363646',}
 config.font = wezterm.font {
         family = 'JetBrains Mono',
         harfbuzz_features = {'calt=0','clig=0','liga=0'},
@@ -17,9 +18,9 @@ config.font_size = 13
 config.window_decorations = "TITLE | RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
 
-config.initial_rows = 40
+config.initial_rows = 36
 config.initial_cols = 100
-config.enable_scroll_bar = false
+config.enable_scroll_bar = true
 config.window_padding = {
   left = 0,
   right = 0,
