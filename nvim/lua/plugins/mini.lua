@@ -1,7 +1,7 @@
 return {
     --files
 
-    -- { 'echasnovski/mini.files', version = '*', 
+    -- { 'nvim-mini/mini.files', version = '*', 
     --
     --     config = function()
     --         local minifiles=require('mini.files')
@@ -11,7 +11,7 @@ return {
     --     end
     -- },
     --notify
-    { 'echasnovski/mini.notify', version = '*',
+    { 'nvim-mini/mini.notify', version = '*',
         event = "VimEnter",
         config = function()
             local mininotify=require('mini.notify')
@@ -56,7 +56,7 @@ return {
 
     },
     -- clue
-    { 'echasnovski/mini.clue', version = '*', 
+    { 'nvim-mini/mini.clue', version = '*', 
         event = "VimEnter",
         config = function() local
         miniclue = require('mini.clue')

@@ -1,5 +1,5 @@
 return {
- 	{ 'echasnovski/mini.statusline', version = false,
+ 	{ 'nvim-mini/mini.statusline', version = false,
     dependencies = { "nvim-tree/nvim-web-devicons"},
         config = function()
             local statusline = require('mini.statusline')
