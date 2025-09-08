@@ -22,17 +22,17 @@ return {
                 -- projectDirectory: from wherever the root file is, descend to this directory (and recurse) to find the location of the project files
                 projectDirectory = "/src",
             })
-            vim.keymap.set('n', '<localleader>lb', function()
+            vim.keymap.set('n', '<leader>cb', function()
                 require('simpleJuliaTreesitterTools').lint_buffer_names()
-            end, { desc = '[L]int names in current [b]uffer' })
+            end, { desc = 'Lint names in [c]urrent [b]uffer' })
 
-            vim.keymap.set('n', '<localleader>lp', function()
+            vim.keymap.set('n', '<leader>cr', function()
                 require('simpleJuliaTreesitterTools').lint_project_names()
-            end, { desc = '[L]int names in current [p]roject' })
+            end, { desc = 'Lint names in [c]urrent [r]oot project' })
 
-            vim.keymap.set('n', '<localleader>lc', function()
+            vim.keymap.set('n', '<leader>cc', function()
                 require('simpleJuliaTreesitterTools').cycle_violations()
-            end, { desc = '[L]inting: [c]ycle to next violation' })
+            end, { desc = 'Linting: [c]ycle to next violation' })
         end
     },
     {

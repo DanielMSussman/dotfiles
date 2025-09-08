@@ -12,7 +12,7 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv",{desc ='move current line(s) down'})
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv",{desc = 'move current line(s) up'})
 
 -- vim.keymap.set("n","<leader>r",':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',{desc="find and [r]eplace word under cursor"})
-vim.keymap.set("n","<leader>r",':%s/\\<<C-r><C-w>\\>//gI<Left><Left><Left>',{desc="find and [r]eplace word under cursor"})
+vim.keymap.set("n","<leader>r",':%s/\\<<C-r><C-w>\\>//gIc<Left><Left><Left><Left>',{desc="find and [r]eplace word under cursor"})
 
 vim.keymap.set("n","gn",":bnext<cr>",{desc='next buffer'})
 vim.keymap.set("n","gp",":bprev<cr>",{desc='prev buffer'})

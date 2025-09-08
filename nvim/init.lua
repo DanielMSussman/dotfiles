@@ -43,7 +43,7 @@ require("lspAndDiagnostics")
 local currentProject = "vermeer.nvim"
 vim.keymap.set("n", "<leader>t",
     function()
-        vim.cmd("Lazy reload " .. currentProject)
+        vim.cmd("Lazy reload current project:" .. currentProject)
     end,
     { desc = "Reload " .. currentProject })
 

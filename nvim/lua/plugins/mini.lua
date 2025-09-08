@@ -114,7 +114,7 @@ return {
                 miniclue.gen_clues.z(),
             { mode = 'n', keys = '<Leader>f', desc = '([f]ind commands (fzf-lua))' },
             { mode = 'n', keys = '<Leader>g', desc = '([g]it commands)' },
-            { mode = 'n', keys = '<Leader>c', desc = '([c]onform formatting)' },
+            { mode = 'n', keys = '<Leader>c', desc = '([c]onform and formatting)' },
             { mode = 'n', keys = '<Leader>l', desc = '([L]SP commands)' },
             -- { mode = 'n', keys = '<Leader>t', desc = '([t]rouble)' },
             { mode = 'n', keys = '<localLeader>l', desc = '(additional [l]atex/VimTex commands)' },
