@@ -2,7 +2,7 @@ return {
     {
         'stevearc/oil.nvim',
         opts = {},
-        dependencies = { "nvim-tree/nvim-web-devicons" }, 
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         lazy = false,
         config = function()
             require("oil").setup({
@@ -10,6 +10,24 @@ return {
             })
             vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
+            vim.keymap.set('n', '<C-n>', function()
+                local oil_win = nil
+                for _, win in ipairs(vim.api.nvim_list_wins()) do
+                    if vim.bo[vim.api.nvim_win_get_buf(win)].filetype == "oil" then
+                        oil_win = win
+                        break
+                    end
+                end
+
+                if oil_win then
+                    -- If an oil window is found, close it
+                    vim.api.nvim_win_close(oil_win, false)
+                else
+                    -- If not, create a vertical split on the left and open oil
+                    vim.cmd("leftabove vsplit")
+                    require("oil").open()
+                end
+            end,{desc = "toggle oil buffer on a vsplit to the left"})
             --default keymap reminders
             --
             -- g? Show a popup with this cheat sheet contents
