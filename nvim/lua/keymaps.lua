@@ -31,7 +31,16 @@ vim.keymap.set('t', '<ESC>', '<C-\\><C-n>',{noremap = true})
 vim.keymap.set("n","<leader>gr",function () vim.cmd("lua update_currentGitStatus()") end, {desc = "check [g]it [r]emote (fetch)"})-- calls a "fetch and notify" function defined in the /nvim/lua/functions.lua file
 
 -- LSP and diagnostic section (as an autocomplete)
-vim.keymap.set("n","<leader>ll", function() vim.cmd("LspStart") end, {desc="[l]aunch lsp (start)",noremap=true})
+
+vim.keymap.set("n", "<leader>lx", function()
+    local bufnr = vim.api.nvim_get_current_buf()
+    local clients = vim.lsp.get_clients({ bufnr = bufnr })
+
+    if #clients > 0 then
+        vim.lsp.stop_client(clients)
+        vim.notify("LSP stopped for this buffer.", vim.log.levels.INFO)
+    end
+end, { desc = "[L]SP e[x]it (stop LSP for buffer)", noremap = true })
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
