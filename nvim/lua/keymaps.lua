@@ -13,6 +13,22 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv",{desc = 'move current line(s) up'})
 
 -- vim.keymap.set("n","<leader>r",':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',{desc="find and [r]eplace word under cursor"})
 vim.keymap.set("n","<leader>r",':%s/\\<<C-r><C-w>\\>//gIc<Left><Left><Left><Left>',{desc="find and [r]eplace word under cursor"})
+vim.keymap.set("n", "<leader>R", function()
+    local word = vim.fn.input('Replace word: ')
+    if word == nil or word == '' then
+        print("Aborted.")
+        return
+    end
+    local escaped_word = vim.fn.escape(word, '/\\')
+    local cmd_prefix = ':%s/\\<' .. escaped_word .. '\\>/'
+
+    -- Part 2: The full command string
+    local full_cmd = cmd_prefix .. escaped_word .. '/gIc'
+    local cursor_movement = string.rep('<Left>', 4)
+    local keys_to_feed = full_cmd .. cursor_movement
+    local processed_keys = vim.api.nvim_replace_termcodes(keys_to_feed, true, true, true)
+    vim.api.nvim_feedkeys(processed_keys, 'n', false)
+end, { desc = "Find and [R]eplace a typed word" })
 
 vim.keymap.set("n","gn",":bnext<cr>",{desc='next buffer'})
 vim.keymap.set("n","gp",":bprev<cr>",{desc='prev buffer'})
