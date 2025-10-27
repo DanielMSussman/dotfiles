@@ -1,27 +1,27 @@
 --For colorschemes that I am not using right now
 return {
-    {
-        "miikanissi/modus-themes.nvim",
-        lazy = true,
-        config = function()
-            require("modus-themes").setup({
-                -- Theme comes in two styles `modus_operandi` and `modus_vivendi`
-                -- `auto` will automatically set style based on background set with vim.o.background
-                style = "modus_operandi",
-                variant = "tinted", -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
-            })
-        end
-    },
-    {
-        "rktjmp/lush.nvim",
-        
-        -- if you wish to use your own colorscheme:
-        -- { dir = '/absolute/path/to/colorscheme', lazy = true },
-    },
-    {
-        dir = '~/repos/vermeer.nvim',
-        lazy=true,
-    },
+    -- {
+    --     "miikanissi/modus-themes.nvim",
+    --     lazy = true,
+    --     config = function()
+    --         require("modus-themes").setup({
+    --             -- Theme comes in two styles `modus_operandi` and `modus_vivendi`
+    --             -- `auto` will automatically set style based on background set with vim.o.background
+    --             style = "modus_operandi",
+    --             variant = "tinted", -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
+    --         })
+    --     end
+    -- },
+    -- {
+    --     "rktjmp/lush.nvim",
+    --
+    --     -- if you wish to use your own colorscheme:
+    --     -- { dir = '/absolute/path/to/colorscheme', lazy = true },
+    -- },
+    -- {
+    --     dir = '~/repos/vermeer.nvim',
+    --     lazy=true,
+    -- },
     -- {
     --     "folke/tokyonight.nvim",
     --     -- lazy = false,

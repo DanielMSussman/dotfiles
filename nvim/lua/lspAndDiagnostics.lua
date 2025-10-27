@@ -1,4 +1,5 @@
-vim.lsp.enable({'luals', 'clangd','julials'})
+vim.lsp.enable({'luals', 'clangd'})
+-- vim.lsp.enable({'luals', 'clangd','julials'})
 
 vim.diagnostic.config({
   virtual_text = {
