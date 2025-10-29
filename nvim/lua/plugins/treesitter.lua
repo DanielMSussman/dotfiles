@@ -13,7 +13,7 @@ return {
                     disable = {"tex"},
                 },
         indent = {enable = true,
-                disable = {"cpp","c","cuda","julia"},
+                disable = {"cpp","c","cuda"},
             }
         })
     end
