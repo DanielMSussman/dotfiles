@@ -16,21 +16,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
--- potential flags for some platform-specific options in plugins
-vim.cmd("let computerName=split(system('hostname'))[0]")
-vim.cmd("let frameworkName='Sussman-Framework'")
-vim.cmd("let workLaptopName='PHY-DMSUSSM-01M'")
---flag for the framework laptop
-isFramework= vim.api.nvim_eval('computerName==frameworkName') == 1
-isEmoryWindows= vim.api.nvim_eval('computerName==workLaptopName') == 1
-isWindows = vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win16") == 1
-isMac = vim.fn.has("mac") == 1
 
 -- set up leader and local leader, and set vim options before loading plugins
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 require("vimOptions")
-require("functions")
 
 require("lazy").setup("plugins")
 
@@ -47,6 +37,8 @@ vim.keymap.set("n", "<leader>t",
     end,
     { desc = "Reload " .. currentProject })
 
+-- potential flags for some platform-specific options in plugins
+isWindows = vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win16") == 1
 --recommended settings to use pwsh instead of cmd.exe
 if isWindows then
     vim.o.shell="pwsh"

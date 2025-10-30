@@ -2,7 +2,6 @@ return {
 
     {
     'stevearc/conform.nvim',
---    event = {'VeryLazy'},
 
     config = function()
         conformTex = require("conform").setup({
@@ -57,9 +56,6 @@ return {
             end, { range = true })
         vim.keymap.set("n","<leader>cf", ':Format<CR>', {noremap=true,desc="format [f]ile"})
         vim.keymap.set("n","<leader>cp", 'vip:Format<CR>', {noremap=true,desc="format [p]aragraph"})
-        -- vim.keymap.set("", "<leader>cf", function()
-        --     require("conform").format({ async = true, lsp_fallback = false })
-        -- end, { desc = "[C]onform: format [f]ile" })
 
     end
     },

@@ -25,7 +25,6 @@ vim.cmd("set inccommand")
 vim.cmd("set signcolumn =yes")
 vim.cmd("set numberwidth=2")
 vim.cmd("set termguicolors")
---vim.cmd("set cursorline")
 
 vim.cmd("set spell spelllang=en_us")
 
@@ -36,11 +35,8 @@ vim.cmd("set noerrorbells")
 vim.cmd("set hidden")
 
 vim.o.pumblend=20
---vim.cmd("set mouse=a")
 
---vim.cmd("set pumheight=8")
 vim.cmd("set history=1000")
--- vim.cmd("set scrolloff=10")
 
 vim.cmd("highlight Spellbad  cterm=underline gui=underline")
 vim.cmd("highlight SpellRare  cterm=underdashed gui=underdashed")

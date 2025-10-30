@@ -1,7 +1,7 @@
 
 vim.keymap.set("n","<S-h>" ,"ge",{noremap=true,desc="go to the end of last word"})
---vim.keymap.set("n","<leader>p",'\"0p',{desc = 'paste last yank'})
---vim.keymap.set("n","<leader>P",'\"0P',{desc = 'Paste last yank'})
+vim.keymap.set("n","<leader>p",'\"0p',{desc = 'paste last yank'})
+vim.keymap.set("n","<leader>P",'\"0P',{desc = 'Paste last yank'})
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz",{desc = 'move down and center'})
 vim.keymap.set("n", "<C-u>", "<C-u>zz",{desc = 'move up and center'})
@@ -11,7 +11,6 @@ vim.keymap.set("n", "N", "Nzzzv",{desc = 'find prev, center, and open any  fold'
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv",{desc ='move current line(s) down'})
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv",{desc = 'move current line(s) up'})
 
--- vim.keymap.set("n","<leader>r",':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',{desc="find and [r]eplace word under cursor"})
 vim.keymap.set("n","<leader>r",':%s/\\<<C-r><C-w>\\>//gIc<Left><Left><Left><Left>',{desc="find and [r]eplace word under cursor"})
 vim.keymap.set("n", "<leader>R", function()
     local word = vim.fn.input('Replace word: ')
@@ -22,7 +21,6 @@ vim.keymap.set("n", "<leader>R", function()
     local escaped_word = vim.fn.escape(word, '/\\')
     local cmd_prefix = ':%s/\\<' .. escaped_word .. '\\>/'
 
-    -- Part 2: The full command string
     local full_cmd = cmd_prefix .. escaped_word .. '/gIc'
     local cursor_movement = string.rep('<Left>', 4)
     local keys_to_feed = full_cmd .. cursor_movement
@@ -30,6 +28,7 @@ vim.keymap.set("n", "<leader>R", function()
     vim.api.nvim_feedkeys(processed_keys, 'n', false)
 end, { desc = "Find and [R]eplace a typed word" })
 
+-- you probably don't want these
 vim.keymap.set("n","gn",":bnext<cr>",{desc='next buffer'})
 vim.keymap.set("n","gp",":bprev<cr>",{desc='prev buffer'})
 vim.keymap.set("n","gq",":bdelete<cr>",{desc='delete buffer'})
@@ -42,9 +41,6 @@ vim.keymap.set('t', '<ESC>', '<C-\\><C-n>',{noremap = true})
 --
 --plugin keymaps
 --
-
---other git maps
-vim.keymap.set("n","<leader>gr",function () vim.cmd("lua update_currentGitStatus()") end, {desc = "check [g]it [r]emote (fetch)"})-- calls a "fetch and notify" function defined in the /nvim/lua/functions.lua file
 
 -- LSP and diagnostic section (as an autocomplete)
 

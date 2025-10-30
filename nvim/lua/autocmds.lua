@@ -1,13 +1,11 @@
 local autogroup = vim.api.nvim_create_augroup
 local autocmd=vim.api.nvim_create_autocmd
 
---do I understand autogroups? not really. I guess it's about disabling whole groups of them at a time?
 local sussmanGroup = autogroup('DMS',{})
 local vimtexGroup = vim.api.nvim_create_augroup("vimtex_events", {})
 local yankGroup = autogroup('HighlightYank', {})
 
-
---call that function when moving between windows
+-- active buffer has relative line numbers, others have absolute line numbers
 autocmd({"WinEnter","WinLeave"},{
     group=autogroup("windowSettings", {clear = false}),
     pattern = "*",
@@ -35,7 +33,7 @@ autocmd('VimResized',{
         end
 })
 
---briefly (140ms) highlight text that gets yanked
+--briefly highlight text that gets yanked
 autocmd('TextYankPost',{
         group=yankGroup,
         pattern = '*',
@@ -47,7 +45,6 @@ autocmd('TextYankPost',{
             end,
 })
 
---enter files where I left off
 autocmd({"BufWinLeave", "BufWritePost", "WinLeave" },{
     desc = "save view for files",
     callback = function(event)
@@ -72,48 +69,6 @@ autocmd("BufWinEnter",{
         end,
 })
 
--- after loading a session, check if the session is at the root of a git repo, then fetch to check status relative to remote
-autocmd("User",{
-    group=sussmanGroup,
-    pattern="SessionLoadPost",
-    callback = function()
-        local path = vim.loop.cwd() .. "/.git"
-        local ok, err = vim.loop.fs_stat(path)
-        if ok then
-            update_currentGitStatus()
-        else
-            vim.notify("Session not at the root directory of a git repo")
-        end
-    end
-})
-
---after inverse search, focus back on the nvim terminal and center line on screen
-autocmd("User", {
-    pattern = "VimtexEventViewReverse",
-    group = vimtexGroup,
-    callback = function() 
-       --"call b:vimtex.viewer.xdo_focus_vim()" --
-        vim.cmd('!open -a wezterm')
-        vim.cmd('redraw')
-        vim.cmd("normal zz")
-    end
-    }
-)
-
---after compilation, return focus to terminal
-vim.api.nvim_create_autocmd("User", {
-    pattern = "VimtexEventCompileSuccess",
-    group = vimtexGroup,
-    callback =  function()
-        -- vim.cmd('VimtexView')
-        -- vim.cmd('sleep 100m') -- tweak per hardware...a bit janky
-        -- --vim.cmd('!goto wezterm')
-        -- vim.cmd('!open -a wezterm')
-    end
-    }
-)
-
---
 -- completely frivolous notifications about vimtex compilation progress
 --
 vim.api.nvim_create_autocmd("User", {

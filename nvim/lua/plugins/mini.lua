@@ -1,15 +1,4 @@
 return {
-    --files
-
-    -- { 'nvim-mini/mini.files', version = '*', 
-    --
-    --     config = function()
-    --         local minifiles=require('mini.files')
-    --         minifiles.setup({
-    --         })
-    --         vim.keymap.set("n", "-", "<CMD>lua MiniFiles.open()<CR>", { desc = "Open parent directory" })
-    --     end
-    -- },
     --notify
     { 'nvim-mini/mini.notify', version = '*',
         event = "VimEnter",

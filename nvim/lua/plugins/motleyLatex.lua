@@ -1,6 +1,5 @@
 return {
     {
-    -- dir = '~/repos/motleyLatex.nvim',
     "DanielMSussman/motleyLatex.nvim",
     config = function()
         require("motleyLatex").setup({

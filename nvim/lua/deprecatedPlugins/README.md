@@ -1,0 +1,1 @@
+Sometimes I want to test out / swap plugins in and out more easily than by looking through my git history. Hence, this directory is not loaded, but contains the most recently used version of a bunch of plugins.
