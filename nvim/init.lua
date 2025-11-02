@@ -16,6 +16,19 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
+-- potential flags for some platform-specific options in plugins
+isWindows = vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win16") == 1
+isWSL = vim.fn.has("wsl")
+
+--recommended settings to use pwsh instead of cmd.exe
+if isWindows then
+    vim.o.shell="pwsh"
+    vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+    vim.o.shellredir = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+    vim.o.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+    vim.o.shellquote = ""
+    vim.o.shellxquote = ""
+end
 
 -- set up leader and local leader, and set vim options before loading plugins
 vim.g.mapleader = " "
@@ -36,20 +49,6 @@ vim.keymap.set("n", "<leader>t",
         vim.cmd("Lazy reload current project:" .. currentProject)
     end,
     { desc = "Reload " .. currentProject })
-
--- potential flags for some platform-specific options in plugins
-isWindows = vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win16") == 1
-isWSL = vim.fn.has("wsl")
-
---recommended settings to use pwsh instead of cmd.exe
-if isWindows then
-    vim.o.shell="pwsh"
-    vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
-    vim.o.shellredir = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
-    vim.o.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
-    vim.o.shellquote = ""
-    vim.o.shellxquote = ""
-end
 
 if isWSL then
     if vim.fn.executable('wl-copy') == 1 then
