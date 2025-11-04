@@ -1,0 +1,140 @@
+--For colorschemes that I am not using right now
+return {
+    {
+        "miikanissi/modus-themes.nvim",
+        lazy = true,
+        config = function()
+            require("modus-themes").setup({
+                -- Theme comes in two styles `modus_operandi` and `modus_vivendi`
+                -- `auto` will automatically set style based on background set with vim.o.background
+                style = "modus_operandi",
+                variant = "tinted", -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
+            })
+        end
+    },
+    {
+        "rktjmp/lush.nvim",
+
+        -- if you wish to use your own colorscheme:
+        -- { dir = '/absolute/path/to/colorscheme', lazy = true },
+    },
+    {
+        dir = '~/repos/vermeer.nvim',
+        lazy=true,
+    },
+    {
+        "folke/tokyonight.nvim",
+        -- lazy = false,
+        lazy=true,
+        -- priority = 1000,
+        opts = {},
+    },
+    {
+        "webhooked/kanso.nvim",
+    lazy = false,
+    lazy = true,
+        priority=10000,
+        config = function()
+            require('kanso').setup({
+                compile = false, -- enable compiling the colorscheme
+                undercurl = true, -- enable undercurls
+                commentStyle = { italic = true },
+                functionStyle = {},
+                keywordStyle = { italic = true },
+                statementStyle = {},
+                typeStyle = {},
+                disableItalics = false,
+                transparent = false, -- do not set background color
+                dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+                terminalColors = true, -- define vim.g.terminal_color_{0,17}
+                colors = { -- add/modify theme and palette colors
+                    palette = {},
+                    theme = { zen = {}, pearl = {}, ink = {}, all = {} },
+                },
+                overrides = function(colors) -- add/modify highlights
+                    return {}
+                end,
+                theme = "pearl", -- Load "zen" theme
+                background = { -- map the value of 'background' option to a theme
+                    dark = "zen", -- try "ink" !
+                    light = "pearl"
+                },
+            })
+            -- vim.cmd.colorscheme('kanso')
+        end
+    },
+    {
+        'sainnhe/everforest',
+        -- lazy = false,
+        -- priority = 1000,
+        lazy = true,
+        config = function()
+            -- Optionally configure and load the colorscheme
+            -- directly inside the plugin declaration.
+            vim.g.everforest_background = 'hard'
+            vim.g.everforest_enable_italic = true
+            --            vim.cmd.colorscheme('everforest')
+        end
+    },
+    {
+        "AlexvZyl/nordic.nvim",
+        lazy = true,
+      -- lazy = false,
+      -- priority = 1000,
+        config = function()
+            require("nordic").setup({})
+      --      vim.cmd.colorscheme("nord")
+        end,
+    },
+    {
+        "zenbones-theme/zenbones.nvim",
+        -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+        -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+        -- In Vim, compat mode is turned on as Lush only works in Neovim.
+        dependencies = "rktjmp/lush.nvim",
+        lazy = true,
+        priority = 1000,
+        -- you can set set configuration options here
+        -- config = function()
+        --     vim.g.zenbones_darken_comments = 45
+        --     vim.cmd.colorscheme('zenbones')
+        -- end
+    },
+    {
+        "EdenEast/nightfox.nvim",
+        lazy = true,
+      -- lazy = false,
+      -- priority = 1000,
+        config = function()
+            -- require("nordic").setup({})
+      --      vim.cmd.colorscheme("nord")
+        end,
+    },
+    {
+        "sainnhe/gruvbox-material",
+        lazy = true,
+        -- lazy = false,
+        -- priority = 1000,
+        config = function()
+            -- require("nordic").setup({})
+            vim.g.gruvbox_material_background = 'hard'
+            vim.g.gruvbox_material_forground = 'original'
+            vim.g.gruvbox_material_enable_bold = '1'
+            vim.cmd.set('background=light')
+            vim.cmd.colorscheme('gruvbox-material')
+        end,
+    },
+
+    {
+        'ribru17/bamboo.nvim',
+        lazy = true,
+        config = function()
+            require('bamboo').setup {
+                style = 'light'
+                -- optional configuration here
+            }
+            vim.cmd.set('background=light')
+            require('bamboo').load()
+        end,
+    },
+}

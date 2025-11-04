@@ -1,5 +1,6 @@
 return {
     {
+        -- this plugin is silly
         "DanielMSussman/simpleJuliaTreesitterTools.nvim",
         dependencies = { 'nvim-treesitter/nvim-treesitter'},
         ft = "julia",

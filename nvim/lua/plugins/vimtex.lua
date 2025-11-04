@@ -5,17 +5,13 @@ return {
     -- tag = "v2.15", -- uncomment to pin to a specific release
     init = function()
             --global vimtex settings
-            --
-            -- disable imaps -- we're using luasnip instead
-            vim.g.vimtex_imaps_enabled = 0
+            vim.g.vimtex_imaps_enabled = 0 -- disable imaps (luasnip instead)
             
             -- compiler settings
 
-            -- i.e., don't emit compilation notifications
-            vim.g.vimtex_compiler_silent = 1 
-            -- put aux files in another directory
+            vim.g.vimtex_compiler_silent = 1 -- i.e., don't emit compilation notifications
             vim.g.vimtex_compiler_latexmk = {
-                aux_dir = 'auxFiles',
+                aux_dir = 'auxFiles', -- put aux files in another directory
             }
 
             --vimtex_view_settings
@@ -23,9 +19,7 @@ return {
             vim.g.vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
 
             --quickfix settings
-            --  don't open quickfix if there are only warnings
-            vim.g.vimtex_quickfix_open_on_warning = 0 
-            -- ignore most common complaints
+            vim.g.vimtex_quickfix_open_on_warning = 0 --  don't open quickfix if there are only warnings
             vim.g.vimtex_quickfix_ignore_filters = {"Underfull","Overfull", "LaTeX Warning: .\\+ float specifier changed to", "Package hyperref Warning: Token not allowed in a PDF string"}
         end,
     },

@@ -1,5 +1,5 @@
 compile_commands.json
-outputFiles/*
+auxFiles/*
 ##spelling files for vim
 *.spl
 

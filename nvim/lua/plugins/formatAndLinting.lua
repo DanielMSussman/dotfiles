@@ -29,17 +29,6 @@ return {
                 },
 
                 --
-            -- If this is set, Conform will run the formatter on save.
-            -- It will pass the table to conform.format().
-            -- This can also be a function that returns the table.
---            format_on_save = {
---                lsp_format = "fallback",
---                timeout_ms = 500,
---            },
-            -- If this is set, Conform will run the formatter asynchronously after save.
---            format_after_save = {
---                lsp_format = "fallback",
---            },
         })
         -- create a user command to run on current file
         vim.api.nvim_create_user_command("Format", 

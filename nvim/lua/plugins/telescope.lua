@@ -7,8 +7,6 @@ return {
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
     },
     keys = {"<leader>"}, -- leader f for usual functionality
-   -- event = {"VimEnter"},
-    -- lazy=true,
     config = function()
         require('telescope').setup({
             defaults = {

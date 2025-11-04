@@ -1,5 +1,6 @@
 return {
     {
+        -- this plugin is half silly, half occasionally useful
         "DanielMSussman/simpleCppTreesitterTools.nvim",
         dependencies = { 'nvim-treesitter/nvim-treesitter'},
         ft = "cpp",

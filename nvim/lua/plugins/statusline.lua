@@ -21,7 +21,6 @@ return {
                 local location = '%l,%2v'
                 local search        = statusline.section_searchcount({ trunc_width = 75 })
                 local infostring = fileinfo()
-                -- print(vim.inspect(infostring))
                 return statusline.combine_groups({
                     { hl = mode_hl,                  strings = { mode } },
                     { hl = 'MiniStatuslineDevinfo',  strings = { diagnostics, lsp } },
@@ -32,7 +31,6 @@ return {
                     { hl = mode_hl,                  strings = { search, location } },
                 })
             end
-
 
             statusline.setup({
                 content = {active = contents},
