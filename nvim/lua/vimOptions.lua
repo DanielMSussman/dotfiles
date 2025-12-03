@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 vim.cmd("filetype plugin indent on")
 vim.cmd("syntax enable")
 

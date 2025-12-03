@@ -1,7 +1,8 @@
 -- use vimtex to determine if we are in a math context
 local function math()
     return vim.api.nvim_eval('vimtex#syntax#in_mathzone()') == 1
-end 
+end
+
 -- a helper function to generate arbitrarily sized matrices.
 --https://github.com/evesdropper/luasnip-latex-snippets.nvim/blob/main/lua/luasnip-latex-snippets/luasnippets/tex/math.lua
 local generate_matrix = function(args, snip)
@@ -24,13 +25,6 @@ local generate_matrix = function(args, snip)
 	return sn(nil, nodes)
 end
 return {
-    s({trig="//",snippetType="autosnippet",desc = "fraction",wordTrig=false},
-        fmta([[\frac{<>}{<>}]],
-        {i(1,"numerator"),
-         i(2,"denominator")}
-        )
-    ),
-
     s(
         {trig="eq", snippetType="snippet", dscr="A LaTeX equation environment"},
         fmta(
@@ -103,7 +97,7 @@ return {
     ),
 
     s(
-        {trig="mat", snippetType="snippet", dscr="Set up a 2x2 matrix (requires amsmath)"},
+        {trig="mat", snippetType="snippet", dscr="Set up a 2x2 matrix (requires amsmath)", show_condition=math},
         fmta(
             [[
             \begin{pmatrix}

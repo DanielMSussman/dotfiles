@@ -1,24 +1,27 @@
 -- use vimtex to determine if we are in a math context
 local function math()
     return vim.api.nvim_eval('vimtex#syntax#in_mathzone()') == 1
-end 
+end
 
 return {
 
     s({trig=";O", snippetType="autosnippet", desc="mathcal O",wordTrig=false},
         {
             t("\\mathcal{O}"),
-        }
+        },
+        {condition =math }
     ),
     s({trig=";i", snippetType="autosnippet", desc="infinity",wordTrig=false},
         {
             t("\\infty"),
-        }
+        },
+        {condition =math }
     ),
     s({trig=";N", snippetType="autosnippet", desc="nabla",wordTrig=false},
         {
             t("\\nabla"),
-        }
+        },
+        {condition =math }
     ),
     s({trig="div", snippetType="autosnippet", desc="nabla",wordTrig=false},
         {
@@ -61,6 +64,10 @@ return {
     ) ,
 
     postfix({trig="df",snippetType="autosnippet",desc="postfix differential (physics package)"},
+        {l("\\d{" .. l.POSTFIX_MATCH .. "}")}, 
+        {condition = math}
+    ),
+    postfix({trig="diff",snippetType="autosnippet",desc="postfix differential (physics package)"},
         {l("\\dd{" .. l.POSTFIX_MATCH .. "}")}, 
         {condition = math}
     ),

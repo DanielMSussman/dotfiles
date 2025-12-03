@@ -72,12 +72,17 @@ s({trig="latexTemplate",snippetType="snippet",dscr="cycle through blank, problem
                 ),{key = "Problem set template"}),
                 sn(nil,fmta(
                     [[
-                    \documentclass[reprint,amsmath,amssymb,aps]{revtex4-2}
-                    %PRL-like template
-                    \usepackage[utf8]{inputenc}
-                    \usepackage{csquotes}
-                    \usepackage[dvipsnames,x11names]{xcolor}
-                    \usepackage{graphicx,physics,hyperref}
+                    \documentclass[reprint]{revtex4-2}
+                    \usepackage{amsmath}
+                    \usepackage{amssymb}
+                    \usepackage{natbib}
+                    \usepackage{float}
+                    \usepackage{graphicx}
+                    \graphicspath{{./figures/}{./}}
+                    \usepackage{xcolor}
+                    \usepackage{todonotes}
+                    \usepackage{physics}
+                    \usepackage{hyperref}
                     \usepackage[capitalize]{cleveref}
 
                     \newcommand{\dms}[1]{{\color{blue} #1}}
