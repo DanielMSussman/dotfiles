@@ -37,6 +37,8 @@ vim.cmd("set noerrorbells")
 
 vim.cmd("set hidden")
 
+vim.opt.viewoptions:remove("curdir")
+
 vim.o.pumblend=20
 
 vim.cmd("set history=1000")
