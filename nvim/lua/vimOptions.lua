@@ -4,45 +4,51 @@ vim.g.maplocalleader = "\\"
 vim.cmd("filetype plugin indent on")
 vim.cmd("syntax enable")
 
-vim.cmd("set number")
-vim.cmd("set ruler")
-vim.cmd("set relativenumber")
-vim.cmd("set wrap linebreak")
-vim.cmd("set breakindent")
-vim.cmd("set showbreak=󱞩")
-vim.cmd("set breakindentopt=shift:3,sbr")
+local opt = vim.opt
 
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
+-- UI and numbers
+opt.number = true
+opt.relativenumber = true
+opt.numberwidth = 2
+opt.ruler = true
+opt.signcolumn = "yes"
+opt.termguicolors = true
+opt.pumblend = 20
+opt.showbreak = "↳ "
 
-vim.cmd("set autoindent")
-vim.cmd("set smartindent")
+-- Indentation and Tabs
+opt.expandtab = true
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.autoindent = true
+opt.smartindent = true
 
-vim.cmd("set incsearch")
-vim.cmd("set ignorecase")
-vim.cmd("set smartcase")
-vim.cmd("set inccommand")
+-- wrapping and line breaks
+opt.wrap = true
+opt.linebreak = true
+opt.breakindent = true
+opt.breakindentopt = "shift:3,sbr"
 
-vim.cmd("set signcolumn =yes")
-vim.cmd("set numberwidth=2")
-vim.cmd("set termguicolors")
+-- search and command behavior
+opt.incsearch = true
+opt.ignorecase = true
+opt.smartcase = true
+opt.inccommand = "nosplit"
+opt.history = 1000
 
-vim.cmd("set spell spelllang=en_us")
+-- system and clipboard
+opt.clipboard = "unnamedplus"
+opt.spell = true
+opt.spelllang = "en_us"
+opt.errorbells = false
+opt.hidden = true
 
-vim.cmd("set clipboard=unnamedplus")
+-- view handling
+opt.viewoptions:remove("curdir")
 
-vim.cmd("set noerrorbells")
-
-vim.cmd("set hidden")
-
-vim.opt.viewoptions:remove("curdir")
-
-vim.o.pumblend=20
-
-vim.cmd("set history=1000")
-
-vim.cmd("highlight Spellbad  cterm=underline gui=underline")
-vim.cmd("highlight SpellRare  cterm=underdashed gui=underdashed")
-vim.cmd("highlight SpellCap  cterm=underdotted gui=underdotted")
+-- 3. highlighting
+local set_hl = vim.api.nvim_set_hl
+set_hl(0, "SpellBad", { underline = true })
+set_hl(0, "SpellRare", { underdashed = true })
+set_hl(0, "SpellCap", { underdotted = true })

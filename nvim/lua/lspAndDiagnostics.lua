@@ -1,3 +1,6 @@
+-- vim.lsp.config.clangd = require('lsp.clangd')
+-- vim.lsp.config.luals = require('lsp.luals')
+-- vim.lsp.config.julials = require('lsp.julials')
 vim.lsp.enable({'luals', 'clangd'}) -- ,'julials'})
 
 vim.diagnostic.config({
