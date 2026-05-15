@@ -1,4 +1,3 @@
-
 vim.keymap.set("n","<S-h>" ,"ge",{noremap=true,desc="go to the end of last word"})
 vim.keymap.set("n","<leader>p",'\"0p',{desc = 'paste last yank'})
 vim.keymap.set("n","<leader>P",'\"0P',{desc = 'Paste last yank'})
@@ -57,19 +56,25 @@ end, { desc = "[L]SP e[x]it (stop LSP for buffer)", noremap = true })
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
     callback = function(event)
-        local map = function(keys,func,desc)
-            vim.keymap.set('n',keys,func,{buffer = event.buf,desc='LSP: ' .. desc})
+        local map = function(keys, func, desc)
+            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
-        map('gd', require("telescope.builtin").lsp_definitions, '[g]oto [d]efinition')
+
+        local extra = require('mini.extra')
+        
+        map('gd', function() extra.pickers.lsp({ scope = 'definition' }) end, '[g]oto [d]efinition')
+        map('gi', function() extra.pickers.lsp({ scope = 'implementation' }) end, '[G]oto [i]mplementation')
+        map('gr', function() extra.pickers.lsp({ scope = 'references' }) end, '[g]oto [r]eferences')
+        map('<leader>fd', function() extra.pickers.lsp({ scope = 'document_symbol' }) end, '[f]ind [d]ocument symbols')
+
         map('gD', vim.lsp.buf.declaration, '[g]oto [D]eclaration')
-        map('gi', require("telescope.builtin").lsp_implementations, '[G]oto [i]mplementation')
-        map('<leader>ls',vim.lsp.buf.signature_help,'[s]ignature help')
-        map('<leader>lr',vim.lsp.buf.references,'[r]eferences')
-        map('<leader>ln',vim.lsp.buf.rename,'re[n]ame all references to symbol')
-        map('<leader>lc',vim.lsp.buf.code_action,'[c]ode action')
-        map('<leader>ld',vim.diagnostic.open_float,'[d]iagnostic window for error or warning')
-        map('[K]',vim.lsp.buf.hover,'[K] hover information')
-        vim.keymap.set('n','<leader>q',vim.diagnostic.setloclist,{desc='[q]uickfix list'})
+        map('<leader>ls', vim.lsp.buf.signature_help, '[s]ignature help')
+        map('<leader>ln', vim.lsp.buf.rename, 're[n]ame symbol')
+        map('<leader>lc', vim.lsp.buf.code_action, '[c]ode action')
+        map('<leader>ld', vim.diagnostic.open_float, '[d]iagnostic window')
+        map('K', vim.lsp.buf.hover, 'Hover Documentation')
+        
+        vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { buffer = event.buf, desc = 'LSP: [q]uickfix list' })
     end
 })
 vim.api.nvim_create_autocmd('LspDetach', {
@@ -82,3 +87,4 @@ vim.api.nvim_create_autocmd('LspDetach', {
 
 vim.keymap.set('n','[d',vim.diagnostic.goto_next, {desc = 'Next warning or error'})
 vim.keymap.set('n',']d',vim.diagnostic.goto_prev, {desc = 'Next warning or error'})
+

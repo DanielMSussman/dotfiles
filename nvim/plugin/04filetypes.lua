@@ -3,3 +3,4 @@ vim.filetype.add({
         njk = 'html',
     },
 })
+

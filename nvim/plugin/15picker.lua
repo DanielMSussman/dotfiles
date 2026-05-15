@@ -21,7 +21,6 @@ vim.keymap.set('n', '<leader>fb', pick.builtin.buffers, { desc = '[f]ind existin
 vim.keymap.set('n', '<leader>fh', pick.builtin.help, { desc = '[f]ind [h]elp' })
 vim.keymap.set('n', '<leader>fr', pick.builtin.resume, { desc = '[f]ind [r]esume (last picker)' })
 
--- Extra pickers replacing specific Telescope builtins
 vim.keymap.set('n', '<leader>f.', extra.pickers.oldfiles, { desc = '[f]ind Recent Files ("." for repeat)' })
 vim.keymap.set('n', '<leader>fk', extra.pickers.keymaps, { desc = '[f]ind [k]eymaps' })
 vim.keymap.set('n', '<leader>fd', extra.pickers.diagnostic, { desc = '[f]ind [d]iagnostics' })
