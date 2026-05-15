@@ -1,3 +1,4 @@
+vim.loader.enable()
 -- directory structure
 -- nvim/
 --      after/
