@@ -37,6 +37,13 @@ local theme_config = {
             DiagnosticVirtualTextInfo  = makeDiagnosticColor(theme.diag.info),
             DiagnosticVirtualTextWarn  = makeDiagnosticColor(theme.diag.warning),
             DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
+            MiniPickNormal = { bg = "none" },
+            MiniPickPrompt = { bg = "none", fg = theme.ui.fg },
+            MiniPickBorder = { fg = theme.ui.fg_dim, bg = "none" },
+            MiniPickBorderBusy = { fg = theme.diag.warn, bg = "none" },
+            MiniPickBorderText = { fg = theme.ui.fg, bold = true },
+            MiniPickIconDirectory = { fg = theme.ui.special },
+            MiniPickHeader = { fg = theme.syn.identifier, bold = true },
         }
     end
 }

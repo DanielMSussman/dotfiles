@@ -3,9 +3,19 @@ vim.pack.add({ "https://github.com/nvim-mini//mini.extra" })
 
 require('mini.pick').setup({
     window = {
-        config = {
-            border = "rounded",
-        }
+        config = function()
+            local height = math.floor(vim.o.lines * 0.45)
+            local width = math.floor(vim.o.columns * 0.8)
+            return {
+                relative = 'editor',
+                anchor = 'NW',
+                height = height,
+                width = width,
+                row = math.floor((vim.o.lines - height) / 2),
+                col = math.floor((vim.o.columns - width) / 2),
+                border = 'rounded',
+            }
+        end,
     }
 })
 require('mini.extra').setup()
