@@ -4,6 +4,10 @@ vim.g.vimtex_compiler_silent = 1 -- i.e., don't emit compilation notifications
 -- vim.g.vimtex_compiler_latexmk = {
 --     aux_dir = 'auxFiles', -- put aux files in another directory
 -- }
+vim.g.vimtex_format_enabled = 0
+vim.g.vimtex_syntax_conceal_disable = 1
+vim.g.vimtex_matchparen_enabled = 0
+
 vim.g.vimtex_view_method = 'general'
 vim.g.vimtex_view_general_options = '-reuse-instance -forward-search @tex @line @pdf'
 vim.g.vimtex_quickfix_open_on_warning = 0 -- don't open quickfix if there are only warnings

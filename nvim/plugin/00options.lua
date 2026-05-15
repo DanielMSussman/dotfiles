@@ -1,10 +1,12 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-vim.cmd("filetype plugin indent on")
-vim.cmd("syntax enable")
-
 local opt = vim.opt
+
+opt.undofile = true
+opt.shada = "'100,<50,s10,:1000,/100,@100,h"
+vim.cmd("filetype plugin indent on")
+if vim.fn.exists('syntax_on') ~= 1 then vim.cmd('syntax enable') end
 
 -- ui and numbers
 opt.number = true
@@ -41,6 +43,7 @@ opt.history = 1000
 opt.clipboard = "unnamedplus"
 opt.spell = true
 opt.spelllang = "en_us"
+opt.spelloptions = 'camel'
 opt.errorbells = false
 opt.hidden = true
 
@@ -54,11 +57,8 @@ set_hl(0, "SpellRare", { underdashed = true })
 set_hl(0, "SpellCap", { underdotted = true })
 
 -- lsp and diagnostics
-
 vim.lsp.config.clangd = require('lsp.clangd')
-vim.lsp.config.luals = require('lsp.luals')
-vim.lsp.enable({'luals', 'clangd'})
-
+vim.lsp.enable({'clangd'})
 vim.diagnostic.config({
   virtual_text = {
     severity = {
@@ -80,3 +80,5 @@ vim.lsp.util.open_floating_preview = function(contents, syntax, opts)
 
   return original_open_floating_preview(contents, syntax, opts)
 end
+
+

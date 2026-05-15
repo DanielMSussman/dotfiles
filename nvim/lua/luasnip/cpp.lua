@@ -9,25 +9,17 @@ end
 
 return {
 
-    s({trig="ONCE", snippetType="snippet",desc="header include guard based on file fname"},
-        d(1, function(args, parent)
-            local env = parent.snippet.env
-            return sn(nil,{ 
-                t {
-                    "#ifndef " .. string.upper(string.gsub(env.TM_FILENAME,"%.","_")),
-                    "#define " .. string.upper(string.gsub(env.TM_FILENAME,"%.","_")),
-                    "",
-                    "",
-                },
-                i(1,"text"),
-                t {
-                    "",
-                    "",
-                    "#endif"        
-                },
-            })
-        end, {})),
+    s({trig="ONCE", snippetType="snippet", desc="modern pragma once header guard"},
+        fmt(
+            [[
+            #pragma once
 
+            <>
+            ]],
+            { i(0) },
+            { delimiters = "<>" }
+        )
+    ),
     s({trig="CLASS",snippetType="snippet",desc="set up a blank class"},
         fmt(
             [[
@@ -57,17 +49,6 @@ return {
         )
     ),
 
-    s({trig = "enablecuda", dscr = "add preprocessor directives based on ENABLE_CUDA either in insert mode or wrapping a visual selection"},
-        fmt(
-            [[
-            #ifdef ENABLE_CUDA
-            <>
-            #endif
-            ]],
-            { d(1, visualSelectionOrInsert) },
-            { delimiters = "<>"}
-        )
-    ),
     s({trig="maincpp", snippetType="snippet", dscr="set up a bare-bones int main with some includes"},
         fmt(
             [[
