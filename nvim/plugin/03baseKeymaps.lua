@@ -1,3 +1,13 @@
+vim.keymap.set('n', '<localleader>c', function()
+  if vim.wo.colorcolumn == "" then
+    vim.wo.colorcolumn = "73"
+    print("Colorcolumn: ON")
+  else
+    vim.wo.colorcolumn = ""
+    print("Colorcolumn: OFF")
+  end
+end, { desc = "Toggle colorcolumn", silent = true })
+
 vim.keymap.set("n","<S-h>" ,"ge",{noremap=true,desc="go to the end of last word"})
 vim.keymap.set("n","<leader>p",'\"0p',{desc = 'paste last yank'})
 vim.keymap.set("n","<leader>P",'\"0P',{desc = 'Paste last yank'})
