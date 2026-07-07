@@ -19,10 +19,11 @@ require('mini.pick').setup({
     }
 })
 require('mini.extra').setup()
-
+-- Route all standard Neovim UI menus through mini.pick
 -- set up keymaps
 local pick = require('mini.pick')
 local extra = require('mini.extra')
+-- vim.ui.select = pick.ui_select
 
 -- core files and text
 vim.keymap.set('n', '<leader>ff', pick.builtin.files, { desc = '[f]ind [f]iles' })

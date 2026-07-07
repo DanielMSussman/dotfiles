@@ -49,7 +49,7 @@
       "src": "https://github.com/nvim-mini/mini.statusline"
     },
     "motleyLatex.nvim": {
-      "rev": "82da60fb86311e092c6126f0ae2fa99e35e6895a",
+      "rev": "e3ff4a4bf0ff1086a6dd7e57fbfda292d7529944",
       "src": "https://github.com/DanielMSussman/motleyLatex.nvim"
     },
     "nvim-treesitter": {

@@ -66,4 +66,8 @@ end, { silent = true, desc = "cycle through choice nodes" })
 
 vim.keymap.set({ "i", "s" }, "<C-y>", function() ls.unlink_current() end, { silent = true, desc = "use this to leave choice node" })
 
-vim.keymap.set({ "i", "s" }, "<C-z>", "<cmd>lua require('luasnip.extras.select_choice')()<cr>", { noremap = true, desc = "ui select for choice node" })
+vim.keymap.set({ "i", "s" }, "<C-z>", function()
+    require('blink.cmp').hide()
+    
+    require('luasnip.extras.select_choice')()
+end, { desc = "ui select for choice node" })
