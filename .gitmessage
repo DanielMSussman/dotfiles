@@ -1,0 +1,11 @@
+Short summary in imperative mood
+
+Explain why this change is being made. 
+
+Explain what changed. Focus on high-level architecture, not line-by-line details (the diff shows that). Mention any trade-offs made.
+
+# Commit Message Guidelines:
+# 1. Subject: Imperative mood ("Add feature" not "Added" or "Adds")
+# 2. Subject: 50 characters max, no trailing period.
+# 3. Body: Wrap at 72 characters.
+# 4. Separate subject from body with a blank line.

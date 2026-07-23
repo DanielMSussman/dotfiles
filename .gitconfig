@@ -11,9 +11,12 @@
     autoSetupRemote = true
 
 [core]
-    editor = vim
+    editor = nvim
 	excludesFile = ~/.globalGitignore
     autocrlf = input
 
 [init]
     defaultBranch = main
+
+[commit]
+	template = ~/.gitmessage
