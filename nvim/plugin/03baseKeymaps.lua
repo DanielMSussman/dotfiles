@@ -84,7 +84,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
         map('<leader>ld', vim.diagnostic.open_float, '[d]iagnostic window')
         map('K', vim.lsp.buf.hover, 'Hover Documentation')
         
-        vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { buffer = event.buf, desc = 'LSP: [q]uickfix list' })
+        vim.keymap.set('n', '<leader>lq', vim.diagnostic.setloclist, { buffer = event.buf, desc = 'LSP: [q]uickfix list' })
+map('<leader>le', function()
+            extra.pickers.diagnostic({
+                scope = 'all',
+                severity = {
+                    vim.diagnostic.severity.ERROR,
+                    vim.diagnostic.severity.WARN,
+                },
+            })
+        end, '[l]ist [e]rrors & warnings')
     end
 })
 vim.api.nvim_create_autocmd('LspDetach', {

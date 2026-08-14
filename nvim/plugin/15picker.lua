@@ -33,6 +33,4 @@ vim.keymap.set('n', '<leader>fh', pick.builtin.help, { desc = '[f]ind [h]elp' })
 vim.keymap.set('n', '<leader>fr', pick.builtin.resume, { desc = '[f]ind [r]esume (last picker)' })
 
 vim.keymap.set('n', '<leader>f.', extra.pickers.oldfiles, { desc = '[f]ind Recent Files ("." for repeat)' })
-vim.keymap.set('n', '<leader>fk', extra.pickers.keymaps, { desc = '[f]ind [k]eymaps' })
-vim.keymap.set('n', '<leader>fd', extra.pickers.diagnostic, { desc = '[f]ind [d]iagnostics' })
 vim.keymap.set('n', '<leader>z', extra.pickers.spellsuggest, { desc = 'Spelling suggestions' })
