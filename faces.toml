@@ -1,0 +1,150 @@
+# Kanagawa color theme for Julia 1.13 syntax highlighting
+
+# --- Keywords, Operators & Functions ---
+[julia_keyword]
+foreground = "#957FB8"       # Oni Violet (or set to "#E46876" Wave Red)
+weight = "bold"
+
+[julia_macro]
+foreground = "#E46876"       # Wave Red
+
+[julia_funcall]
+foreground = "#7E9CD8"       # Crystal Blue
+
+[julia_operator]
+foreground = "#C0A36E"       # Boat Yellow 2
+
+[julia_comparator]
+inherit = "julia_operator"
+
+[julia_assignment]
+foreground = "#C0A36E"
+weight = "bold"
+
+[julia_broadcast]
+foreground = "#C0A36E"
+weight = "bold"
+
+# --- Types & Literals ---
+[julia_type]
+foreground = "#7AA89F"       # Wave Aqua 2
+
+[julia_typedec]
+foreground = "#7AA89F"
+weight = "bold"
+
+[julia_builtin]
+foreground = "#7AA89F"
+weight = "bold"
+
+[julia_number]
+foreground = "#D27E99"       # Sakura Pink
+
+[julia_bool]
+foreground = "#D27E99"
+weight = "bold"
+
+[julia_string]
+foreground = "#98BB6C"       # Spring Green
+
+[julia_string_delim]
+foreground = "#98BB6C"
+weight = "bold"
+
+[julia_regex]
+inherit = "julia_string"
+
+[julia_cmdstring]
+inherit = "julia_string"
+
+[julia_char]
+inherit = "julia_string"
+
+[julia_char_delim]
+inherit = "julia_string_delim"
+
+[julia_backslash_literal]
+foreground = "#E6C384"
+inherit = "julia_string"
+
+[julia_symbol]
+foreground = "#E6C384"       # Carp Yellow
+
+[julia_singleton_identifier]
+inherit = "julia_symbol"
+
+# --- Base Text & Comments ---
+[julia_identifier]
+foreground = "#DCD7BA"       # Fuji White
+
+[julia_comment]
+foreground = "#727169"       # Fuji Gray
+italic = true
+
+[julia_error]
+background = "#E82424"       # Samurai Red
+foreground = "#DCD7BA"
+weight = "bold"
+
+[julia_unpaired_parentheses]
+background = "#E82424"
+foreground = "#DCD7BA"
+weight = "bold"
+
+# --- Unified Light Blue Delimiters  ---
+[julia_parentheses]
+foreground = "#7FB4CA"       # Kanagawa Spring Blue
+
+[julia_rainbow_paren_1]
+inherit = "julia_parentheses"
+
+[julia_rainbow_paren_2]
+inherit = "julia_parentheses"
+
+[julia_rainbow_paren_3]
+inherit = "julia_parentheses"
+
+[julia_rainbow_paren_4]
+inherit = "julia_parentheses"
+
+[julia_rainbow_paren_5]
+inherit = "julia_parentheses"
+
+[julia_rainbow_paren_6]
+inherit = "julia_parentheses"
+
+[julia_rainbow_bracket_1]
+inherit = "julia_parentheses"
+
+[julia_rainbow_bracket_2]
+inherit = "julia_parentheses"
+
+[julia_rainbow_bracket_3]
+inherit = "julia_parentheses"
+
+[julia_rainbow_bracket_4]
+inherit = "julia_parentheses"
+
+[julia_rainbow_bracket_5]
+inherit = "julia_parentheses"
+
+[julia_rainbow_bracket_6]
+inherit = "julia_parentheses"
+
+[julia_rainbow_curly_1]
+inherit = "julia_parentheses"
+
+[julia_rainbow_curly_2]
+inherit = "julia_parentheses"
+
+[julia_rainbow_curly_3]
+inherit = "julia_parentheses"
+
+[julia_rainbow_curly_4]
+inherit = "julia_parentheses"
+
+[julia_rainbow_curly_5]
+inherit = "julia_parentheses"
+
+[julia_rainbow_curly_6]
+inherit = "julia_parentheses"
