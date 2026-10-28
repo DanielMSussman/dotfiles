@@ -9,10 +9,6 @@ local function ensure_jsregexp_built()
     local luasnip_root = vim.fn.fnamemodify(luasnip_lua_path, ":h:h:h")
     local artifact = luasnip_root .. "/deps/jsregexp/jsregexp.so"
     
-    if isWindows then
-        artifact = luasnip_root .. "/deps/jsregexp/jsregexp.dll"
-    end
-    
     if not vim.uv.fs_stat(artifact) then
         vim.notify("Building LuaSnip jsregexp in the background...", vim.log.levels.INFO)
         
