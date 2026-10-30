@@ -1,7 +1,13 @@
 local nematex_auto = false
+local compiling = false
 local nematex_timer = (vim.uv or vim.loop).new_timer()
 
 local function compile_nematex()
+    if compiling then
+        return
+    end
+    compiling = true
+
     vim.cmd.write()
 
     local file = vim.api.nvim_buf_get_name(0)
@@ -11,6 +17,7 @@ local function compile_nematex()
         { vim.fn.expand('~/repos/cpptex/build/nematex'), '-S', file },
         { text = true },
         function(obj)
+            compiling = false
             if not nematex_auto then
                 local elapsed_ms = ((vim.uv or vim.loop).hrtime() - start_time) / 1e6
 
