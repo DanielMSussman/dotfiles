@@ -71,7 +71,7 @@ vim.api.nvim_create_autocmd({ 'TextChanged', 'TextChangedI' }, {
         end
 
         nematex_timer:stop()
-        nematex_timer:start(100, 0, vim.schedule_wrap(
+        nematex_timer:start(30, 0, vim.schedule_wrap(
             function()
                 if nematex_auto then
                     compile_nematex()
@@ -84,4 +84,15 @@ end,
 
 vim.keymap.set('n', '<localleader>n', compile_nematex, {
     desc = '[n]emaTeX: Save buffer and compile',
+})
+local function open_pdf()
+    local filename_no_ext = vim.fn.expand("%:t:r")
+    local pdf = filename_no_ext .. ".pdf"
+    vim.fn.jobstart({ "zathura", pdf }, {
+        detach = true,
+    })
+end
+
+vim.keymap.set('n', '<localleader>p', open_pdf, {
+    desc = 'open [p]df with zathura',
 })
