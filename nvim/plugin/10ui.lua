@@ -57,7 +57,7 @@ miniclue.setup({
         miniclue.gen_clues.windows(),
         miniclue.gen_clues.z(),
         { mode = 'n', keys = '<Leader>f', desc = '(Find commands)' },
-        { mode = 'n', keys = '<Leader>g', desc = '(Git commands)' },
+        { mode = 'n', keys = '<Leader>h', desc = '(Git commands)' },
         { mode = 'n', keys = '<Leader>c', desc = '(Conform / formatting)' },
         { mode = 'n', keys = '<Leader>l', desc = '(LSP commands)' },
         { mode = 'n', keys = '<localLeader>l', desc = '(LaTeX/VimTex)' },
